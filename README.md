@@ -4,16 +4,46 @@ ShoppingDemo
 Final Project in A/A, this will basically be an amazon clone with twists
 
 
-* Tools: 
-** Sever-side: Rails
+* Sever-side: 
+    + **_Rails_**
+    + **_Jbuilder_**
+    + **_Kaminari_**
+* Client-side: 
+    + Data: **_Backbone-on-rails_**, **_backbone-support_**
+    + UI:  **_Jquery_**, **_Kendo UI_**(Depends)
+    + CSS: **_Gumby_**(Looks good)
 
-** Client-side: 
-  ..Data: Backbone-on-rails, backbone-support
-  ..UI:  Jquery, Kendo UI
-  ..CSS: Gumby
+Main Features
+========
+  * User is able to drag and drop products on their carts. 
+  * User is able to comment on a product and rate it
+  * User is able to add product to wishlist
+  * User is able to view product by category
+  * User is able to use auto completion search bar to search for product
+  * Guest's cart or list will be stored on Cookie until they Sign Up
+
+####Possible Additional Features
+  * Recommendation (table stored the distance between each pair of product using some custom metric)
+  * User tracking
+  * Fancier UI
 
 
 Phase1
 ========
+  
+* Building the server side constructs. That includes setting up Models( Product, User, WishList, ShoppingCart, Session) and corresponding associations. Make Auth. 
 
+* Set up controllers and Json api and corresponding routes
+
+
+Phase2
+========
+* Set Up server side logic(calculation) for the features mentioned above. (How to respond to search, rating, Totaling for the purchase, etc..)
+
+Phase3 & Phase4
+========
+* Start Building client side UI.
+* Bare bone overview of the whole site using backbone view
+* Add drag and drop ,sort Logics
+* Styling and animation using Gumby, Kendo and Jquery
   
