@@ -21,11 +21,15 @@ Main Features
   * User is able to view product by category
   * User is able to use auto completion search bar to search for product
   * Guest's cart or list will be stored on Cookie until they Sign Up
+  * Horizontal scrolling/paging with animation 
+  * Product info on mouse hover
+  * Modal Product show page
 
 ####Possible Additional Features
   * Recommendation (table stored the distance between each pair of product using some custom metric)
   * User tracking
   * Fancier UI
+  * MultiLanguage support
 
 
 Phase1
@@ -40,10 +44,13 @@ Phase2
 ========
 * Set Up server side logic(calculation) for the features mentioned above. (How to respond to search, rating, Totaling for the purchase, etc..)
 
-Phase3 & Phase4
+Phase3
 ========
 * Start Building client side UI.
-* Bare bone overview of the whole site using backbone view
+* Bare bone of the whole site using backbone view (includes info panel on hover and modal show page)
 * Add drag and drop ,sort Logics
-* Styling and animation using Gumby, Kendo and Jquery
+
+Phase 4
+========
+* Styling and animation using Gumby, Kendo and Jquery (horizontal scrolling)
   
