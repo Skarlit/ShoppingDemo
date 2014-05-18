@@ -1,7 +1,7 @@
 ShoppingDemo
 ============
 
-Final Project in A/A, this will basically be an amazon clone with twists
+Final Project in A/A, this will basically be an Amazon clone(anime products only) with twists
 
 
 * Sever-side: 
@@ -10,16 +10,17 @@ Final Project in A/A, this will basically be an amazon clone with twists
     + **_Kaminari_**
 * Client-side: 
     + Data: **_Backbone-on-rails_**, **_backbone-support_**
-    + UI:  **_Jquery_**, **_Kendo UI_**(Depends)
-    + CSS: **_Gumby_**(Looks good)
+    + UI:  **_Jquery_**, **_Jquery UI_** & **_Kendo UI_** (Depends)
+    + CSS: **_Bootstrap_**
 
 Main Features
 ========
-  * User is able to drag and drop products on their carts. 
+  * Auth /(Omniauth? maybe)
   * User is able to comment on a product and rate it
   * User is able to add product to wishlist
   * User is able to view product by category
   * User is able to use auto completion search bar to search for product
+  * User is able to drag and drop products on their carts. 
   * Guest's cart or list will be stored on Cookie until they Sign Up
   * Horizontal scrolling/paging with animation 
   * Product info on mouse hover
@@ -31,11 +32,10 @@ Main Features
   * Fancier UI
   * MultiLanguage support
 
-
 Phase1
 ========
   
-* Building the server side constructs. That includes setting up Models( Product, User, WishList, ShoppingCart, Session) and corresponding associations. Make Auth. 
+* Building the server side constructs. That includes setting up Models( Product, User, WishList, ShoppingCart, Session) and corresponding associations.Make Auth. 
 
 * Set up controllers and Json api and corresponding routes
 
