@@ -39,6 +39,26 @@ Phase1
 
 * Set up controllers and Json api and corresponding routes
 
+##Schema:
+### User:
+  * **_users_**: id, email:string, password_digest:string
+  * **_user\_infos_**: id, user_id, country, state, address, zipcode.
+  * **_cart\_items_**: id, user_id, item_id, quantity
+
+### Item:
+  * **_items_**: id, title, price
+  * **_item\_infos_**: id, item_id, description, category
+  * **_item\_stats_**: id, item_id, rating, stocks, released:boolean
+
+### Comments:
+ * **_comments_**: id, user_id, item_id, title, body:text(markdown), single_rating
+
+### Search and Caching:
+* **_hotwords_**: id, query:string, result:text(string of array of item:id)
+
+### Order:
+* **_orders_**: id, user_id, total, status:integer
+
 
 Phase2
 ========
