@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: item_stats
+#
+#  id         :integer          not null, primary key
+#  item_id    :integer
+#  rating     :integer
+#  stocks     :integer
+#  released   :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 1
+  rating: 1
+  stocks: 1
+  released: false
+
+two:
+  item_id: 1
+  rating: 1
+  stocks: 1
+  released: false

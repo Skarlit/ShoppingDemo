@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: hotwords
+#
+#  id         :integer          not null, primary key
+#  query      :string(255)
+#  result     :text
+#  rank       :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyString
+  result: MyText
+  rank: 1
+
+two:
+  query: MyString
+  result: MyText
+  rank: 1

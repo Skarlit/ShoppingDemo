@@ -41,23 +41,26 @@ Phase1
 
 ##Schema:
 ### User:
-  * **_users_**: id, email:string, password_digest:string
-  * **_user\_infos_**: id, user_id, country, state, address, zipcode.
-  * **_cart\_items_**: id, user_id, item_id, quantity
+  * **_users_**: id, name, email:string, password_digest:string, session\_token
+  * **_user\_infos_**: id, user\_id, country, state, address, zipcode
+  * **_cart\_items_**: id, user\_id, item\_id, quantity
 
 ### Item:
-  * **_items_**: id, title, price
-  * **_item\_infos_**: id, item_id, description, category
-  * **_item\_stats_**: id, item_id, rating, stocks, released:boolean
+  * **_items_**: id, title, price, img, cat\_id
+  * **_item\_infos_**: id, item\_id, description
+  * **_item\_stats_**: id, item\_id, rating, stocks, released:boolean
+
+### Category:
+  * **_cats_**: name
 
 ### Comments:
- * **_comments_**: id, user_id, item_id, title, body:text(markdown), single_rating
+ * **_comments_**: id, user\_id, item\_id, title, body:text(markdown), user\_rating
 
 ### Search and Caching:
-* **_hotwords_**: id, query:string, result:text(string of array of item:id)
+* **_hotwords_**: id, query:string, result:text(string of array of item:id), rank:integer
 
 ### Order:
-* **_orders_**: id, user_id, total, status:integer
+* **_orders_**: id, user\_id, total, status:integer 
 
 
 Phase2
@@ -72,5 +75,5 @@ Phase3
 
 Phase 4
 ========
-* Styling and animation using Gumby, Kendo and Jquery (horizontal scrolling)
+* Styling and animation using Jquery (horizontal scrolling)
   
