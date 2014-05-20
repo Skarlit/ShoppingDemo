@@ -46,7 +46,7 @@ Phase1
   * **_cart\_items_**: id, user\_id, item\_id, quantity
 
 ### Item:
-  * **_items_**: id, title, price, img, cat\_id
+  * **_items_**: id, title, price, img, cat\_id, clicks
   * **_item\_infos_**: id, item\_id, description
   * **_item\_stats_**: id, item\_id, rating, stocks, released:boolean
 

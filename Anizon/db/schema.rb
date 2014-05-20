@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519052544) do
+ActiveRecord::Schema.define(version: 20140519181806) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "user_id"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20140519052544) do
     t.datetime "updated_at"
   end
 
+  add_index "hotwords", ["query"], name: "index_hotwords_on_query"
+
   create_table "item_infos", force: true do |t|
     t.integer  "item_id"
     t.text     "description"
@@ -68,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140519052544) do
     t.integer  "cat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "clicks"
   end
 
   create_table "orders", force: true do |t|
@@ -96,5 +99,7 @@ ActiveRecord::Schema.define(version: 20140519052544) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["session_token"], name: "index_users_on_session_token"
 
 end
