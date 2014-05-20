@@ -1,3 +1,3 @@
-// Anizon.Models.Shop = Backbone.Model.extend({
+Anizon.Models.Shop = Backbone.Model.extend({
 
-// });
+});
