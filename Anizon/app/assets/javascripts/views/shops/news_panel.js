@@ -3,9 +3,11 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
     var popularView = new Anizon.Views.Popular();
     var newsView = new Anizon.Views.News();
     var releaseView = new Anizon.Views.Release();
+    var logView = new Anizon.Views.Log();
     this.children.push(popularView);
     this.children.push(releaseView);
     this.children.push(newsView);
+    this.children.push(logView);
   },
 
   newsSkeletonTemplate: JST["shops/news"],
@@ -23,7 +25,7 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
 
 
 Anizon.Views.News = Support.CompositeView.extend({
-  className: "col-md-12 news-panel",
+  className: "col-md-8 news-panel",
 
   newsTemplate: JST["center/news/news"],
 
@@ -34,20 +36,26 @@ Anizon.Views.News = Support.CompositeView.extend({
     this.collection.fetch();
 
     var parent = this;
-    this.collection.each(function(entry){
+
+    this.listenTo(this.collection, "sync", function(){
+      parent.collection.each(function(entry){
+        var newsEntryView = new Anizon.Views.Entry({model: entry, template: parent.newsEntryTemplate }) 
+        parent.children.push(newsEntryView);
+      })
+    });
+
+    this.listenTo(this.collection, "add", function(entry){
       var newsEntryView = new Anizon.Views.Entry({model: entry, template: parent.newsEntryTemplate }) 
       parent.children.push(newsEntryView);
+      parent.render();
     })
-
-    this.listenTo(this.collection, "sync add", this.render);
   },
 
   render: function(){
     this.$el.html(this.newsTemplate({}));
-    debugger
     var parent = this;
     this.children.each(function(childView){
-      this.$el.append(childView.render().$el);
+      parent.$el.append(childView.render().$el);
     })
 
     return this;
@@ -83,6 +91,21 @@ Anizon.Views.Popular = Support.CompositeView.extend({
 
   render: function(){
     this.$el.html(this.popularTemplate({}));
+
+    return this;
+  }
+});
+
+Anizon.Views.Log = Support.CompositeView.extend({
+  className: "col-md-4 news-panel",
+  initialize: function(){
+
+  },
+
+  logTemplate: JST["center/news/log"],
+
+  render: function(){
+    this.$el.html(this.logTemplate({}));
 
     return this;
   }
