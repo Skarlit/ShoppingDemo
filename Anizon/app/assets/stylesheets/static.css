@@ -1,0 +1,35 @@
+/*Navbar*/
+#top-navbar{
+    color: white;
+
+    background-color: black;
+    border-radius: 0px; 
+}
+
+.navbar-brand:hover{
+  cursor: default;
+}
+
+.navbar-brand {
+  color: white;  
+}
+
+.sign-in-form, #sign-up-form{
+  padding-top: 5px;
+  margin-right: 40px;
+  background-color: black;
+  color: white;    
+}
+
+.dropdown, input, input[type="submit"]:hover{
+  background-color: black;
+  color:white;
+}
+
+
+
+/*News Panel*/
+
+#news-container{
+  background-color: black;
+}

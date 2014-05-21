@@ -20,4 +20,11 @@ class User < ActiveRecord::Base
   def password=(plaintext)
     self.password_digest = BCrypt::Password.create(plaintext)
   end
+
+  def reset_session_token!
+    new_token = SecureRandom.hex(64)
+    self.session_token = new_token
+    self.save!
+    new_token
+  end
 end

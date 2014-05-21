@@ -32,13 +32,6 @@ Main Features
   * Fancier UI
   * MultiLanguage support
 
-Phase1
-========
-  
-* Building the server side constructs. That includes setting up Models( Product, User, WishList, ShoppingCart, Session) and corresponding associations.Make Auth. 
-
-* Set up controllers and Json api and corresponding routes
-
 ##Schema:
 ### User:
   * **_users_**: id, name, email:string, password_digest:string, session\_token
@@ -63,17 +56,4 @@ Phase1
 * **_orders_**: id, user\_id, total, status:integer 
 
 
-Phase2
-========
-* Set Up server side logic(calculation) for the features mentioned above. (How to respond to search, rating, Totaling for the purchase, etc..)
 
-Phase3
-========
-* Start Building client side UI.
-* Bare bone of the whole site using backbone view (includes info panel on hover and modal show page)
-* Add drag and drop ,sort Logics
-
-Phase 4
-========
-* Styling and animation using Jquery (horizontal scrolling)
-  
