@@ -10,6 +10,14 @@ class SessionsController < ApplicationController
     end
   end
 
+  def auto
+    if signed_in?
+      render json: {name: current_user.name}
+    else
+      render "Not Signed In"
+    end
+  end
+
   private 
   def login_params
     params.require(:user).permit(:email, :password)

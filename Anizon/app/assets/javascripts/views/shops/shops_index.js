@@ -19,7 +19,8 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     'click #cancel-signin-btn' : 'authButtons',
     'click #signin-submit-btn' : 'signInSubmit',
     'click #sign-up-submit-btn' : 'signUpSubmit',
-    'click #sign-up-btn' : 'signUpForm'
+    'click #sign-up-btn' : 'signUpForm',
+    'click #cart' : 'toggleCart'
   },
 
   //HANDLERS
@@ -80,6 +81,10 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
       }
     });
+  },
+
+  toggleCart: function(event){
+    
   }
 
 });

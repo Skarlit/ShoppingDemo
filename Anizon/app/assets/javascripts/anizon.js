@@ -12,7 +12,19 @@ window.Anizon = {
   }
 };
 
+window.persistentLogin = function(){
+  $.ajax({
+    type: "POST",
+    url: "sessions/auto",
+    data: "",
+    success: function(resp){
+      $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
+    }
+
+  })
+}
 
 $(document).ready(function(){
   window.Anizon.initialize();
+  window.persistentLogin(); 
 });

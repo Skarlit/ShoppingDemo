@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(version: 20140521234126) do
   create_table "item_infos", force: true do |t|
     t.integer  "item_id"
     t.text     "description"
+    t.string   "authors"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

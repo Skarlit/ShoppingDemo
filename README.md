@@ -40,7 +40,7 @@ Main Features
 
 ### Item:
   * **_items_**: id, title, price, img, cat\_id, clicks
-  * **_item\_infos_**: id, item\_id, description
+  * **_item\_infos_**: id, item\_id, description, authors, url
   * **_item\_stats_**: id, item\_id, rating, stocks, released:boolean
 
 ### Category:

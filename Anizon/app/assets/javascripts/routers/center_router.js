@@ -4,10 +4,19 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     this.el = option.el;
   },
   routes: {
-    'news' : 'newsPanel'
+    '' : 'welcomePanel',
+    'news' : 'newsPanel',
+    'items/:cat' : 'itemsPanel',
   },
   newsPanel: function(){
     var newsView = new Anizon.Views.NewsPanel();
     this.swap(newsView);
+  },
+  welcomePanel: function(){
+    var welcomeView = new Anizon.Views.WelcomePanel();
+    this.swap(welcomeView);
+  },
+  itemsPanel: function(cat){
+
   }
 })
