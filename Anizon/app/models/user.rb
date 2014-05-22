@@ -15,7 +15,14 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :name, presence: true, allow_nil: true
   validates :email, presence: true, format: { with: /[\w\.\_]+@[\w\.\_]+/ } , uniqueness: true
+
   validates :password, length: { minimum: 6 , allow_nil: true}
+
+
+  has_many :cart_items
+  has_many :comments
+  has_many :orders
+
 
   def password=(plaintext)
     self.password_digest = BCrypt::Password.create(plaintext)

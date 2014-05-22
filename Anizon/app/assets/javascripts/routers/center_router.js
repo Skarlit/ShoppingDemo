@@ -1,7 +1,7 @@
 
 Anizon.Routers.Center = Support.SwappingRouter.extend({
   initialize: function(option){
-    this.el = $(option.el);
+    this.el = option.el;
   },
   routes: {
     'news' : 'newsPanel'

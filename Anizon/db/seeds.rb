@@ -7,4 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
+20.times do |i|
+  Feed.create(title: "News #{i}", url: "fake.com")
+end

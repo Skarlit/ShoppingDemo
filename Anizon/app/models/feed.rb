@@ -1,17 +1,13 @@
 # == Schema Information
 #
-# Table name: items
+# Table name: feeds
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  price      :float
-#  img        :string(255)
-#  cat_id     :integer
+#  url        :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  clicks     :integer
 #
 
-class Item < ActiveRecord::Base
-  belongs_to :cat
+class Feed < ActiveRecord::Base
 end

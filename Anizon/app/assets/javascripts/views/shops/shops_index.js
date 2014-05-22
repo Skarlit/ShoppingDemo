@@ -1,23 +1,20 @@
 Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
   //TEMPLATES
-  skeletonTemplate: JST['shops/index'],
   navbarTemplate: JST['top/topNavBar'],
   signInMenuTemplate: JST['top/signInForm'],
   authButtonsTemplate: JST['top/authButtons'],
   
   //RENDER
   render: function(){
-    var skeleton = this.skeletonTemplate({});
     var topNavBar = this.navbarTemplate({});
-    this.$el.html(skeleton);
-    this.$el.find("#top").html(topNavBar);
+    this.$el.html(topNavBar);
     this.$el.find("#top-navbar-right").html(this.authButtonsTemplate({}));
     return this;
   },
 
   //EVENTS 
-  events: {
+  events: { 
     'click #sign-in-btn' : 'signInForm',
     'click #cancel-signin-btn' : 'authButtons',
     'click #signin-submit-btn' : 'signInSubmit',

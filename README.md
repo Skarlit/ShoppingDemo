@@ -56,4 +56,8 @@ Main Features
 * **_orders_**: id, user\_id, total, status:integer 
 
 
+### Feed:
+* **_feeds_**: id, title, url
+
+
 

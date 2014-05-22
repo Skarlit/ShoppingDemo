@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519181806) do
+ActiveRecord::Schema.define(version: 20140521234126) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "user_id"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20140519181806) do
     t.string   "title"
     t.text     "body"
     t.integer  "user_rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feeds", force: true do |t|
+    t.string   "title"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

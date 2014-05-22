@@ -1,27 +1,20 @@
 # == Schema Information
 #
-# Table name: items
+# Table name: feeds
 #
 #  id         :integer          not null, primary key
 #  title      :string(255)
-#  price      :float
-#  img        :string(255)
-#  cat_id     :integer
+#  url        :string(255)
 #  created_at :datetime
 #  updated_at :datetime
-#  clicks     :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
   title: MyString
-  price: 1.5
-  img: MyString
-  cat_id: 1
+  url: MyString
 
 two:
   title: MyString
-  price: 1.5
-  img: MyString
-  cat_id: 1
+  url: MyString
