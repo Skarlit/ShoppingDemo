@@ -17,6 +17,7 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     this.swap(welcomeView);
   },
   itemsPanel: function(cat){
+    var view = new Anizon.Views.ItemsPanel({})
     switch(cat){
       case "geometry":
       break;
@@ -26,6 +27,19 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
       break;
       case "probability":
       break;
+      case "numerical":
+      break;
     }
+    this.swap(view);
+  },
+
+  swap: function(newView) {
+    if (this.currentView && this.currentView.leave) {
+      this.currentView.leave();
+    }
+
+    this.currentView = newView;
+    $(this.el).empty().append(this.currentView.render().el).hide().fadeIn(1000);
   }
 })
+

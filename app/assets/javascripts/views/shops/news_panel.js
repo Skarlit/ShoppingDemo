@@ -1,18 +1,12 @@
 Anizon.Views.NewsPanel = Support.CompositeView.extend({
+  
   releaseTemplate: JST["center/news/release"],
-
   releaseEntryTemplate: JST["center/news/release_entry"],
-
   newsSkeletonTemplate: JST["shops/news"],
-
   newsTemplate: JST["center/news/news"],
-
   newsEntryTemplate: JST["center/news/news_entry"],
-
   popularTemplate: JST["center/news/popular"],
-
   popularEntryTemplate: JST["center/news/popular_entry"],
-
 
   initialize: function(){
     this.collection = new Anizon.Collections.Feeds();
@@ -47,6 +41,11 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
     this.children.push(releaseView);
     this.children.push(newsView);
     this.children.push(logView);
+
+    popularView.parent = this;
+    releaseView.parent = this;
+    newsView.parent = this;
+    logView.parent = this;
   },
 
   render: function(){
