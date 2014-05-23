@@ -1,0 +1,74 @@
+
+
+/*Navbar*/
+#top-navbar{
+    color: white;
+
+    background-color: black;
+    border-radius: 0px; 
+}
+
+.navbar-brand:hover{
+  cursor: default;
+}
+
+.navbar-brand {
+  color: white;  
+}
+
+.sign-in-form, #sign-up-form{
+  padding-top: 5px;
+  margin-right: 40px;
+  background-color: black;
+  color: white;    
+}
+
+.dropdown, input, input[type="submit"]:hover{
+  background-color: black;
+  color:white;
+}
+
+
+
+/*News Panel*/
+
+#news-container{
+  background-color: black;
+}
+
+.news-panel{
+  border: 10px solid black;
+  background-color: white;
+  overflow-y: scroll;
+  height:400px;
+}
+
+
+
+
+/*Bottom */
+
+.cartSideBar{
+  position: fixed;
+  z-index: 1000;
+  bottom:0;
+  width:100%;
+  background-color: black;
+  color: white;
+}
+
+#hideCart{
+  height:50px;
+  text-align: center;
+}
+
+#cartBody{
+  background-color: black;
+  overflow-x: scroll;
+  height:200px;
+}
+
+
+::-webkit-scrollbar { 
+    display: none; 
+}
