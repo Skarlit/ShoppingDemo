@@ -16,6 +16,7 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     var welcomeView = new Anizon.Views.WelcomePanel();
     this.swap(welcomeView);
   },
+  
   itemsPanel: function(cat){
     var items = new Anizon.Collections.Items({cat: cat, page: 1})
     items.setUrl();

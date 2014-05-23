@@ -50,7 +50,7 @@
 
 .cartSideBar{
   position: fixed;
-  z-index: 1000;
+  z-index: 128;
   bottom:0;
   width:100%;
   background-color: black;
@@ -72,6 +72,13 @@
 #itemsContainer{
   background-color: #111111
   overflow-x: scroll;
+}
+
+#itemsContainer.cartItem{
+  height:90%;
+  width:80px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #cartScrollLeft{

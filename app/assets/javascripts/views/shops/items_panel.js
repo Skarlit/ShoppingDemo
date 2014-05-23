@@ -8,12 +8,13 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
 
     var parent = this;
     this.listenTo(this.collection, "sync", function(){
-      // parent.children.each(function(childView){
-      //   childView.leave();
-      // })
+      parent.children.each(function(childView){
+        childView.leave();
+      })
       parent.collection.each(function(item){
         var itemView = new Anizon.Views.Item({model: item});
         parent.children.push(itemView);
+        itemView.parent = parent;
       })
       parent.render();
     })
@@ -43,7 +44,22 @@ Anizon.Views.Item = Support.CompositeView.extend({
   },
 
   render: function(){
+
     this.$el.html(this.itemTemplate({item: this.model}))
+
+    var parent = this;
+    this.$el.draggable({
+      revert: "invalid",  
+      helper: "clone",
+      zIndex: 200,
+      start: function(){
+        Anizon.currentDraggedItem = new Anizon.Models.CartItem({
+          item_id: parent.model.escape('id'),
+          quantity: 1,
+          price: parent.model.escape('price'),
+        });
+      }
+    });
     return this;
   }
 })

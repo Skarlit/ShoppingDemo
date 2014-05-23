@@ -3,11 +3,29 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   cartTemplate: JST["bottom/carts/cart_body"],
 
   initialize: function(){
-
+    var parent = this;
+    this.listenTo(this.collection, "add", function(cartItem){
+      var cartItemView = new Anizon.Views.CartItem({model: cartItem});
+      parent.children.push(cartItemView);
+      cartItemView.parent = parent;
+      parent.render();
+    })
   },
 
   render: function(){
     this.$el.html(this.cartTemplate({}));
+
+    var parent = this;
+
+    this.children.each(function(childView){
+      parent.$el.find("#itemsContainer").append(childView.render().$el)
+    });
+
+    this.$el.droppable({
+      drop: function(){
+        parent.collection.add(Anizon.currentDraggedItem);
+      }
+    });
 
     return this;
   },
@@ -28,5 +46,18 @@ Anizon.Views.Cart = Support.CompositeView.extend({
       }
     });
   }
+})
 
+Anizon.Views.CartItem = Support.CompositeView.extend({
+  className: "cartItem",
+  cartItemTemplate: JST["bottom/carts/cart_item"],
+
+  initialize: function(){
+
+  },
+
+  render: function(){
+    this.$el.html(this.cartItemTemplate({cartItem: this.model}));
+    return this;
+  }
 })

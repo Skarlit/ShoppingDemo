@@ -21,6 +21,16 @@ Anizon.Collections.Items = Backbone.Collection.extend({
   },
 
   setUrl: function(){
-    this.url = "api/" + this.cat + "?page=" + this.page
+    this.url = "api/" + this.cat + "?page=" + this.page 
+  }
+})
+
+Anizon.Collections.Cart = Backbone.Collection.extend({
+  model: Anizon.Models.CartItem,
+
+  url: 'api/cart_items',
+
+  initialize: function(option){
+
   }
 })
