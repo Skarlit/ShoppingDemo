@@ -58,17 +58,40 @@
 }
 
 #hideCart{
-  height:50px;
+  height:30px;
   text-align: center;
 }
 
 #cartBody{
   background-color: black;
+
+  width: 80%;
+  height:150px;
+}
+
+#itemsContainer{
+  background-color: #111111
   overflow-x: scroll;
-  height:200px;
+}
+
+#cartScrollLeft{
+  height: 150px;
+}
+
+#cartScrollRight{
+  height: 150px;
+}
+
+#cartScrollLeft span, #cartScrollRight span{
+  top: 45%;
+  left:40%;
+}
+
+#hideCart:hover, #cartScrollLeft:hover, #cartScrollRight:hover{
+  background-color: #333333;
 }
 
 
 ::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }

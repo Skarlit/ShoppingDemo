@@ -17,19 +17,10 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     this.swap(welcomeView);
   },
   itemsPanel: function(cat){
-    var view = new Anizon.Views.ItemsPanel({})
-    switch(cat){
-      case "geometry":
-      break;
-      case "algebra":
-      break;
-      case "analysis":
-      break;
-      case "probability":
-      break;
-      case "numerical":
-      break;
-    }
+    var items = new Anizon.Collections.Items({cat: cat, page: 1})
+    items.setUrl();
+    items.fetch();
+    var view = new Anizon.Views.ItemsPanel({collection: items})
     this.swap(view);
   },
 
