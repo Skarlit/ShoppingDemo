@@ -2,11 +2,11 @@ class SessionsController < ApplicationController
   def create
     p login_params[:email]
     @user = User.find_by_email(login_params[:email])
-    if BCrypt::Password.new(@user.password_digest) == login_params[:password]
+    if @user && BCrypt::Password.new(@user.password_digest) == login_params[:password]
       sign_in(@user)
       render json: {name: @user.name} 
     else
-      render json: "Invalid Username/Password", status: 422
+      render json: {status: "Invalid Username/Password"}, status: 422
     end
   end
 
@@ -14,8 +14,14 @@ class SessionsController < ApplicationController
     if signed_in?
       render json: {name: current_user.name}
     else
-      render "Not Signed In"
+      render json: {status: "Not signed in"}, status: 422
     end
+  end
+
+  def destroy
+    session[:token] = nil;
+    current_user = nil;
+    render json: {status: "sign out"}
   end
 
   private 

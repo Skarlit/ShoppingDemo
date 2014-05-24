@@ -10,18 +10,23 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     var topNavBar = this.navbarTemplate({});
     this.$el.html(topNavBar);
     this.$el.find("#top-navbar-right").html(this.authButtonsTemplate({}));
+    this.delegateEvents();
     return this;
   },
 
   //EVENTS 
   events: { 
+    'mouseover .my-dropdown' : 'animateDropDown',
+    'mouseleave .my-dropdown' : 'animateSlideUpParent',
+    'mouseover .my-dropdown-menu' : 'animateDropDown',
+    'mouseleave .my-dropdown-menu' : 'animateSlideUp',
+    'click #sign-out-btn' : 'signOut',
     'click #sign-in-btn' : 'signInForm',
     'click #cancel-signin-btn' : 'authButtons',
     'click #signin-submit-btn' : 'signInSubmit',
     'click #sign-up-submit-btn' : 'signUpSubmit',
     'click #sign-up-btn' : 'signUpForm',
     'click #cart' : 'toggleCart',
-    'hover .dropdown' : 'animateDropDown'
   },
 
   //HANDLERS
@@ -98,7 +103,42 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
   animateDropDown: function(event){
     console.log("cat dropdown");
-    $(this).find('.dropdown-menu').first().stop(true,true).delay(250).toggle();
-  }
 
+    $(event.target).parent().find('.my-dropdown-menu').stop().slideDown(200);
+    event.stopPropagation();
+  },
+
+  animateSlideUp: function(event){
+    console.log("cat slideUp");
+    var $target = $(event.target)
+    if($target.prop("tagName") === "UL") {
+      $target.stop().slideUp(200);
+    } else {
+      $target.closest('ul').stop().slideUp(200);
+    }
+    event.stopPropagation();
+  },
+
+  animateSlideUpParent: function(event){
+    console.log("cat slideUp");
+    $(event.target).parent().find('.my-dropdown-menu').stop().slideUp(200);
+    event.stopPropagation();
+  },
+
+  signOut: function(event){
+    console.log("Sign Out");
+    var parent = this;
+    event.preventDefault();
+    $.ajax({
+      method: "DELETE",
+      url: "/sessions",
+      data: "",
+      success: function(resp){
+        $("#top-navbar-right").html(parent.authButtonsTemplate({}));
+      },
+      error: function(resp){
+
+      }
+    })
+  }
 });

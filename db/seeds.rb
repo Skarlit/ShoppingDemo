@@ -48,6 +48,55 @@ Item.create(
   clicks: 0
   )
 
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
+Item.create(
+  title: "Probability and Measure",
+  price: 106.45,
+  cat_id: 3,
+  clicks: 0
+  )
+
 Feed.create(
   title: 'Currents on locally conformally Kähler manifolds',
   url: 'http://arxiv.org/pdf/1405.5502.pdf' 

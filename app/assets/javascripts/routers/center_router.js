@@ -32,6 +32,15 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
 
     this.currentView = newView;
     $(this.el).empty().append(this.currentView.render().el).hide().fadeIn(1000);
-  }
+  },
+
+  nonFadeSwap: function(newView){
+    if (this.currentView && this.currentView.leave) {
+      this.currentView.leave();
+    }
+
+    this.currentView = newView;
+    $(this.el).empty().append(this.currentView.render().el);
+  },
 })
 
