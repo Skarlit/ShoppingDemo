@@ -73,6 +73,8 @@ Anizon.Views.Item = Support.CompositeView.extend({
   }
 })
 
+
+
 Anizon.Views.Info = Support.CompositeView.extend({
   className: "info",
 

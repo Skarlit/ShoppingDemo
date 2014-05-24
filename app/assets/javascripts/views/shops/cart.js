@@ -9,7 +9,23 @@ Anizon.Views.Cart = Support.CompositeView.extend({
       parent.children.push(cartItemView);
       cartItemView.parent = parent;
       parent.render();
-    })
+      parent.updateCartTotal();
+    });
+
+    this.listenTo(this.collection, "remove", function(){
+    }
+  },
+
+  updateCartTotal: function(){
+    var amount = 0;
+    Anizon.cartCollection.each(function(item){
+      if(item.get("price") && item.get("quantity")){
+        amount += parseFloat(item.get("price")) * parseInt(item.get("quantity"));
+      }
+    });
+    amount = Math.round(amount*100)/100
+    $("#cartTotal").html("Total: " + String(amount) + "$");
+    Anizon.cart.total = amount;
   },
 
   render: function(){
