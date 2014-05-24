@@ -97,7 +97,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     }else{
       Anizon.cartCollection = new Anizon.Collections.Cart({});
       Anizon.cart = new Anizon.Views.Cart({collection: Anizon.cartCollection});
-      $("#bottom").hide().html(Anizon.cart.render().$el).show("slow");
+      $("#bottom").html(Anizon.cart.render().$el).show("slide", {direction: "down"}, 1000);
     }
   },
 

@@ -25,6 +25,7 @@ window.persistentLogin = function(){
 }
 
 $(document).ready(function(){
+
   window.Anizon.initialize();
   window.persistentLogin(); 
 });

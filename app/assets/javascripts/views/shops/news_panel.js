@@ -55,6 +55,8 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
     this.children.each(function(child){
       $(parent.el).find("#news-container").append(child.render().$el);
     })
+
+    $("#popuar-list").smoothScroll(7, 600);
     return this;
   }
 });
