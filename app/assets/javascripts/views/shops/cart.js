@@ -15,6 +15,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     });
 
     this.listenTo(this.collection, "remove", function(){
+      parent.updateCartTotal();
     })
   },
 
@@ -146,7 +147,7 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   editQuantity: function(event){
     console.log("editing item quantity");
     event.preventDefault();
-    
+
     event.stopPropagation();
   },
 
