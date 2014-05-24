@@ -175,6 +175,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   color: white;
 }
 
+.cartItem{
+  height:150px;
+  margin-left: 10px; 
+}
+
 #hideCart{
   height:30px;
   text-align: center;
@@ -182,7 +187,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 
 #cartBody{
   background-color: black;
-
   height:150px;
 }
 
@@ -283,19 +287,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 
-
-/* Test */
-./*thing{
-
-  width:3000px;
-  height:200px;
-  background-color: yellow;
-  float: right;
-  margin:10px;
-}
-
-.thingrow{
-  width:800px;
-  height:200px;
-  overflow-x: scroll;
-}*/

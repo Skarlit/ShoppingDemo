@@ -58,11 +58,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
       helper: "clone",
       zIndex: 200,
       start: function(){
-        Anizon.currentDraggedItem = new Anizon.Models.CartItem({
-          item_id: parent.model.escape('id'),
-          quantity: 1,
-          price: parent.model.escape('price'),
-        });
+        Anizon.currentDraggedItem = parent.model
       }
     });
     return this;
