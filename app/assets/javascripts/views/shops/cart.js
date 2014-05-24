@@ -13,7 +13,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     });
 
     this.listenTo(this.collection, "remove", function(){
-    }
+    })
   },
 
   updateCartTotal: function(){
