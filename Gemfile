@@ -5,6 +5,8 @@ gem 'rails', '4.0.2'
 gem 'bcrypt'
 gem 'jbuilder', '~> 1.2'
 gem 'kaminari'
+gem 'nokogiri'
+gem 'feed-normalizer'
 
 
 ####FRONT END

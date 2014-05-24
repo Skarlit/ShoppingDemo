@@ -27,6 +27,7 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
 
   swap: function(newView) {
     if (this.currentView && this.currentView.leave) {
+
       this.currentView.leave();
     }
 

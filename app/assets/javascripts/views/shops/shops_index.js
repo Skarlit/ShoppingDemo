@@ -26,7 +26,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     'click #signin-submit-btn' : 'signInSubmit',
     'click #sign-up-submit-btn' : 'signUpSubmit',
     'click #sign-up-btn' : 'signUpForm',
-    'click #cart' : 'toggleCart',
+    'click #cart' : 'toggleCart'
   },
 
   //HANDLERS

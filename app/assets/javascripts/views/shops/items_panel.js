@@ -21,7 +21,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   render: function(){
-    this.$el.html(this.itemsPanelTemplate({}));
+    this.$el.html(this.itemsPanelTemplate({books: this.collection}));
     
     var parent = this;
     this.children.each(function(childView){
