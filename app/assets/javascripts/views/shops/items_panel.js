@@ -89,15 +89,11 @@ Anizon.Views.Item = Support.CompositeView.extend({
     });
     return this;
   },
-<<<<<<< HEAD
-=======
 
   showInfo: function(event){
     var infoView = new Anizon.Views.Info({model: this.model})
   },
 
-
->>>>>>> a7cfaf6cd67568291d0f9497812a9c8680598394
 })
 
 
