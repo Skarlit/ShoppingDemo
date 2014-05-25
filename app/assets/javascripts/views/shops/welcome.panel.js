@@ -1,5 +1,5 @@
 Anizon.Views.WelcomePanel = Support.CompositeView.extend({
-  className: "col-md-8 col-md-offset-2",
+  className: "jumbotron",
   initialize: function(){
 
   },
