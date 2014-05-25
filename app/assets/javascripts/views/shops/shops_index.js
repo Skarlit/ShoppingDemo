@@ -26,7 +26,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     'click #signin-submit-btn' : 'signInSubmit',
     'click #sign-up-submit-btn' : 'signUpSubmit',
     'click #sign-up-btn' : 'signUpForm',
-    'click #cart' : 'toggleCart',
+    'click #cart' : 'toggleCart'
   },
 
   //HANDLERS
@@ -95,9 +95,9 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     if(Anizon.cart){
       $("#hideCart").click();
     }else{
-      Anizon.cartCollection = new Anizon.Collections.Cart({});
+      Anizon.cartCollection = new Anizon.Collections.Cart();
       Anizon.cart = new Anizon.Views.Cart({collection: Anizon.cartCollection});
-      $("#bottom").hide().html(Anizon.cart.render().$el).show("slow");
+      $("#bottom").html(Anizon.cart.render().$el).show("slide", {direction: "down"}, 1000);
     }
   },
 

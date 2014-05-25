@@ -15,14 +15,14 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
 
     var popularView = new Anizon.Views.Panel({
         className: "col-md-6 news-panel",
-        entryClassName: "col-md-10 col-md-offset-1",
+        entryClassName: "col-md-10 col-md-offset-1 newsEntry",
         panelTemplate: this.popularTemplate,
         entryTemplate: this.popularEntryTemplate,
         collection: this.collection
     });
     var newsView = new Anizon.Views.Panel({
         className: "col-md-8 news-panel", 
-        entryClassName: "col-md-10 col-md-offset-1",
+        entryClassName: "col-md-10 col-md-offset-1 newsEntry",
         panelTemplate: this.newsTemplate,
         entryTemplate: this.newsEntryTemplate,
         collection: this.collection
@@ -30,7 +30,7 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
 
     var releaseView = new Anizon.Views.Panel({
         className: "col-md-6 news-panel", 
-        entryClassName: "col-md-10 col-md-offset-1",
+        entryClassName: "col-md-10 col-md-offset-1 newsEntry",
         panelTemplate: this.releaseTemplate,
         entryTemplate: this.releaseEntryTemplate,
         collection: this.collection
@@ -55,6 +55,7 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
     this.children.each(function(child){
       $(parent.el).find("#news-container").append(child.render().$el);
     })
+    
     return this;
   }
 });

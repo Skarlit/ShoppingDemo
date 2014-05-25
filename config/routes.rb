@@ -1,5 +1,6 @@
 Anizon::Application.routes.draw do
 
+  get "tests/test"
   resources :users, only: [:create]
   resource :sessions, only: [:create, :destroy]
   post '/sessions/auto', to: 'sessions#auto'

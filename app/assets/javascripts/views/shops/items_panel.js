@@ -25,7 +25,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   render: function(){
-    this.$el.html(this.itemsPanelTemplate({}));
+    this.$el.html(this.itemsPanelTemplate({books: this.collection}));
     
     var parent = this;
     this.children.each(function(childView){
@@ -62,16 +62,14 @@ Anizon.Views.Item = Support.CompositeView.extend({
       helper: "clone",
       zIndex: 200,
       start: function(){
-        Anizon.currentDraggedItem = new Anizon.Models.CartItem({
-          item_id: parent.model.escape('id'),
-          quantity: 1,
-          price: parent.model.escape('price'),
-        });
+        Anizon.currentDraggedItem = parent.model
       }
     });
     return this;
   },
 })
+
+
 
 Anizon.Views.Info = Support.CompositeView.extend({
   className: "info",

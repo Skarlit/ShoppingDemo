@@ -20,11 +20,11 @@ window.persistentLogin = function(){
     success: function(resp){
       $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
     }
-
   })
 }
 
 $(document).ready(function(){
+
   window.Anizon.initialize();
   window.persistentLogin(); 
 });

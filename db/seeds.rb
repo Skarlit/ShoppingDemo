@@ -6,108 +6,53 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Cat.create(name: "Geometry")  #1
-Cat.create(name: "Algebra")  #2
-Cat.create(name: "Probability") #3
-Cat.create(name: "Numerical")  #4
-Cat.create(name: "Analysis")  #5
+Cat.create(name: "geometry")  #1
+Cat.create(name: "glgebra")  #2
+Cat.create(name: "probability") #3
+Cat.create(name: "numerical")  #4
+Cat.create(name: "analysis")  #5
+
+clicks = (0..1000)
+
+itemTitle1 = [
+  ["Sub-Riemannian Geometry and Optimal Transport", 39.99],
+  ["Manifolds of Nonpositive Curvature", 69.99]
+]
+
+itemTitle2 =  [
+  ["Lie Groups, Lie Algebras, and Representations: An Elementary Introduction",45.84],
 
 
-Item.create(
-  title: "Lie Groups, Lie Algebras, and Representations: An Elementary Introduction",
-  price: 45.84,
-  cat_id: 2,
-  clicks: 0
-  )
+]
 
-Item.create(
-  title: "Probability (Graduate Texts in Mathematics) (v. 95)",
-  price: 69.22,
-  cat_id: 3,
-  clicks: 0
-  )
+itemTitle3 = [
+  ["Probability (Graduate Texts in Mathematics) (v. 95)", 69.22],
+  ["An Introduction to Measure Theory (Graduate Studies in Mathematics)", 35.05],
+  ["Stochastic Differential Equations: An Introduction with Applications", 41.08],
+  ["Brownian Motion Calculus", 25.15],
+  ["Stochastic Processes (Cambridge Series in Statistical and Probabilistic Mathematics)", 65.73]
 
-Item.create(
-  title: "Numerical Analysis ",
-  price: 253.07,
-  cat_id: 4,
-  clicks: 0
-  )
+]
 
-Item.create(
-  title: "An Introduction to Measure Theory (Graduate Studies in Mathematics)",
-  price: 35.05,
-  cat_id: 5,
-  clicks: 0
-  )
+itemTitle4 = [
+  ["Numerical Analysis ", 253.07],
+  ["Spectral Mapping Theorems",54.99],
+  ["Classical Banach Spaces II", 69.99],
+  ["Linear Integral Equations", 59.99],
+  ["Basic Operator Theory", 69.95],
+  ["Partial Differential Equations II", 119.00],
+  ["Foundations of the Classical Theory of Partial Differential Equations", 79.99],
+  ["Probability (Graduate Texts in Mathematics) (v. 95)", 69.22],
+  ["An Introduction to Measure Theory (Graduate Studies in Mathematics)", 35.05],
+  ["Stochastic Differential Equations: An Introduction with Applications", 41.08],
+  ["Brownian Motion Calculus", 25.15],
+  ["Stochastic Processes (Cambridge Series in Statistical and Probabilistic Mathematics)", 65.73],
+  ["Lie Groups, Lie Algebras, and Representations: An Elementary Introduction",45.84],
+  ["Sub-Riemannian Geometry and Optimal Transport", 39.99],
+  ["Manifolds of Nonpositive Curvature", 69.99]
+]
 
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
 
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Item.create(
-  title: "Probability and Measure",
-  price: 106.45,
-  cat_id: 3,
-  clicks: 0
-  )
-
-Feed.create(
-  title: 'Currents on locally conformally Kähler manifolds',
-  url: 'http://arxiv.org/pdf/1405.5502.pdf' 
-  )
-
-Feed.create(
-  title: 'Bolza quaternion order and asymptotics of systoles along congruence subgroups',
-  url: 'http://arxiv.org/pdf/1405.5454.pdf' 
-  )
-
-Feed.create(
-  title: 'Stable capillary hypersurfaces in a wedge',
-  url: 'http://arxiv.org/pdf/1405.5407.pdf' 
-  )
+itemTitle4.each do |item4|
+  Item.create(title: item4[0], price: item4[1], cat_id: 4)
+end
