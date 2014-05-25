@@ -17,6 +17,7 @@
 //= require jquery_scrollTo
 //= require jquery_serial_scroll.js
 //= require jquery.qtip.min.js
+//= require backstretch.min.js
 //= require serialize_json
 //= require bootstrap
 //= require underscore

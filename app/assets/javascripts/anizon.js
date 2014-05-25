@@ -27,4 +27,5 @@ $(document).ready(function(){
 
   window.Anizon.initialize();
   window.persistentLogin(); 
+  $.backstretch("http://cdn.wallwuzz.com/uploads/vector-wallpaper-patterns-black-wallpapers-array-wallwuzz-hd-wallpaper-7577.png");
 });

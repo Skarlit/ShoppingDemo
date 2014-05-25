@@ -20,8 +20,17 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     })
   },
 
+<<<<<<< HEAD
   events:{
     "click .item" : "showInfo",
+=======
+  events: {
+    'scroll #items-panel': "hideCart"
+  },
+
+  hideCart: function(event){
+    console.log("scrolled");
+>>>>>>> a7cfaf6cd67568291d0f9497812a9c8680598394
   },
 
   render: function(){
@@ -31,13 +40,17 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.children.each(function(childView){
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
+
+    $('#items-panel').on('scroll', function(){
+      if(Anizon.cart){
+        Anizon.cart.hideCart();
+      }
+    });
+
+    this.delegateEvents();
     return this;
   },
 
-  showInfo: function(event){
-    var infoView = new Anizon.Views.Info({model: this.model});
-    $(event.target).append(infoView.render().$el);    
-  }
 
 })
 
@@ -62,11 +75,25 @@ Anizon.Views.Item = Support.CompositeView.extend({
       helper: "clone",
       zIndex: 200,
       start: function(){
-        Anizon.currentDraggedItem = parent.model
+        Anizon.currentDraggedItem = parent.model;
+        if(Anizon.cart){
+          Anizon.cart.showCart();
+        }else{
+          
+        }
       }
     });
     return this;
   },
+<<<<<<< HEAD
+=======
+
+  showInfo: function(event){
+    var infoView = new Anizon.Views.Info({model: this.model})
+  },
+
+
+>>>>>>> a7cfaf6cd67568291d0f9497812a9c8680598394
 })
 
 
