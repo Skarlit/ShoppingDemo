@@ -312,3 +312,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
 }
 
+/* Modal */
+
+.mymodal .modal-content{
+  background-color: black;
+  color: white;
+  font-size: 120%;
+  opacity: 0.9;
+}
+
+.mymodal table{
+  text-align: center;
+}

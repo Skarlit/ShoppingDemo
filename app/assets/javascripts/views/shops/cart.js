@@ -88,6 +88,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     "click #hideCart" : "toggleCart",
     'click #cartScrollRight' : "slideItemsRight",
     'click #cartScrollLeft' : "slideItemsLeft",
+    'click #checkout-btn' : "checkout"
   },
 
   toggleCart: function(event){
@@ -135,6 +136,13 @@ Anizon.Views.Cart = Support.CompositeView.extend({
       this.lowerBound -= 1;
     }
   },
+
+  checkout: function(){
+    var checkoutView = new Anizon.Views.CheckOut({collection: this.collection});
+    $("body").append(checkoutView.render().$el);
+    //hide class has display:none important
+    checkoutView.render().$el.modal().removeClass("hide");
+  }
 
 })
 
@@ -188,7 +196,6 @@ Anizon.Views.EditQuantity = Support.CompositeView.extend({
 
   submit: function(event){
     event.preventDefault();
-    debugger
     var new_quantity =  this.$el.find("input").val().match(/^\d+$/);
     if(new_quantity){
        this.model.set({quantity: parseInt(new_quantity[0])});
@@ -197,5 +204,21 @@ Anizon.Views.EditQuantity = Support.CompositeView.extend({
       this.$el.effect("shake");
     }
     event.stopPropagation();
+  }
+})
+
+
+Anizon.Views.CheckOut = Support.CompositeView.extend({
+  id: 'base-modal',
+  className: 'modal fade hide mymodal',
+  checkoutTemplate: JST['bottom/carts/checkout'],
+
+  initialize: function(){
+
+  },
+
+  render: function(){
+    this.$el.html(this.checkoutTemplate({cart: this.collection}));
+    return this;
   }
 })
