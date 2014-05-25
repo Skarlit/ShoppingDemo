@@ -78,10 +78,26 @@ Anizon.Views.Item = Support.CompositeView.extend({
         if(Anizon.cart){
           Anizon.cart.showCart();
         }else{
-          
+         parent.$el.notify("You don't have a cart currently, click on Cart above to create or load a cart");
+         $("#cart").trigger("mouseover");
         }
+      },
+      stop: function(){
+        $("#cart").trigger("mouseleave");
       }
     });
+
+    this.$el.qtip({
+      content: {
+        text: 'Drag to cart below.'
+      },
+      position: {
+        my: 'top center'
+      },
+      style: {
+        classes: 'qtip-dark qtip-tipsy'
+      }
+    })
     return this;
   },
 

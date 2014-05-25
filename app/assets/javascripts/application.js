@@ -13,10 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require jquery_mousewheel_min.js
-//= require jquery_scrollTo
-//= require jquery_serial_scroll.js
 //= require jquery.qtip.min.js
+//= require notify.min.js
 //= require backstretch.min.js
 //= require serialize_json
 //= require bootstrap
