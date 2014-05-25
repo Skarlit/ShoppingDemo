@@ -158,8 +158,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   color: #3f3f4c;
 }
 
-.newsEntry:hover, .newsEntry *{
-  background-color: ##666622;
+.newsEntry:hover{
+  background-color: #666622;
   cursor: pointer;
 }
 
@@ -242,7 +242,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 
 ::-webkit-scrollbar:window-inactive {
   display: none;
-};
+}
 
 
 
