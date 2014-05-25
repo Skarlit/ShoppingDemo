@@ -20,17 +20,12 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     })
   },
 
-<<<<<<< HEAD
-  events:{
-    "click .item" : "showInfo",
-=======
   events: {
     'scroll #items-panel': "hideCart"
   },
 
   hideCart: function(event){
     console.log("scrolled");
->>>>>>> a7cfaf6cd67568291d0f9497812a9c8680598394
   },
 
   render: function(){
