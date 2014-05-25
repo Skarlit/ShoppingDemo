@@ -20,6 +20,10 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     })
   },
 
+  events:{
+    "click .item" : "showInfo",
+  },
+
   render: function(){
     this.$el.html(this.itemsPanelTemplate({}));
     
@@ -28,6 +32,11 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
     return this;
+  },
+
+  showInfo: function(event){
+    var infoView = new Anizon.Views.Info({model: this.model});
+    $(event.target).append(infoView.render().$el);    
   }
 
 })
@@ -41,11 +50,6 @@ Anizon.Views.Item = Support.CompositeView.extend({
   initialize: function(){
 
     this.listenTo(this.model, "sync", this.render);
-  },
-
-
-  events:{
-    "click .item" : "showInfo",
   },
 
   render: function(){
@@ -67,10 +71,6 @@ Anizon.Views.Item = Support.CompositeView.extend({
     });
     return this;
   },
-
-  showInfo: function(event){
-    var infoView = new Anizon.Views.Info({model: this.model})
-  }
 })
 
 Anizon.Views.Info = Support.CompositeView.extend({
@@ -79,7 +79,7 @@ Anizon.Views.Info = Support.CompositeView.extend({
   infoTemplate: JST["center/items/info"],
 
   initialize: function(){
-    this.listenTo(this.model, "sync", this.render)
+    //this.listenTo(this.model, "sync", this.render)
   },
 
   render: function(){
