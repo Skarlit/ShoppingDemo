@@ -191,7 +191,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 }
 
 #itemsContainer{
-  background-color: #111111
+  background-color: #111111;
   overflow-x: scroll;
 }
 
