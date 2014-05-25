@@ -20,6 +20,14 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     })
   },
 
+  events: {
+    'scroll #items-panel': "hideCart"
+  },
+
+  hideCart: function(event){
+    console.log("scrolled");
+  },
+
   render: function(){
     this.$el.html(this.itemsPanelTemplate({books: this.collection}));
     
@@ -27,8 +35,16 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.children.each(function(childView){
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
+
+    $('#items-panel').on('scroll', function(){
+      if(Anizon.cart){
+        Anizon.cart.hideCart();
+      }
+    });
+
+    this.delegateEvents();
     return this;
-  }
+  },
 
 })
 
@@ -58,7 +74,12 @@ Anizon.Views.Item = Support.CompositeView.extend({
       helper: "clone",
       zIndex: 200,
       start: function(){
-        Anizon.currentDraggedItem = parent.model
+        Anizon.currentDraggedItem = parent.model;
+        if(Anizon.cart){
+          Anizon.cart.showCart();
+        }else{
+          
+        }
       }
     });
     return this;
@@ -66,7 +87,9 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
   showInfo: function(event){
     var infoView = new Anizon.Views.Info({model: this.model})
-  }
+  },
+
+
 })
 
 

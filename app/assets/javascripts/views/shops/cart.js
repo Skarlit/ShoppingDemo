@@ -4,7 +4,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
 
   initialize: function(){
     this.lowerBound = 0;
-    this.upperBound = 9;
+    this.upperBound = 5;
     var parent = this;
     this.listenTo(this.collection, "add", function(cartItem){
       var cartItemView = new Anizon.Views.CartItem({model: cartItem});
@@ -14,7 +14,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
       parent.updateCartTotal();
     });
 
-    this.listenTo(this.collection, "remove", function(){
+    this.listenTo(this.collection, "change remove", function(){
       parent.updateCartTotal();
     })
   },
@@ -64,9 +64,9 @@ Anizon.Views.Cart = Support.CompositeView.extend({
          text: "Edit quantity for this item"
        },
        style: {
-         classes: 'qtip-dark qtip-shadow'
+         classes: 'qtip-dark qtip-tipsy'
        },
-       hide: { delay: 100}
+       hide: {delay: 100}
      });
 
     $('.removeCartItem').qtip({
@@ -74,9 +74,9 @@ Anizon.Views.Cart = Support.CompositeView.extend({
          text: "Remove all quantity for this item"
        },
        style: {
-         classes: 'qtip-dark qtip-shadow'
+         classes: 'qtip-dark qtip-tipsy'
        },
-       hide: { delay: 100}
+       hide: {delay: 100}
      });
 
     parent.delegateEvents();
@@ -85,12 +85,12 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   },
 
   events: {
-    "click #hideCart" : "hideCart",
+    "click #hideCart" : "toggleCart",
     'click #cartScrollRight' : "slideItemsRight",
-    'click #cartScrollLeft' : "slideItemsLeft"
+    'click #cartScrollLeft' : "slideItemsLeft",
   },
 
-  hideCart: function(event){
+  toggleCart: function(event){
     console.log("toggle cart");
     event.preventDefault();
     $("#cartBody").toggle("slow",function(){ 
@@ -101,6 +101,19 @@ Anizon.Views.Cart = Support.CompositeView.extend({
         $("#hideCart").html('<span class="glyphicon glyphicon-chevron-up"></span>');
       }
     });
+  },
+
+  hideCart: function(){
+    if($("#cartBody").is(":visible")){
+      $("#cartBody").hide();
+      $("#hideCart").html('<span class="glyphicon glyphicon-chevron-up"></span>');
+    }
+  },
+
+  showCart: function(){
+    if(!$("#cartBody").is(":visible")){
+      $("#hideCart").click();
+    }
   },
 
   slideItemsRight: function(){
@@ -135,7 +148,7 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   },
 
   initialize: function(){
-
+    this.listenTo(this.model, 'change:quantity', this.render);
   },
 
   render: function(){
@@ -147,8 +160,8 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   editQuantity: function(event){
     console.log("editing item quantity");
     event.preventDefault();
-
-    event.stopPropagation();
+    var editView = new Anizon.Views.EditQuantity({model: this.model});
+    this.$el.append(editView.render().$el);
   },
 
   removeItem: function(event){
@@ -156,6 +169,33 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
     event.preventDefault();
     this.model.destroy();
     this.leave();
+  }
+})
+
+
+Anizon.Views.EditQuantity = Support.CompositeView.extend({
+  className: "floatingDialog",
+  editQuantityTemplate: JST["bottom/carts/edit_quantity"],
+
+  render:function(){
+    this.$el.html(this.editQuantityTemplate({item: this.model}))
+    return this;
+  },
+
+  events: {
+    'click .edit' : 'submit'
+  },
+
+  submit: function(event){
+    event.preventDefault();
+    debugger
+    var new_quantity =  this.$el.find("input").val().match(/^\d+$/);
+    if(new_quantity){
+       this.model.set({quantity: parseInt(new_quantity[0])});
+       this.leave();
+    }else{
+      this.$el.effect("shake");
+    }
     event.stopPropagation();
   }
 })
