@@ -51,6 +51,10 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     return this;
   },
 
+  showInfo: function(event){
+    var infoView = new Anizon.Views.Info({model: this.model});
+    //$(event.target).append(infoView.render().$el);    
+  }
 
 })
 
