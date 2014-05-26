@@ -1,20 +1,20 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: red">&times;</button>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: red;opacity:1">&times;</button>
       <h4 class="modal-title"><%= item.escape('title')%></h4>
     </div>
     <div class="modal-body">
       	<section>
-      		 Author: 
+      		 Author: <%= itemInfo.escape("authors") %>
       	</section>
 
       	<section>
-      		 Description:
+      		 Description: <%= itemInfo.escape("description") %>
       	</section>
 
       	<section>
-      		 Rating:
+      		 Rating: 
       	</section>
 
       <button class="btn my-btn-info" style="color:black">Post a Comment: </button>
@@ -27,7 +27,7 @@
       </section>
     </div>
     <div class="modal-footer">
-      <button class="btn my-btn-info" style="color:black; float:right">Close
+      <button type="button" class="close" data-dismiss="modal" class="btn my-btn-info" style="color:white; float:right;opacity:1">Close
       </button>
     </div>
   </div><!-- /.modal-content -->

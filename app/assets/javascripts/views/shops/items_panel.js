@@ -77,7 +77,11 @@ Anizon.Views.Item = Support.CompositeView.extend({
         if(Anizon.cart){
           Anizon.cart.showCart();
         }else{
-         parent.$el.notify("You don't have a cart currently, click on Cart above to create or load a cart");
+         parent.$el.notify(
+          "You don't have a cart currently, \nclick on Cart above to create or load a cart", 
+          {
+            position: "top right"
+          });
          $("#cart").trigger("mouseover");
         }
       },
@@ -102,7 +106,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
   showInfo: function(event){
     event.preventDefault();
-    var infoView = new Anizon.Views.Info({model: this.model});
+    var infoView = new Anizon.Views.Info({model: this.model.itemInfo(), item: this.model});
     infoView.render().$el.modal().removeClass("hide");
   },
 
@@ -115,12 +119,13 @@ Anizon.Views.Info = Support.CompositeView.extend({
   className: 'modal fade hide mymodal',
   infoTemplate: JST["center/items/info"],
 
-  initialize: function(){
-    //this.listenTo(this.model, "sync", this.render)
+  initialize: function(option){
+    this.item = option.item;
+    this.listenTo(this.model, "sync", this.render)
   },
 
   render: function(){
-    this.$el.html(this.infoTemplate({item: this.model}));
+    this.$el.html(this.infoTemplate({itemInfo: this.model, item: this.item}));
     return this;
   }
 })

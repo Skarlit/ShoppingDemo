@@ -238,7 +238,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 .floatingDialog{
   color:black;
   position: absolute;
-  top: 0;
+  top: 18%;
   opacity: 0.9;
   background-color: #acacac;
   border-radius: 5px;
@@ -273,27 +273,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 /*Items */
 #items-panel{
   width: 100%;
-  height: 560px;
+  height: 570px;
   overflow-y: scroll;
   overflow-x:scroll;
+  background: rgba(225, 225, 225, 0.6);
 }
+
 
 
 .item{
-  width: 300px; 
-  height:200px; 
+  width: 250px; 
+  height:250px; 
+  border-radius: 5px;
   display: inline-block;
-  margin: 1em;
+  margin: 4em;
+  background: rgba(225, 225, 225, 0.9);
+  position: relative;
 }
 
-.guard{
+
+/*.item > a {
   position: absolute;
-  height: 100%;
+  left: 20%;
+  top: 5%;
 }
+
+.item > div {
+  position: absolute;
+  left:20%;
+  bottom: 5%;
+}*/
+
+
 
 
 .left-transparent-gradient {
-  background: -moz-linear-gradient(left, rgba(255,255,255,1) 24%, rgba(255,255,255,1) 47%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+  background: -moz-linear-gradient(left, rgba(225,225,225,1) 24%, rgba(255,255,255,1) 47%, rgba(255,255,255,0) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right top, color-stop(24%,rgba(255,255,255,1)), color-stop(47%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(left, rgba(255,255,255,1) 24%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(left, rgba(255,255,255,1) 24%,rgba(255,255,255,1) 47%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
