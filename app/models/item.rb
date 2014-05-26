@@ -15,4 +15,5 @@
 class Item < ActiveRecord::Base
   belongs_to :cat
   has_one :item_info, class_name: "ItemInfo", foreign_key: :item_id
+  has_many :comments
 end

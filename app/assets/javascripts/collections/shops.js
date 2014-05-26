@@ -34,3 +34,12 @@ Anizon.Collections.Cart = Backbone.Collection.extend({
 
   }
 })
+
+
+Anizon.Collections.Comments = Backbone.Collection.extend({
+  model: Anizon.Models.Comment,
+
+  initialize: function(option){
+    this.url = "api/items/" + option.item_id + "/comments";
+  }
+})

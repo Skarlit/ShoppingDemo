@@ -11,23 +11,37 @@
 
       	<section>
       		 Author: <%= itemInfo.escape("author") %>
-           <li>ISBN: <%= itemInfo.escape("isbn") %> </li>
-           <li>Published Date: <%= itemInfo.escape("published") %> </li>
-           <li>Publisher: <%= itemInfo.escape("publisher") %> </li>
-           <li>Edition: <%= itemInfo.escape("edition") %> </li>
+           <ul style="list-style:none">
+             <li>ISBN: <%= itemInfo.escape("isbn") %> </li>
+             <li>Published Date: <%= itemInfo.escape("published") %> </li>
+             <li>Publisher: <%= itemInfo.escape("publisher") %> </li>
+             <li>Edition: <%= itemInfo.escape("edition") %> </li>
+           </ul>
       	</section>
 
       	<section>
-      		 Overview: <%= itemInfo.escape("overview") %>
-      	</section>           
+      		 Overview: 
+           <hr>
+           <%= itemInfo.escape("overview") %>
+      	</section>   
 
-      <button class="btn my-btn-info" style="color:black">Post a Comment: </button>
+        <h2> Post a Comment: </h2>        
       <form>
-
+        <textarea id="comment-box"></textarea>
+        <button id="comment-submit-btn" class="btn my-btn-info" style="color:black">Submit</button>
       </form>
-      <h4> User Comments </h4>
+      <h4> User Comments: </h4>
       <hr> 
       <section>
+        <ul style="list-style:none;color:#eeee22">
+          <% comments.each(function(comment){  %>
+            <li>
+              <p style="float:right"> By <%= comment.author().escape('name') %> </p>
+              <h4> <%= comment.escape('title') %> </h4>              
+              <p> <%= comment.escape('body') %> </p>
+            </li>
+          <% }) %>
+        </ul>
       </section>
     </div>
     <div class="modal-footer">

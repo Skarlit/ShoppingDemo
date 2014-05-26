@@ -8,6 +8,7 @@ Anizon::Application.routes.draw do
   namespace :api do
     get '/feeds', to: 'infos#feeds'
     get '/:cat', to: 'items#book_by_category'
+    get '/items/:id/comments', to: 'comments#index'
     patch '/items/:id', to: 'items#update'
     put '/items/:id', to: 'items#update'
     get '/items/:id', to: 'items#show'
