@@ -4,7 +4,7 @@ Anizon.Routers.Shop = Support.SwappingRouter.extend({
   },
 
   shopIndex: function(){
-    var indexView = new Anizon.Views.ShopIndex();
+    var indexView = Anizon.indexView  = new Anizon.Views.ShopIndex();
     this.swap(indexView);
   },
 });

@@ -36,7 +36,8 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
 
-    $('#items-panel').on('scroll', function(){
+    $('.frame').on('scroll', function(){
+      console.log("scroll");
       if(Anizon.cart){
         Anizon.cart.hideCart();
       }
@@ -95,7 +96,8 @@ Anizon.Views.Item = Support.CompositeView.extend({
   },
 
   events: {
-    'click .itemDetail' : 'showInfo'
+    'click .itemDetail' : 'showInfo', 
+    'click .addToCart' : 'addToCart'
   },
 
   render: function(){
@@ -103,16 +105,22 @@ Anizon.Views.Item = Support.CompositeView.extend({
     this.$el.html(this.itemTemplate({item: this.model}))
 
     var parent = this;
+
     this.$el.draggable({
-      revert: "invalid",  
-      helper: "clone",
+      revert: true,  
+      //helper: "clone",
+      stack: "#cartBody",
       zIndex: 200,
-      start: function(){
+      start: function(event, ui){
+        console.log(event.clientY + " " + event.clientX);
+        console.log(ui.offset.top + " " + ui.offset.left);
+        console.log(parent.$el.offset());  
+
         Anizon.currentDraggedItem = parent.model;
         if(Anizon.cart){
           Anizon.cart.showCart();
         }else{
-         parent.$el.notify(
+         $.notify(
           "You don't have a cart currently, \nclick on Cart above to create or load a cart", 
           {
             position: "top right"
@@ -123,7 +131,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
       stop: function(){
         $("#cart").trigger("mouseleave");
       }
-    });
+    })
 
     this.$el.qtip({
       content: {
@@ -144,6 +152,20 @@ Anizon.Views.Item = Support.CompositeView.extend({
     var infoView = new Anizon.Views.Info({model: this.model});
     infoView.render().$el.modal().removeClass("hide");
   },
+
+  addToCart: function(event){
+    event.preventDefault();
+    if(!Anizon.cart || $("#cartBody").is(":hidden")){
+      $('#cart').click();
+    }
+    var cartItem = new Anizon.Models.CartItem({
+          item_id: this.model.escape('id'),
+          quantity: 1,
+          price: this.model.escape('price'),
+        });
+    cartItem.title = this.model.escape("title");
+    Anizon.cart.collection.add(cartItem);
+  }
 
 })
 
