@@ -167,7 +167,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
           item_id: this.model.escape('id'),
           quantity: 1,
           price: this.model.escape('price'),
-          title = this.model.escape("title")
+          title: this.model.escape("title")
         });
     Anizon.cart.collection.add(cartItem);
   }

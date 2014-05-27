@@ -10,6 +10,14 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     
     var parent = this;
     this.listenTo(this.collection, "add", function(cartItem){
+      cartItem.save({
+        success: function(resp){
+          $.notify(resp.status, "success")
+        },
+        error: function(resp){
+          $.notify(resp.status)
+        }
+      });
       var cartItemView = new Anizon.Views.CartItem({model: cartItem});
       parent.children.push(cartItemView);
       cartItemView.parent = parent;
@@ -19,7 +27,6 @@ Anizon.Views.Cart = Support.CompositeView.extend({
 
     this.listenTo(this.collection, "change remove", function(){
       parent.updateCartTotal();
-      parent.collection.save();
     })
   },
 
@@ -160,7 +167,19 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   },
 
   initialize: function(){
-    this.listenTo(this.model, 'change:quantity', this.render);
+    var parent = this;
+
+    this.listenTo(this.model, 'change:quantity', function(){
+      parent.render();
+      parent.model.save({
+        success: function(resp){
+          $.notify(resp.status, "success")
+        },
+        error: function(resp){
+          $.notify(resp.status)
+        }
+      });
+    });
   },
 
   render: function(){
@@ -179,7 +198,14 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   removeItem: function(event){
     console.log("remove cart item");
     event.preventDefault();
-    this.model.destroy();
+    this.model.destroy({
+        success: function(resp){
+          $.notify(resp.status, "success")
+        },
+        error: function(resp){
+          $.notify(resp.status)
+        }
+    });
     this.leave();
   }
 })
