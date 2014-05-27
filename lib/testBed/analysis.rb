@@ -1,20 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-Cat.create(name: "geometry")  #1
-Cat.create(name: "glgebra")  #2
-Cat.create(name: "probability") #3
-Cat.create(name: "numerical")  #4
-Cat.create(name: "analysis")  #5
-
-
-
-
 item = Item.create(title: "A Guided Tour of Mathematical Methods: For the Physical Sciences Edition 2", price: 60.00, img: "http://img1.imagesbn.com/p/9780521542616_p0_v1_s600.jpg", cat_id: 5)
 ItemInfo.create(item_id: item.id, isbn: "0521542618", published: "April 2009", publisher: "Cambridge University Press", author: "Roel Snieder", overview: "
 In contrast to traditional textbooks for students and professionals in the physical sciences, this book presents its material in the form of problems. The second edition contains new chapters on dimensional analysis, variational calculus, and the asymptotic evaluation of integrals. The book can be used by undergraduates and lower-level graduate students. It can serve as a stand-alone text, or as a source of problems and examples to complement other textbooks. First Edition Hb (2001): 0-521-78241-4 First Edition Pb (2001): 0-521-78751-3
@@ -264,7 +247,7 @@ The companion software system allows users to perform a full complement of meta-
 item = Item.create(title: "Physics of Fractal Operators Edition 1", price: 134.00, img: "http://img2.imagesbn.com/p/9781441930545_p0_v2_s600.JPG", cat_id: 5)
 ItemInfo.create(item_id: item.id, isbn: "144193054", published: "May 2011", publisher: "Springer New York", author: "Bruce West,Mauro Bologna,Paolo Grigolini", overview: "
                     This text describes how fractal phenomena, both deterministic and random, change over time, using the fractional calculus. The intent is to identify those characteristics of complex physical phenomena that require fractional derivatives or fractional integrals to describe how the process changes over time. The discussion emphasizes the properties of physical phenomena whose evolution is best described using the fractional calculus, such as systems with long-range spatial interactions or long-time memory.
-In many cases, classic analytic function theory cannot serve for modeling complex phenomena; \"Fractal Operators\" shows how classes of less familiar functions, such as fractals, can serve as useful models in such cases. Because fractal functions, such as the Weierstrass function (long known not to have a derivative), do in fact have fractional derivatives, they can be cast as solutions to fractional differential equations. The traditional techniques for solving differential equations, including Fourier and Laplace transforms as well as Green's functions, can be generalized to fractional derivatives.
+In many cases, classic analytic function theory cannot serve for modeling complex phenomena; "Fractal Operators" shows how classes of less familiar functions, such as fractals, can serve as useful models in such cases. Because fractal functions, such as the Weierstrass function (long known not to have a derivative), do in fact have fractional derivatives, they can be cast as solutions to fractional differential equations. The traditional techniques for solving differential equations, including Fourier and Laplace transforms as well as Green's functions, can be generalized to fractional derivatives.
 Fractal Operators addresses a general strategy for understanding wave propagation through random media, the nonlinear response of complex materials, and the fluctuations of various forms of transport in heterogeneous materials. This strategy builds on traditional approaches and explains why the historical techniques fail as phenomena become more and more complicated.
 
 

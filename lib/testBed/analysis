@@ -1,0 +1,6 @@
+item = Item.create(title: A Guided Tour of Mathematical Methods: For the Physical Sciences Edition 2, price: 60.00, img: http://img1.imagesbn.com/p/9780521542616_p0_v1_s600.jpg, cat_id: 5)
+ItemInfo.create(item_id: item.id, isbn: 0521542618, published: April 2009, publisher: Cambridge University Press, author: Roel Snieder, overview: 
+                    In contrast to traditional textbooks for students and professionals in the physical sciences, this book presents its material in the form of problems. The second edition contains new chapters on dimensional analysis, variational calculus, and the asymptotic evaluation of integrals. The book can be used by undergraduates and lower-level graduate students. It can serve as a stand-alone text, or as a source of problems and examples to complement other textbooks. First Edition Hb (2001): 0-521-78241-4 First Edition Pb (2001): 0-521-78751-3
+
+
+                

@@ -1,10 +1,8 @@
-<div href="#" class="thumbnail" style="height:400px; width: 300px; overflow-y: scroll">
-  <img src="http://i3.kym-cdn.com/photos/images/newsfeed/000/269/819/f6f.png" data-src="holder.js/100x100" alt="">
-
-<div class="caption">
+<div href="#" class="thumbnail" style="margin-left:15%;height:200px; width: 150px; overflow-y: hidden">
+  <img src="<%= item.escape("img")%>" data-src="holder.js/100x100" alt="">
+</div>
+<div class="caption" style="margin-left:15%">
   <h4> <%= item.escape("title") %></h4>
   <h5>Price: $<%= item.escape("price") %></h5>
   <h5> <a href="#" class="itemDetail"> Look inside </a> </h5>
-</div>
-
 </div>

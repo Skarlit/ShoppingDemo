@@ -56,18 +56,12 @@ ActiveRecord::Schema.define(version: 20140521234126) do
 
   create_table "item_infos", force: true do |t|
     t.integer  "item_id"
-    t.text     "description"
-    t.string   "authors"
-    t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "item_stats", force: true do |t|
-    t.integer  "item_id"
-    t.integer  "rating"
-    t.integer  "stocks"
-    t.boolean  "released"
+    t.text     "overview"
+    t.string   "publisher"
+    t.string   "published"
+    t.string   "author"
+    t.string   "isbn"
+    t.string   "edition"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -5,17 +5,21 @@
       <h4 class="modal-title"><%= item.escape('title')%></h4>
     </div>
     <div class="modal-body">
+      <section>
+          <img src="<%=item.get("img")%>" > 
+      </section>  
+
       	<section>
-      		 Author: <%= itemInfo.escape("authors") %>
+      		 Author: <%= itemInfo.escape("author") %>
+           <li>ISBN: <%= itemInfo.escape("isbn") %> </li>
+           <li>Published Date: <%= itemInfo.escape("published") %> </li>
+           <li>Publisher: <%= itemInfo.escape("publisher") %> </li>
+           <li>Edition: <%= itemInfo.escape("edition") %> </li>
       	</section>
 
       	<section>
-      		 Description: <%= itemInfo.escape("description") %>
-      	</section>
-
-      	<section>
-      		 Rating: 
-      	</section>
+      		 Overview: <%= itemInfo.escape("overview") %>
+      	</section>           
 
       <button class="btn my-btn-info" style="color:black">Post a Comment: </button>
       <form>
