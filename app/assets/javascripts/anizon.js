@@ -19,6 +19,9 @@ window.persistentLogin = function(){
     data: "",
     success: function(resp){
       $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
+    },
+    error: function(resp){
+      $.notify("You are not signed in, your cart items would be stored on local cookies");
     }
   })
 }

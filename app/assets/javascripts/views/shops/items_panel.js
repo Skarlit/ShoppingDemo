@@ -25,7 +25,9 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   hideCart: function(event){
-    console.log("scrolled");
+    if(Anizon.cart){
+      Anizon.cart.hideCart();
+    }
   },
 
   render: function(){
@@ -43,6 +45,11 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       }
     });
     this.initSly();
+    this.$frame.sly('on', 'change', function(event){
+      parent.hideCart();
+    });
+
+
     this.delegateEvents();
     return this;
   },
@@ -55,7 +62,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     // Call Sly on frame
     this.$frame.sly({
       horizontal: 1,
-      itemNav: 'basic',
+      itemNav: 'centered',
       smart: 1,
       mouseDragging: 0,
       touchDragging: 0,
@@ -110,26 +117,24 @@ Anizon.Views.Item = Support.CompositeView.extend({
       revert: true,  
       //helper: "clone",
       stack: "#cartBody",
-      zIndex: 200,
+      zIndex: 9000,
       start: function(event, ui){
-        console.log(event.clientY + " " + event.clientX);
-        console.log(ui.offset.top + " " + ui.offset.left);
-        console.log(parent.$el.offset());  
+        // console.log(event.clientY + " " + event.clientX);
+        // console.log(ui.offset.top + " " + ui.offset.left);
+        // console.log(parent.$el.offset());  
 
         Anizon.currentDraggedItem = parent.model;
         if(Anizon.cart){
           Anizon.cart.showCart();
         }else{
          $.notify(
-          "You don't have a cart currently, \nclick on Cart above to create or load a cart", 
+          "Cart created : )",
           {
+            className: "success",
             position: "top right"
           });
-         $("#cart").trigger("mouseover");
+         $("#cart").click();
         }
-      },
-      stop: function(){
-        $("#cart").trigger("mouseleave");
       }
     })
 
@@ -162,8 +167,8 @@ Anizon.Views.Item = Support.CompositeView.extend({
           item_id: this.model.escape('id'),
           quantity: 1,
           price: this.model.escape('price'),
+          title = this.model.escape("title")
         });
-    cartItem.title = this.model.escape("title");
     Anizon.cart.collection.add(cartItem);
   }
 

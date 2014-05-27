@@ -6,6 +6,7 @@ Anizon::Application.routes.draw do
   post '/sessions/auto', to: 'sessions#auto'
 
   namespace :api do
+    get '/cart_items', to: 'cart_items#index'
     get '/feeds', to: 'infos#feeds'
     get '/:cat', to: 'items#book_by_category'
     get '/items/:id/comments', to: 'comments#index'

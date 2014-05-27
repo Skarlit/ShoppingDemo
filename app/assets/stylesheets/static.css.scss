@@ -13,6 +13,10 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
+a:hover{
+  cursor: pointer;
+}
+
 .my-btn-danger{
   border-radius: 1px;
 font-family: 'Dosis', sans-serif;
@@ -298,7 +302,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   border-radius: 5px;
   display: inline-block;
   margin: 4em;*/
-  background: rgba(225, 225, 225, 0.7);
+  background: rgba(255, 255, 255, 1);
 /*  position: relative;*/
 }
 

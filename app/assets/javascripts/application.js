@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= require jquery.cookie.js
 //= require jquery.qtip.min.js
 //= require sly.min.js
 //= require notify.min.js

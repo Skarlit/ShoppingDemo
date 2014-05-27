@@ -5,6 +5,9 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   initialize: function(){
     this.lowerBound = 0;
     this.upperBound = 5;
+
+    this.collection.fetch();
+    
     var parent = this;
     this.listenTo(this.collection, "add", function(cartItem){
       var cartItemView = new Anizon.Views.CartItem({model: cartItem});
@@ -16,6 +19,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
 
     this.listenTo(this.collection, "change remove", function(){
       parent.updateCartTotal();
+      parent.collection.save();
     })
   },
 
@@ -53,8 +57,8 @@ Anizon.Views.Cart = Support.CompositeView.extend({
           item_id: Anizon.currentDraggedItem.escape('id'),
           quantity: 1,
           price: Anizon.currentDraggedItem.escape('price'),
+          title: Anizon.currentDraggedItem.escape("title")
         });
-        cartItem.title = Anizon.currentDraggedItem.escape("title");
         parent.collection.add(cartItem);
       }
     });
