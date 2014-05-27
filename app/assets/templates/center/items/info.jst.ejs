@@ -27,7 +27,7 @@
 
         <h2> Post a Comment: </h2>        
       <form>
-        <textarea id="comment-box"></textarea>
+        <textarea id="comment-box" style="background-color: #222222; color:#eeee22"></textarea>
         <button id="comment-submit-btn" class="btn my-btn-info" style="color:black">Submit</button>
       </form>
       <h4> User Comments: </h4>
@@ -36,9 +36,10 @@
         <ul style="list-style:none;color:#eeee22">
           <% comments.each(function(comment){  %>
             <li>
-              <p style="float:right"> By <%= comment.author().escape('name') %> </p>
-              <h4> <%= comment.escape('title') %> </h4>              
+              <p style="float:right"> By <%= comment.escape("author") %> </p>
+              <h3><%= comment.escape('title') %> </h3>              
               <p> <%= comment.escape('body') %> </p>
+              <hr style="width:80%">
             </li>
           <% }) %>
         </ul>

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require jquery.qtip.min.js
+//= require sly.min.js
 //= require notify.min.js
 //= require backstretch.min.js
 //= require serialize_json

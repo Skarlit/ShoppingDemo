@@ -106,7 +106,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
   showInfo: function(event){
     event.preventDefault();
-    var infoView = new Anizon.Views.Info({model: this.model.itemInfo(), item: this.model});
+    var infoView = new Anizon.Views.Info({model: this.model});
     infoView.render().$el.modal().removeClass("hide");
   },
 
@@ -120,12 +120,15 @@ Anizon.Views.Info = Support.CompositeView.extend({
   infoTemplate: JST["center/items/info"],
 
   initialize: function(option){
-    this.item = option.item;
-    this.listenTo(this.model, "sync", this.render)
+    this.comments = this.model.comments();
+    this.itemInfo = this.model.itemInfo();
+    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.comments, "sync", this.render);
+    this.listenTo(this.itemInfo, "sync", this.render);
   },
 
   render: function(){
-    this.$el.html(this.infoTemplate({itemInfo: this.model, item: this.item}));
+    this.$el.html(this.infoTemplate({itemInfo: this.itemInfo, item: this.model, comments: this.comments}));
     return this;
   }
 })

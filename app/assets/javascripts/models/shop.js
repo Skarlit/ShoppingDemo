@@ -22,7 +22,7 @@ Anizon.Models.Item = Backbone.Model.extend({
 
   itemInfo: function(){
     if(this.info)
-      return info;
+      return this.info;
     else{
       this.info = new Anizon.Models.ItemInfo();
       this.info.fetch({
@@ -31,13 +31,22 @@ Anizon.Models.Item = Backbone.Model.extend({
           $.notify("Cannot get the Information on this Book. Maybe it doesn't exist", {position: "top left"});
         }
       });
-      return info;
+      return this.info;
     }
   },
 
   comments: function(){
-
-
+    if(this.c){
+      return this.c;
+    }else{
+      this.c = new Anizon.Collections.Comments({item_id: this.id});
+      this.c.fetch({
+        error: function(){
+          $.notify("No comments for this book yet");
+        }
+      })
+      return this.c;
+    }
   }
 });
 
