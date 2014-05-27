@@ -1,4 +1,10 @@
-<h1 style="margin-bottom: 1em; color:white; font-weight:500;"><%= books.cat %></h1>
+<h1 style="margin-bottom: 1em; color:white; font-weight:500;"><%= books.cat.charAt(0).toUpperCase() + books.cat.slice(1) %></h1>
 
-
-<div id="items-panel" class="panel panel-default"> </div>
+<div>
+  <div class="scrollbar">
+      <div class="handle"></div>
+  </div>
+  <div class="frame" id="items-frame" style="overflow:hidden">
+    <ul id="items-panel" class="slidee"> </ul>
+  </div>
+</div>

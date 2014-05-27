@@ -41,15 +41,50 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
         Anizon.cart.hideCart();
       }
     });
-
+    this.initSly();
     this.delegateEvents();
     return this;
   },
 
+  initSly: function(){
+    this.$frame  = $('#items-frame');
+    this.$slidee = this.$frame.children('ul').eq(0);
+    this.$wrap   = this.$frame.parent();
+
+    // Call Sly on frame
+    this.$frame.sly({
+      horizontal: 1,
+      itemNav: 'basic',
+      smart: 1,
+      mouseDragging: 0,
+      touchDragging: 0,
+      releaseSwing: 0,
+      startAt: 3,
+      scrollBar: this.$wrap.find('.scrollbar'),
+      scrollBy: 1,
+      pagesBar: this.$wrap.find('.pages'),
+      // activatePageOn: 'click',
+      speed: 300,
+      elasticBounds: 1,
+      easing: 'easeOutExpo',
+      dragHandle: 0,
+      dynamicHandle: 1,
+      clickBar: 1,
+
+      // Buttons
+      forward: this.$wrap.find('.forward'),
+      backward: this.$wrap.find('.backward'),
+      prev: this.$wrap.find('.prev'),
+      next: this.$wrap.find('.next'),
+      prevPage: this.$wrap.find('.prevPage'),
+      nextPage: this.$wrap.find('.nextPage')
+    });
+  }
 })
 
 
 Anizon.Views.Item = Support.CompositeView.extend({
+  tagName: "li",
   className: "item",
 
   itemTemplate: JST["center/items/item"],
