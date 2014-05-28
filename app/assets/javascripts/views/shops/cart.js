@@ -266,11 +266,18 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
   events: {
     'click #change-info-btn' : 'changeInfo',
     'click #cancel-info-btn' : 'cancelInfo',
-    'click #checkout-btn' : 'checkout'
+    'click #checkout-btn' : 'checkout',
+    'click .close' : 'closeModal'
   },
 
   render: function(){
     this.$el.html(this.checkoutTemplate({cart: this.collection, userInfo: this.userInfo, infoExist: this.infoExist}));
+    var parent = this;
+    $(".modal-backdrop").on('click', function(){
+      parent.remove();
+      console.log("destroyed");
+      $(".modal-backdrop").remove();
+    });
     return this;
   },
 
@@ -290,5 +297,10 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
     //   url: "api/orders",
     //   data: 
     // })
+  },
+
+  closeModal: function(){
+    $(".modal-backdrop").remove();
+    this.leave();
   }
 })

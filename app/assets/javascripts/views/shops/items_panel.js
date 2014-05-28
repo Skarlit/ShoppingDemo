@@ -115,6 +115,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
     this.$el.draggable({
       revert: true,  
+      distance: 10,
       //helper: "clone",
       stack: "#cartBody",
       zIndex: 9000,
@@ -176,44 +177,3 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
 
 
-Anizon.Views.Info = Support.CompositeView.extend({
-  id: 'base-modal',
-  className: 'modal fade hide mymodal',
-  infoTemplate: JST["center/items/info"],
-
-  initialize: function(option){
-    this.comments = this.model.comments();
-    this.itemInfo = this.model.itemInfo();
-    this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.comments, "add sync", this.render);
-    this.listenTo(this.itemInfo, "sync", this.render);
-  },
-
-  events: {
-    'click #comment-submit-btn' : 'submitComment'
-  },
-
-  submitComment: function(event){
-    event.preventDefault();
-    var newComment = new Anizon.Models.Comment({
-      title: $("#comment-title").val(),
-      body: $("#comment-box").val(),
-      item_id: this.model.id
-    });
-
-    this.comments.add(newComment);
-    newComment.save({
-      success: function(){
-        $.notify("Comment saved successfully");
-      },
-      error: function(){
-        $.notify("failed to save comment : (");
-      }
-    });
-  },
-
-  render: function(){
-    this.$el.html(this.infoTemplate({itemInfo: this.itemInfo, item: this.model, comments: this.comments}));
-    return this;
-  }
-})

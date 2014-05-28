@@ -14,14 +14,15 @@ class Api::CommentsController < ApplicationController
 			comment.user_id = 0
 		end
 		if comment.save
+			Item.find(comment.item_id).updateRating(comment)
 			render json: {status: "ok"}
 		else
-			render status: 402
+			render json: {status: "error"}, status: 402
 		end
 	end
 
 	private 
 	def comment_params
-		params.require(:comment).permit(:item_id, :title, :body, :rating)
+		params.require(:comment).permit(:item_id, :title, :body, :user_rating)
 	end
 end
