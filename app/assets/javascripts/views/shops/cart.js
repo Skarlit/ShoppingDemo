@@ -200,10 +200,10 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
     event.preventDefault();
     this.model.destroy({
         success: function(resp){
-          $.notify(resp.status, "success")
+          $.notify(resp.status, "success");
         },
         error: function(resp){
-          $.notify(resp.status)
+          $.notify(resp.status);
         }
     });
     this.leave();
