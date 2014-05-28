@@ -18,7 +18,11 @@ Anizon.Views.WelcomePanel = Support.CompositeView.extend({
   },
 
   changeWallpaper: function(){
-  	$.backstretch($("#wallpaperUrl").val());
+    if($("#wallpaperUrl").val() == ""){
+      $.backstretch(this.$el.find(".selectpicker").val());
+    }else{  
+  	  $.backstretch($("#wallpaperUrl").val());
+    }
   }
 
 })

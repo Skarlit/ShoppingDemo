@@ -1,6 +1,5 @@
 Anizon::Application.routes.draw do
 
-  get "tests/test"
   resources :users, only: [:create]
   resource :sessions, only: [:create, :destroy]
   post '/sessions/auto', to: 'sessions#auto'
@@ -12,6 +11,8 @@ Anizon::Application.routes.draw do
     put '/cart_items/:id', to: 'cart_items#update'
     get '/feeds', to: 'infos#feeds'
     get '/userinfo', to: 'infos#user_info'
+    post 'orders', to: 'orders#create'
+    post 'comments', to: 'comments#create'
     get '/items/:id/comments', to: 'comments#index'
     patch '/items/:id', to: 'items#update'
     put '/items/:id', to: 'items#update'

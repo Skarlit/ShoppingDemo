@@ -185,8 +185,31 @@ Anizon.Views.Info = Support.CompositeView.extend({
     this.comments = this.model.comments();
     this.itemInfo = this.model.itemInfo();
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.comments, "sync", this.render);
+    this.listenTo(this.comments, "add sync", this.render);
     this.listenTo(this.itemInfo, "sync", this.render);
+  },
+
+  events: {
+    'click #comment-submit-btn' : 'submitComment'
+  },
+
+  submitComment: function(event){
+    event.preventDefault();
+    var newComment = new Anizon.Models.Comment({
+      title: $("#comment-title").val(),
+      body: $("#comment-box").val(),
+      item_id: this.model.id
+    });
+
+    this.comments.add(newComment);
+    newComment.save({
+      success: function(){
+        $.notify("Comment saved successfully");
+      },
+      error: function(){
+        $.notify("failed to save comment : (");
+      }
+    });
   },
 
   render: function(){

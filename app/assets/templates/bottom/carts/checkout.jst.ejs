@@ -21,14 +21,15 @@
             <%= cartItem.escape('quantity') %>
           </td>
           <td>
-            <% sum += parseFloat(cartItem.escape('price')) * parseInt(cartItem.escape('quantity')) %>
-            <%= Math.round(sum *100) / 100 %>
+            <% var rowTotal = parseFloat(cartItem.escape('price')) * parseInt(cartItem.escape('quantity')) %>
+            <% sum += rowTotal %>
+            <%= Math.round(rowTotal *100) / 100 %>
           </td>
         </tr>
       <%  }) %>
       </table> 
       <hr>
-            <h5 style="float:right"> Total: <%= sum %> </h5>  <br> <br>
+            <h5 style="float:right"> Total: <%= Math.round(sum *100) / 100 %> </h5>  <br> <br>
 
       <% if(infoExist){ %>
         <section id="userinfo-show">
@@ -37,27 +38,15 @@
           State: <%= this.userInfo.escape("state") %> <br>
           ZipCode: <%= this.userInfo.escape("zipcode") %> <br>
           Address: <%= this.userInfo.escape("address") %> <br>
-          <button id="change-info-btn"> Change Address </button>
+          <button id="change-info-btn" class="my-btn-info"> Change Address </button>
+          <button id="cancel-info-btn" class="my-btn-danger"> Cancel </button>
         </section>
-        <form id="userinfo-form" style="display: hidden">
-           <label style="float:left"> Country:
-             <input type="text" value="<%= this.userInfo.escape("country")%>" name="user_info[country]">
-           </label>
+        <br> <br>
+      <div id="checkout-form-wrapper">
 
-           <label style="float:left"> State:
-             <input type="text" value="<%= this.userInfo.escape("state")%>" name="user_info[state]">
-           </label>
-           <label style="float:left">ZipCode:
-             <input type="text" value="<%= this.userInfo.escape("zipcode") %>" name="user_info[zipcode]">
-           </label>
-           <br>
-
-           <label style="float:left"> Address:
-              <input type="text" value="<%= this.userInfo.escape("address")%>" name="user_info[address]" >
-           </label>         
-        </form>
+      </div>
       <% }else{ %>
-          <form id="userinfo-form" style="display: hidden">
+          <form id="userinfo-form">
            <label> Name: <span style="color:red">(One time user only) </span>
              <input type="text" name="user_info[name]">
            </label>
@@ -80,10 +69,10 @@
         </form>
 
       <% } %> 
-      <hr>
+       <br><br>
     </div>
     <div class="modal-footer">
-      <button class="btn my-btn-info" style="color:black; float:right">Place Order
+      <button class="my-btn-info" id="checkout-btn" style="color:black;right:5px;bottom:5px">Place Order
       </button>
     </div>
   </div><!-- /.modal-content -->

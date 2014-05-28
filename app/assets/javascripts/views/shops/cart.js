@@ -12,10 +12,10 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     this.listenTo(this.collection, "add", function(cartItem){
       cartItem.save({
         success: function(resp){
-          $.notify(resp.status, "success")
+          $.notify(resp.escape("title") + "\n added to the cart", "success")
         },
         error: function(resp){
-          $.notify(resp.status)
+          $.notify("unable to add/load item")
         }
       });
       var cartItemView = new Anizon.Views.CartItem({model: cartItem});
@@ -149,7 +149,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   },
 
   checkout: function(){
-    var checkoutView = new Anizon.Views.CheckOut({collection: this.collection});
+    var checkoutView = new Anizon.Views.CheckOut();
     $("body").append(checkoutView.render().$el);
     //hide class has display:none important
     checkoutView.render().$el.modal().removeClass("hide");
@@ -173,10 +173,10 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
       parent.render();
       parent.model.save({
         success: function(resp){
-          $.notify(resp.status, "success")
+          $.notify("quantity updated", "success");
         },
         error: function(resp){
-          $.notify(resp.status)
+          $.notify("failed to update quantity");
         }
       });
     });
@@ -200,10 +200,10 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
     event.preventDefault();
     this.model.destroy({
         success: function(resp){
-          $.notify(resp.status, "success");
+          $.notify(resp.escape("title") + " removed", "success");
         },
         error: function(resp){
-          $.notify(resp.status);
+          $.notify("error removing item");
         }
     });
     this.leave();
@@ -242,6 +242,7 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
   id: 'base-modal',
   className: 'modal fade hide mymodal',
   checkoutTemplate: JST['bottom/carts/checkout'],
+  changeInfoFormTemplate: JST['bottom/carts/change_info_form'],
 
   initialize: function(){
     this.collection = new Anizon.Collections.Cart()
@@ -250,11 +251,11 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
     var parent = this;
     this.userInfo.fetch({
       success: function(resp){
-        $.notify(resp.status, "success");
+        $.notify("shipping info retrived", "success");
         parent.infoExist = true;
       },
       error: function(resp){
-        $.notify(resp.status)
+        $.notify("cannot find shipping info")
         parent.infoExist = false;
       }
     });
@@ -262,8 +263,32 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
     this.listenTo(this.userInfo, "sync", this.render);
   },
 
+  events: {
+    'click #change-info-btn' : 'changeInfo',
+    'click #cancel-info-btn' : 'cancelInfo',
+    'click #checkout-btn' : 'checkout'
+  },
+
   render: function(){
     this.$el.html(this.checkoutTemplate({cart: this.collection, userInfo: this.userInfo, infoExist: this.infoExist}));
     return this;
+  },
+
+  changeInfo: function(){
+    var form = this.changeInfoFormTemplate({userInfo: this.userInfo});
+    this.$el.find("#checkout-form-wrapper").append(form);
+  },
+
+  cancelInfo: function(){
+    $("#userinfo-form").remove();
+  },
+
+  checkout: function(){
+    var user_info = this.$el.find("#userinfo-form").serializeJSON();
+    // $.ajax({
+    //   method: "POST",
+    //   url: "api/orders",
+    //   data: 
+    // })
   }
 })

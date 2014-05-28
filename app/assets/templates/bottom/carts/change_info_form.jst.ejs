@@ -1,0 +1,17 @@
+<form id="userinfo-form">
+   <label style="float:left"> Country:
+     <input type="text" value="<%= this.userInfo.escape("country")%>" name="user_info[country]">
+   </label>
+
+   <label style="float:left"> State:
+     <input type="text" value="<%= this.userInfo.escape("state")%>" name="user_info[state]">
+   </label>
+   <label style="float:left">ZipCode:
+     <input type="text" value="<%= this.userInfo.escape("zipcode") %>" name="user_info[zipcode]">
+   </label>
+   <br>
+
+   <label style="float:left"> Address:
+      <input type="text" value="<%= this.userInfo.escape("address")%>" name="user_info[address]" >
+   </label>         
+</form>
