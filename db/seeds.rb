@@ -5,6 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.new(id: 0, name: "Anonymous User", email: "Anon@Anon", password: SecureRandom.hex(16))
+user.reset_session_token!
+user.save!
+
 
 Cat.create(name: "geometry")  #1
 Cat.create(name: "glgebra")  #2

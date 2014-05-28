@@ -2,9 +2,13 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   className: "col-md-12 row",
 
   itemsPanelTemplate: JST["center/items/items_panel"],
+  prevPageTemplate: JST["center/items/prev_page"],
+  nextPageTemplate: JST["center/items/next_page"],
 
   initialize: function(){
     this.page = 1;
+    this.book = [];
+    this.book[this.page] = this.collection;
 
     var parent = this;
     this.listenTo(this.collection, "sync", function(){
@@ -21,7 +25,9 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   events: {
-    'scroll #items-panel': "hideCart"
+    'scroll #items-panel': "hideCart",
+    'click .prevPage' : "previousPage",
+    'click .nextPage' : "nextPage"
   },
 
   hideCart: function(event){
@@ -31,27 +37,90 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   render: function(){
-    this.$el.html(this.itemsPanelTemplate({books: this.collection}));
+    this.$el.html(this.itemsPanelTemplate({books: this.collection, page: this.page}));
     
     var parent = this;
+
+    this.$el.find("#items-panel").append(this.prevPageTemplate());
     this.children.each(function(childView){
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
+    this.$el.find("#items-panel").append(this.nextPageTemplate());
 
-    $('.frame').on('scroll', function(){
-      console.log("scroll");
-      if(Anizon.cart){
-        Anizon.cart.hideCart();
-      }
-    });
+
     this.initSly();
     this.$frame.sly('on', 'change', function(event){
       parent.hideCart();
     });
 
+    this.$frame.sly('cycle', function(event){
+      console.log("you went around : )");
+    });
 
     this.delegateEvents();
     return this;
+  },
+
+  pager: function(index){ 
+    console("called with" + index);
+
+  },
+
+  nextPage: function(){
+    console.log("next");
+    var cat = this.book[this.page].cat;
+    this.book[this.page].off();
+    if(!this.book[this.page + 1]){
+      this.book[this.page + 1] = this.book[this.page + 1] || new Anizon.Collections.Items({page: this.page + 1, cat: cat});
+      this.book[this.page + 1].setUrl();
+      this.book[this.page + 1].fetch();
+    }
+    this.collection = this.book[this.page + 1];
+    this.page += 1;
+
+    var parent = this;
+    this.listenTo(this.collection, "sync", function(){
+      parent.children.each(function(childView){
+        childView.leave();
+      })
+      parent.collection.each(function(item){
+        var itemView = new Anizon.Views.Item({model: item});
+        parent.children.push(itemView);
+        itemView.parent = parent;
+      })
+      parent.render();
+    }) 
+
+    this.render();
+  },
+
+  previousPage: function(){
+    console.log("prev");
+    debugger
+    var cat = this.book[this.page].cat;
+    this.book[this.page].off();
+    if(!this.book[this.page - 1 ]){
+      this.book[this.page - 1] =  new Anizon.Collections.Items({page: this.page - 1, cat: cat});
+      this.book[this.page - 1].setUrl();
+      this.book[this.page - 1].fetch();
+    }
+    this.collection = this.book[this.page - 1];
+    this.page -= 1;
+    
+    var parent = this;
+    this.listenTo(this.collection, "sync", function(){
+      parent.children.each(function(childView){
+        childView.leave();
+      })
+      parent.collection.each(function(item){
+        var itemView = new Anizon.Views.Item({model: item});
+        parent.children.push(itemView);
+        itemView.parent = parent;
+      })
+      parent.render();
+    })
+
+    this.render(); 
   },
 
   initSly: function(){
@@ -60,32 +129,28 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.$wrap   = this.$frame.parent();
 
     // Call Sly on frame
+    var parent = this;
     this.$frame.sly({
       horizontal: 1,
-      itemNav: 'centered',
+      itemNav: 'basic',
       smart: 1,
       mouseDragging: 0,
       touchDragging: 0,
       releaseSwing: 0,
       startAt: 3,
-      scrollBar: this.$wrap.find('.scrollbar'),
+      scrollBar: parent.$wrap.find('.scrollbar'),
       scrollBy: 1,
-      pagesBar: this.$wrap.find('.pages'),
+      pagesBar: parent.$wrap.find('.pages'),
       // activatePageOn: 'click',
+      keyboardNavBy: 'pages',
+      dragHandle: true,
       speed: 300,
       elasticBounds: 1,
       easing: 'easeOutExpo',
       dragHandle: 0,
       dynamicHandle: 1,
       clickBar: 1,
-
-      // Buttons
-      forward: this.$wrap.find('.forward'),
-      backward: this.$wrap.find('.backward'),
-      prev: this.$wrap.find('.prev'),
-      next: this.$wrap.find('.next'),
-      prevPage: this.$wrap.find('.prevPage'),
-      nextPage: this.$wrap.find('.nextPage')
+      pageBuilder: parent.pager,
     });
   }
 })
@@ -150,12 +215,22 @@ Anizon.Views.Item = Support.CompositeView.extend({
         classes: 'qtip-dark qtip-tipsy'
       }
     })
+
+    this.delegateEvents();
     return this;
   },
 
   showInfo: function(event){
     event.preventDefault();
-    var infoView = new Anizon.Views.Info({model: this.model});
+    var infoView  = new Anizon.Views.Info({model: this.model});
+    this.swapInfoView(infoView);
+  },
+
+  swapInfoView: function(infoView){
+    if(Anizon.infoView){
+      Anizon.infoView.leave();
+    }
+    Anizon.infoView = infoView;
     infoView.render().$el.modal().removeClass("hide");
   },
 

@@ -7,6 +7,8 @@ Anizon.Views.Info = Support.CompositeView.extend({
     this.comments = this.model.comments();
     this.comments.fetch();
     this.itemInfo = this.model.itemInfo();
+
+    var parent = this;
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.comments, "add sync", this.render);
     this.listenTo(this.itemInfo, "sync", this.render);
@@ -48,13 +50,6 @@ Anizon.Views.Info = Support.CompositeView.extend({
       $(".modal-backdrop").remove();
     });
 
-
-    // $(".set_star").on("hover", function(event){
-    //    console.log("hover");
-    //    for(var i = 1; i <= $(event.target).data('id'); i++){
-    //     $(".set_star[data-id=" + "'i']").html("&#9733;")
-    //    }
-    // })
     this.delegateEvents();
 
     return this;
@@ -64,6 +59,10 @@ Anizon.Views.Info = Support.CompositeView.extend({
      console.log("click");
      for(var i = 0; i <= $(event.target).data('id'); i++){
        this.$el.find("#set_rating span:nth-child(" + i + ")").html("&#9733;");
+     }
+
+     for(var i = $(event.target).data('id') + 1 ; i <= 10; i++){
+       this.$el.find("#set_rating span:nth-child(" + i + ")").html("&#9734;");
      }
      this.$el.find("#user_rating").html($(event.target).data('id'));
   },
