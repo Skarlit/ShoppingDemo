@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 
   validates :password, length: { minimum: 6 , allow_nil: true}
 
-
+  has_one :user_info
   has_many :cart_items
   has_many :comments
   has_many :orders

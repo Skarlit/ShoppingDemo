@@ -11,11 +11,12 @@ Anizon::Application.routes.draw do
     get '/cart_items', to: 'cart_items#index'
     put '/cart_items/:id', to: 'cart_items#update'
     get '/feeds', to: 'infos#feeds'
-    get '/:cat', to: 'items#book_by_category'
+    get '/userinfo', to: 'infos#user_info'
     get '/items/:id/comments', to: 'comments#index'
     patch '/items/:id', to: 'items#update'
     put '/items/:id', to: 'items#update'
     get '/items/:id', to: 'items#show'
+    get '/:cat', to: 'items#book_by_category'
   end
 
   root 'static#index'

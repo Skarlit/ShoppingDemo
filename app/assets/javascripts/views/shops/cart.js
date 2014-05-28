@@ -244,11 +244,26 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
   checkoutTemplate: JST['bottom/carts/checkout'],
 
   initialize: function(){
-
+    this.collection = new Anizon.Collections.Cart()
+    this.collection.fetch();
+    this.userInfo = new Anizon.Models.UserInfo()
+    var parent = this;
+    this.userInfo.fetch({
+      success: function(resp){
+        $.notify(resp.status, "success");
+        parent.infoExist = true;
+      },
+      error: function(resp){
+        $.notify(resp.status)
+        parent.infoExist = false;
+      }
+    });
+    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.userInfo, "sync", this.render);
   },
 
   render: function(){
-    this.$el.html(this.checkoutTemplate({cart: this.collection}));
+    this.$el.html(this.checkoutTemplate({cart: this.collection, userInfo: this.userInfo, infoExist: this.infoExist}));
     return this;
   }
 })

@@ -54,3 +54,8 @@ Anizon.Models.Item = Backbone.Model.extend({
 Anizon.Models.Comment = Backbone.Model.extend({
 
 })
+
+
+Anizon.Models.UserInfo = Backbone.Model.extend({
+  url: "api/userinfo"
+})
