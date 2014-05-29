@@ -21,6 +21,7 @@ class SessionsController < ApplicationController
   def destroy
     session[:token] = nil;
     current_user = nil;
+    cookies[:cart_item] = nil;
     render json: {status: "sign out"}
   end
 

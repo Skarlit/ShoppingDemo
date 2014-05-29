@@ -10,6 +10,11 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     
     var parent = this;
     this.listenTo(this.collection, "add", function(cartItem){
+      if($.cookie('cart_item')){
+        $.cookie('cart_item', $.cookie('cart_item') + " " + cartItem.escape("item_id") + "&" + cartItem.escape("quantity") );
+      }else{
+        $.cookie('cart_item', cartItem.escape("item_id") + "&" + cartItem.escape("quantity") );
+      }
       cartItem.save({
         success: function(resp){
           $.notify(resp.escape("title") + "\n added to the cart", "success")
