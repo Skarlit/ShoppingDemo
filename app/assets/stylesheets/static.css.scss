@@ -6,11 +6,11 @@
 
 /* Button */
 .menuFont{
-  font-family: 'Dosis', sans-serif;
+  font-family: 'Nova Square', cursive;
 }
 
 body{
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Cabin Condensed', sans-serif;
 }
 
 a:hover{
@@ -160,6 +160,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   font-size: 150%;
 }
 
+#search, #cart{
+  font-size: 25pt;
+}
+
 
 /*News Panel*/
 #center{
@@ -188,11 +192,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
   color: #dcdc66;
 }
 
-.newsEntry:hover{
+.popular-clicks span, .ranking-rating{
+  color: #ecec44;
+}
+
+.popular-clicks, .ranking-rating{
+  float: right;
+}
+
+.popular_Entry:hover, .ranking_Entry:hover, .newsEntry:hover{
   background-color: black;
   cursor: pointer;
 }
-
 
 /*Bottom */
 
@@ -360,4 +371,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 
 .set_star:hover{
   cursor: pointer;
+}
+
+
+table.checkout-title table.checkout-quantity{
+  text-align: left;
 }

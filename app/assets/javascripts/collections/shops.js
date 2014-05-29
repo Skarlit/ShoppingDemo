@@ -22,6 +22,14 @@ Anizon.Collections.Items = Backbone.Collection.extend({
 
   setUrl: function(){
     this.url = "api/" + this.cat + "?page=" + this.page 
+  },
+
+  setPopularUrl: function(){
+    this.url = "api/items/popular";
+  },
+
+  setRankingUrl: function(){
+    this.url = "api/items/ranking";
   }
 })
 

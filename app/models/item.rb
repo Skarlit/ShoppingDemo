@@ -16,8 +16,10 @@ class Item < ActiveRecord::Base
   belongs_to :cat
   has_one :item_info, class_name: "ItemInfo", foreign_key: :item_id
   has_many :comments
-  before_save :default_values
 
+  validates :price, presence: true,  numericality: { greater_than: 0}
+  
+  before_save :default_values
 
   def default_values
     self.rating ||= 0

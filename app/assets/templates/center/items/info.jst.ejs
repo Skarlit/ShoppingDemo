@@ -55,16 +55,15 @@
         <ul style="list-style:none;color:#eeee22">
           <% comments.each(function(comment){  %>
             <li>
-              <p style="float:right"> By <%= comment.escape("author") || "You" %> </p>
-              <h3><%= comment.escape('title') %> </h3> 
+              <h3><%= comment.escape('title') %> <span style="font-size: 9pt"> By <%= comment.escape("author") || "You" %></span> </h3>
               <% for(var i = 0; i < parseInt(comment.escape("user_rating")); i++){ %>
                 <span> &#9733; </span>
               <% } %>
               <% for(var i = parseInt(comment.escape("user_rating")); i < 10 ; i++){ %>
                 <span>&#9734;</span>
-              <% } %>             
+              <% } %>        
               <p> <%= comment.escape('body') %> </p>
-              <hr style="width:80%; left:5px">
+              <hr style="width:90%;">
             </li>
           <% }) %>
         </ul>

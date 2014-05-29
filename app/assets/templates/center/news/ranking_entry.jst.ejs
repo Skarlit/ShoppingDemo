@@ -1,1 +1,13 @@
-<h3> Ranking </h3>
+
+<section class="ranking-entry">
+<h5 class="ranking-title"> <%= item.escape('title') %>  <span class="glyphicon glyphicon-shopping-cart addToCart"></span> </h5>
+
+<p class="ranking-rating">
+<% for(var i = 0; i < parseInt(item.escape('rating')); i++) { %>
+ <span> &#9733; </span>
+<% } %>
+<% for(var i = parseInt(item.escape('rating')); i < 10 ; i++){ %>
+ <span>&#9734;</span>
+<% } %>
+</p>
+</section>

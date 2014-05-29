@@ -10,17 +10,32 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
 
   initialize: function(){
     this.collection = new Anizon.Collections.Feeds();
-
     this.collection.fetch();
 
-    var popularView = new Anizon.Views.Panel({
+    this.popularItems = new Anizon.Collections.Items({});
+    this.popularItems.setPopularUrl();
+    this.popularItems.fetch();
+
+    this.rankingItems = new Anizon.Collections.Items({});
+    this.rankingItems.setRankingUrl();
+    this.rankingItems.fetch();
+
+    var popularView = new Anizon.Views.listItemPanel({
         className: "col-md-6 news-panel",
-        entryClassName: "col-md-10 col-md-offset-1 newsEntry",
+        entryClassName: "col-md-10 col-md-offset-1 popular_Entry",
         panelTemplate: this.popularTemplate,
         entryTemplate: this.popularEntryTemplate,
-        collection: this.collection,
+        collection: this.popularItems,
         root: "#popular-list"
     });
+    var rankingView = new Anizon.Views.listItemPanel({
+        className: "col-md-6 news-panel", 
+        entryClassName: "col-md-10 col-md-offset-1 ranking_Entry",
+        panelTemplate: this.rankingTemplate,
+        entryTemplate: this.rankingEntryTemplate,
+        collection: this.rankingItems,
+        root: "#ranking-list"
+    })
     var newsView = new Anizon.Views.Panel({
         className: "col-md-8 news-panel", 
         entryClassName: "col-md-10 col-md-offset-1 newsEntry",
@@ -30,14 +45,6 @@ Anizon.Views.NewsPanel = Support.CompositeView.extend({
         root: "#news-list"
     });
 
-    var rankingView = new Anizon.Views.Panel({
-        className: "col-md-6 news-panel", 
-        entryClassName: "col-md-10 col-md-offset-1 newsEntry",
-        panelTemplate: this.rankingTemplate,
-        entryTemplate: this.rankingEntryTemplate,
-        collection: this.collection,
-        root: "#ranking-list"
-    })
 
     var logView = new Anizon.Views.Log();
     this.children.push(popularView);
@@ -121,3 +128,48 @@ Anizon.Views.Log = Support.CompositeView.extend({
     return this;
   }
 });
+
+
+Anizon.Views.listItemPanel = Support.CompositeView.extend({
+  initialize: function(option){
+    this.panelTemplate = option.panelTemplate;
+    this.entryTemplate = option.entryTemplate;
+    this.entryClassName = option.entryClassName;
+    this.root = option.root
+
+    var parent = this;
+    this.listenTo(this.collection, "sync", function(){
+      parent.collection.each(function(entry){
+        var entryView = new Anizon.Views.listItem({
+          model: entry, 
+          template: parent.entryTemplate,
+          className: parent.entryClassName
+        });
+        parent.children.push(entryView);
+        parent.render();
+      })
+    });
+  },
+
+  render: function(){
+    this.$el.html(this.panelTemplate({}));
+    var parent = this;
+    this.children.each(function(childView){
+      parent.$el.find(parent.root).append(childView.render().$el);
+    })
+    return this;
+  }
+})
+
+Anizon.Views.listItem = Anizon.Views.Item.extend({
+  initialize: function(option){
+    this.itemTemplate = option.template;
+    this.className = option.entryClassName;
+  },
+
+  events: {
+    'click section' : 'showInfo'
+  },
+
+})
+

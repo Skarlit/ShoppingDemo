@@ -13,6 +13,8 @@ Anizon::Application.routes.draw do
     get '/userinfo', to: 'infos#user_info'
     post 'orders', to: 'orders#create'
     post 'comments', to: 'comments#create'
+    get '/items/popular', to: 'items#popular'
+    get '/items/ranking', to: 'items#ranking'
     get '/items/:id/comments', to: 'comments#index'
     patch '/items/:id', to: 'items#update'
     put '/items/:id', to: 'items#update'

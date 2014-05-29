@@ -404,3 +404,491 @@ ItemInfo.create(item_id: item.id, isbn: "0471981095", published: "August 1999", 
 
                     
                 ")
+item = Item.create(title: "Discourse on Method, Optics, Geometry, and Meteorology Edition 1", price: 19.00, img: "http://img2.imagesbn.com/p/9780872205673_p0_v1_s600.jpg", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0872205673", published: "March 2001", publisher: "Hackett Publishing Company, Inc.", author: "Rene Descartes,Paul J. Olscamp", overview: "BooknewsDescartes (1596-1650) intended the four books to be read together, the three on specific subjects demonstrating the methods he describes, but they have generally been studied separately since their first publication. Olscamp (Western Washington U.) brings them back together in a corrected version of his 1963 translation, published by Bobbs- Merrill. Annotation c. Book News, Inc., Portland, OR (booknews.com)
+
+")
+item = Item.create(title: "In Our Own Image: Personal Symmetry in Discovery Edition 1", price: 89.99, img: "http://img2.imagesbn.com/p/9780306460913_p0_v2_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0306460912", published: "January 2000", publisher: "Springer US", author: "Istvan Hargittai,Magdolna Hargittai,Magdolna Hargittai (Joint Author)", overview: "
+                    This book inquires into the nature of scientific discovery. The focus is on six personalities and six scientific fields: Johannes Kepler and modeling, Buckminster Fuller and molecules, Linus Pauling and helices of biological systems, A. Kitaiigorodskii and packing of shapes, D.J. Bernal and quasicrystals, and Pierre Curie and symmetry breaking. Excerpts from conversations with 40 leading scientists, including 17 Nobel laureates, enliven the discussion. Culture and science blend inseparably in this book and natural curiosity is the only prerequisite to enjoy it. The award winning authors created this book for the interested general public and it is illustrated by striking images.
+
+
+                ")
+item = Item.create(title: "The Geometry Problem Solver : Plane, Solid, Analytic: A Complete Solution Guide to Any Textbook Edition 1", price: 25.95, img: "http://img2.imagesbn.com/p/9780878915101_p0_v1_s600.jpg", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0878915109", published: "January 1998", publisher: "Research & Education Association", author: "The Editors of REA,Ernest Woodward,Research & Education Association", overview: "
+                    
+ REA’s Problem Solvers is a series of useful, practical, and informative study guides. Each title in the series is complete step-by-step solution guide. The Geometry Problem Solver enables students to solve difficult problems by showing them step-by-step solutions to Geometry problems.
+The Problem Solvers cover material ranging from the elementary to the advanced and make excellent review books and textbook companions.
+The Geometry Problem Solver is the perfect resource for any class, any exam, and any problem!
+
+
+                ")
+item = Item.create(title: "Reflections on Spacetime: Foundations, Philosophy, History Edition 1", price: 99.00, img: "http://img2.imagesbn.com/p/9789048146123_p0_v3_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "9048146127", published: "December 2010", publisher: "Springer Netherlands", author: "Ulrich Majer (Editor),Heinz-Juergen Schmidt (Editor)", overview: "
+                    This book presents a collection of research papers, written by physicists, philosophers and historians of science who had participated in the Zentrum für interdisziplinäre Forschung (ZiF) during the academic year 1992/93 in order to discuss the nature and structure of spacetime as it is used in general relativity. All contributions focus on unsolved questions, such as the possibility of time machines, referential indeterminacy, the hole problem, and the conventional vs. empirical character of spacetime. These papers having a more historical colour deal with Einstein's view of general covariance and with the epistemological status of space(time) in the works of Carnap, Weyl and Hilbert, all of whom relate their position to Husserl's phenomenology, yet in fundamentally different ways.
+
+
+                ")
+item = Item.create(title: "Further Advances in Twistor Theory: Curved Twistor Spaces Edition 1", price: 164.95, img: "http://img2.imagesbn.com/p/9781584880479_p0_v1_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1584880473", published: "March 2001", publisher: "Taylor & Francis", author: "L.J. Mason (Editor),P.Z. Kobak (Editor),L. Hughston (Editor),K. Pulverer (Editor)", overview: "
+                    Although twistor theory originated as an approach to the unification of quantum theory and general relativity, twistor correspondences and their generalizations have provided powerful mathematical tools for studying problems in differential geometry, nonlinear equations, and representation theory. At the same time, the theory continues to offer promising new insights into the nature of quantum theory and gravitation.
+Further Advances in Twistor Theory, Volume III: Curved Twistor Spaces is actually the fourth in a series of books compiling articles from Twistor Newsletter-a somewhat informal journal published periodically by the Oxford research group of Roger Penrose. Motivated both by questions in differential geometry and by the quest to find a twistor correspondence for general Ricci-flat space times, this volume explores deformed twistor spaces and their applications.
+Articles from the world's leading researchers in this field-including Roger Penrose-have been written in an informal, easy-to-read style and arranged in four chapters, each supplemented by a detailed introduction. Collectively, they trace the development of the twistor programme over the last 20 years and provide an overview of its recent advances and current status.
+
+
+                ")
+item = Item.create(title: "Hyperspace: A Scientific Odyssey Through Parallel Universes, Time Warps, and the Tenth Dimension Edition 1", price: 60.00, img: "http://img2.imagesbn.com/p/9780195085143_p0_v1_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0195085140", published: "March 1994", publisher: "Oxford University Press", author: "Michio Kaku,Robert O'Keefe (Illustrator)", overview: "
+                    Are there other dimensions beyond our own? Is time travel possible? Can we change the past? Are there gateways to parallel universes? All of us have pondered such questions, but there was a time when scientists dismissed these notions as outlandish speculations. Not any more. Today, they are the focus of the most intense scientific activity in recent memory. In Hyperspace, Michio Kaku, author of the widely acclaimed Beyond Einstein and a leading theoretical physicist, offers the first book-length tour of the most exciting (and perhaps most bizarre) work in modern physics, work which includes research on the tenth dimension, time warps, black holes, and multiple universes. The theory of hyperspace (or higher dimensional space) - and its newest wrinkle, superstring theory - stand at the center of this revolution, with adherents in every major research laboratory in the world, including several Nobel laureates. Beginning where Hawking's Brief History of Time left off, Kaku paints a vivid portrayal of the breakthroughs now rocking the physics establishment. Why all the excitement? As the author points out, for over half a century, scientists have puzzled over why the basic forces of the cosmos - gravity, electromagnetism, and the strong and weak nuclear forces - require markedly different mathematical descriptions. But if we see these forces as vibrations in a higher dimensional space, their field equations suddenly fit together like pieces in a jigsaw puzzle, perfectly snug, in an elegant, astonishingly simple form. This may thus be our leading candidate for the Theory of Everything. If so, it would be the crowning achievement of 2,000 years of scientific investigation into matter and its forces. Already, the theory has inspired several thousand research papers, and has been the focus of over 200 international conferences. Many leading scientists believe the theory will unlock the deepest secrets of creation and answer some of the most intriguing questions of all
+
+                        Kaku, a physicist, paints a vivid portrait of the groundbreaking theory of hyperspace and its newest wrinkle--superstring theory.
+
+                    
+                ")
+item = Item.create(title: "Statistical Methods: The Geometric Approach Edition 1", price: 159.00, img: "http://img2.imagesbn.com/p/9780387975177_p0_v2_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387975179", published: "May 1991", publisher: "Springer New York", author: "David J. Saville,Graham R. Wood", overview: "
+                    A novel exposition of the analysis of variance and regression. The key feature here is that these tools are viewed in their natural mathematical setting - the geometry of finite dimensions. This is because geometry clarifies the basic statistics and unifies the many aspects of analysing variance and regression.
+
+
+                ")
+item = Item.create(title: "The Completeness of Scientific Theories: On the Derivation of Empirical Indicators within a Theoretical Framework: The Case of Physical Geometry Edition 1", price: 279.00, img: "http://img2.imagesbn.com/p/9780792324751_p0_v2_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0792324757", published: "November 1993", publisher: "Springer Netherlands", author: "Martin Carrier,M. Carrier", overview: "
+                    The Completeness of Scientific Theories deals with the role of theories in measurement. Theories are employed in measurements in order to account for the operation of the instruments and to correct the raw data obtained. These observation theories thus guarantee the reliability of measurement procedures. In special cases a theory can be used as its own observation theory. In such cases it is possible, relying on the theory itself, to analyze the measuring procedures associated with theoretical states specified within its framework. This feature is called completeness. The book addresses the assets and liabilities of theories exhibiting this feature.
+ Chief among the prima-facie liabilities is a testability problem. If a theory that is supposed to explain certain measurement results at the same time provides the theoretical means necessary for obtaining these results, the threat of circularity arises. Closer investigation reveals that various circularity problems do indeed emerge in complete theories, but that these problems can generally be solved. Some methods for testing and confirming theories are developed and discussed.
+ The particulars of complete theories are addressed using a variety of theories from the physical sciences and psychology as examples. The example developed in greatest detail is general relativity theory, which exhibits an outstanding degree of completeness. In this context a new approach to the issue of the conventionality of physical geometry is pursued.
+ The book contains the first systematic analysis of completeness; it thus opens up new paths of research.
+ For philosophers of science working on problems of confirmation, theory-ladenness of evidence, empirical testability, and space—time philosophy (or students in these areas).
+
+
+                ")
+item = Item.create(title: "Reflections on Spacetime: Foundations, Philosophy, History Edition 1", price: 99.00, img: "http://img1.imagesbn.com/p/9780792337126_p0_v1_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0792337123", published: "August 1995", publisher: "Springer Netherlands", author: "Ulrich Majer (Editor),Heinz-Juergen Schmidt (Editor)", overview: "
+                    This book presents a collection of research papers, written by physicists, philosophers and historians of science who had participated in the Zentrum für interdisziplinäre Forschung (ZiF) during the academic year 1992/93 in order to discuss the nature and structure of spacetime as it is used in general relativity. All contributions focus on unsolved questions, such as the possibility of time machines, referential indeterminacy, the hole problem, and the conventional vs. empirical character of spacetime. These papers having a more historical colour deal with Einstein's view of general covariance and with the epistemological status of space(time) in the works of Carnap, Weyl and Hilbert, all of whom relate their position to Husserl's phenomenology, yet in fundamentally different ways.
+
+
+                ")
+item = Item.create(title: "Differential Geometry: Cartan's Generalization of Klein's Erlangen Program Edition 1", price: 79.95, img: "http://img2.imagesbn.com/p/9780387947327_p0_v1_s600.jpg", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387947329", published: "June 1997", publisher: "Springer New York", author: "R.W. Sharpe,S.S. Chern", overview: "
+                    Cartan geometries were the first examples of connections on a principal bundle. They seem to be almost unknown these days, in spite of the great beauty and conceptual power they confer on geometry. The aim of the present book is to fill the gap in the literature on differential geometry by the missing notion of Cartan connections. Although the author had in mind a book accessible to graduate students, potential readers would also include working differential geometers who would like to know more about what Cartan did, which was to give a notion of \"espaces généralisés\" (= Cartan geometries) generalizing homogeneous spaces (= Klein geometries) in the same way that Riemannian geometry generalizes Euclidean geometry. In addition, physicists will be interested to see the fully satisfying way in which their gauge theory can be truly regarded as geometry.
+
+
+                ")
+item = Item.create(title: "Combinatorial Convexity and Algebraic Geometry Edition 1", price: 79.95, img: "http://img1.imagesbn.com/p/9780387947556_p0_v1_s600.JPG", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387947558", published: "October 1996", publisher: "Springer New York", author: "Gunter Ewald,G]nter Ewald,Ga1/4nter Ewald", overview: "
+                    This text provides an introduction to the theory of convex polytopes and polyhedral sets, to algebraic geometry and to the fascinating connections between these fields: the theory of toric varieties (or torus embeddings).
+The fist part of the book contains an introduction to the theory of polytopes - one of the most important parts of classical geometry in n-dimensional Euclidean space. Since the discussion here is independent of any applications to algebraic geometry, it would also be suitable for a course in geometry. This part also provides large parts of the mathematical background of linear optimization and of the geometrical aspects in Computer Science. The second part introduces toric varieties in an elementary way, building on the concepts of combinatorial geometry introduced in the first part. Many of the general concepts of algebraic geometry arise in this treatment and can be dealt with concretely. This part of the book can thus serve for a one-semester introduction to algebraic geometry, with the first part serving as a reference for combinatorial geometry.
+
+
+                ")
+item = Item.create(title: "Vectors And Tensors In Engineering And Physics Edition 2", price: 58.00, img: "http://img2.imagesbn.com/p/9780813340807_p0_v1_s600.jpg", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0813340802", published: "January 2003", publisher: "Westview Press", author: "Donald Danielson", overview: "
+                    Vectors and Tensors in Engineering and Physics develops the calculus of tensor fields and uses this mathematics to model the physical world. This new edition includes expanded derivations and solutions, and new applications. The book provides equations for predicting: the rotations of gyroscopes and other axisymmetric solids, derived from Euler's equations for the motion of rigid bodies; the temperature decays in quenched forgings, derived from the heat equation; the deformed shapes of twisted rods and bent beams, derived from the Navier equations of elasticity; the flow fields in cylindrical pipes, derived from the Navier-Stokes equations of fluid mechanics; the trajectories of celestial objects, derived from both Newton's and Einstein's theories of gravitation; the electromagnetic fields of stationary and moving charged particles, derived from Maxwell's equations; the stress in the skin when it is stretched, derived from the mechanics of curved membranes; the effects of motion and gravitation upon the times of clocks, derived from the special and general theories of relativity. The book also features over 100 illustrations, complete solutions to over 400 examples and problems, Cartesian components, general components, and components-free notations, lists of notations used by other authors, boxes to highlight key equations, historical notes, and an extensive bibliography.
+
+                ")
+item = Item.create(title: "Infinite Dimensional Morse Theory and Multiple Solution Problems Edition 1", price: 199.00, img: "http://img2.imagesbn.com/p/9780817634513_p0_v1_s600.jpg", cat_id: 1, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0817634517", published: "January 1992", publisher: "Birkhauser Verlag", author: "K.C. Chang,K. C. Chang", overview: "BooknewsChang treats Morse theory as a tool to study multiple solutions to different equations arising in the calculus of variations. Among the topics he covers are basic Morse theory and its various extensions; minimax principles in Morse theory; and applications of semilinear boundary value problems, periodic solutions of Hamiltonian systems, and harmonic maps. In a self-contained appendix, Chang presents Witten's proof of Morse inequalities. Annotation c. Book News, Inc., Portland, OR (booknews.com)
+
+")
+item = Item.create(title: "Elementary Linear Algebra (Student Solution Manual) Edition 7", price: 34.75, img: "http://img2.imagesbn.com/p/9780471306221_p0_v1_s600.gif", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0471306223", published: "January 1994", publisher: "Wiley, John & Sons, Incorporated", author: "Howard Anton", overview: "
+                    Presents the fundamentals of linear algebra in the clearest possible way, examining basic ideas by means of computational examples and geometrical interpretation. This substantial revision includes greater focus on relationships between concepts, smoother transition to abstraction, early exposure to linear transformations and eigenvalues, more emphasize on visualization, new material on least squares and QR-decomposition and a greater number of proofs. Exercise sets begin with routine drill problems, progress to problems with more substance and conclude with theoretical problems.
+
+                ")
+item = Item.create(title: "Elementary Linear Algebra Edition 7", price: 89.75, img: "http://img1.imagesbn.com/p/9780471587422_p0_v1_s600.gif", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0471587427", published: "December 1993", publisher: "Wiley, John & Sons, Incorporated", author: "Howard Anton", overview: "
+                    Presents the fundamentals of linear algebra in the clearest possible way, examining basic ideas by means of computational examples and geometrical interpretation. This substantial revision includes greater focus on relationships between concepts, smoother transition to abstraction, early exposure to linear transformations and eigenvalues, more emphasize on visualization, new material on least squares and QR-decomposition and a greater number of proofs. Exercise sets begin with routine drill problems, progress to problems with more substance and conclude with theoretical problems.
+
+                ")
+item = Item.create(title: "Algebra Edition 1", price: 32.95, img: "http://img2.imagesbn.com/p/9780817636777_p0_v2_s600.JPG", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0817636773", published: "July 2003", publisher: "Birkhauser Verlag", author: "I.M. Gelfand,Alexander Shen,A. Shen (With)", overview: "
+                    The need for improved mathematics education at the high school and college levels has never been more apparent than in the 1990's. As early as the 1960's, I.M. Gelfand and his colleagues in the USSR thought hard about this same question and developed a style for presenting basic mathematics in a clear and simple form that engaged the curiosity and intellectual interest of thousands of high school and college students. These same ideas, this development, are available in the following books to any student who is willing to read, to be stimulated, and to learn. 
+ \"Algebra\" is an elementary algebra text from one of the leading mathematicians of the world -- a major contribution to the teaching of the very first high school level course in a centuries old topic -- refreshed by the author's inimitable pedagogical style and deep understanding of mathematics and how it is taught and learned. 
+This text has been adopted at: 
+Holyoke Community College, Holyoke, MA * University of Illinois in Chicago, Chicago, IL * University of Chicago, Chicago, IL * California State University, Hayward, CA * Georgia Southwestern College, Americus, GA * Carey College, Hattiesburg, MS
+
+                ")
+item = Item.create(title: "Strings, Conformal Fields, and M-Theory Edition 2", price: 159.00, img: "http://img1.imagesbn.com/p/9780387988924_p0_v2_s600.JPG", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387988920", published: "December 1999", publisher: "Springer New York", author: "Michio Kaku", overview: "
+                    Building on the foundations laid in his Introduction to Superstrings and M Theory, Professor Kaku discusses such topics as the classification of conformal string theories, knot theory, the Yang-Baxter relation, quantum groups, and the insights into 11-dimensional strings recently obtained from M-theory. New chapters discuss such topics as Seiberg-Witten theory, M theory and duality, and D-branes. Throughout, the author conveys the vitality of the current research and places readers at its forefront. Several chapters reviewing the fundamentals of string theory, making the presentation of the material self-contained while keeping overlap with the earlier book to a minimum.
+
+
+                ")
+item = Item.create(title: "The Maple Book Edition 1", price: 75.95, img: "http://img2.imagesbn.com/p/9781584882329_p0_v2_s600.JPG", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1584882328", published: "November 2001", publisher: "Taylor & Francis", author: "Frank Garvan", overview: "
+                    Maple is a very powerful computer algebra system used by students, educators, mathematicians, statisticians, scientists, and engineers for doing numerical and symbolic computations. Greatly expanded and updated from the author's MAPLE V Primer, The MAPLE Book offers extensive coverage of the latest version of this outstanding software package, MAPLE 7.0
+The MAPLE Book serves both as an introduction to Maple and as a reference. Organized according to level and subject area of mathematics, it first covers the basics of high school algebra and graphing, continues with calculus and differential equations then moves on to more advanced topics,
+ such as linear algebra, vector calculus, complex analysis, special functions, group theory, number theory and combinatorics. The MAPLE Book includes a tutorial for learning the Maple programming language. Once readers have learned how to program, they will appreciate the real power of Maple.
+The convenient format and straightforward style of The MAPLE Book let users proceed at their own pace, practice with the examples,
+ experiment with graphics, and learn new functions as they need them. All of the Maple commands used in the book are available on the Internet, as are links to various other files referred to in the book. Whatever your level of expertise, you'll want to keep The MAPLE Book next to your computer.
+
+
+                ")
+item = Item.create(title: "Five Equations That Changed the World: The Power and Poetry of Mathematics Edition 1", price: 16.00, img: "http://img2.imagesbn.com/p/9780786881871_p0_v1_s600.JPG", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0786881879", published: "September 1996", publisher: "Hyperion", author: "Michael Guillen,Guillen", overview: "
+                    A Publishers Weekly best book of 1995! 
+Dr. Michael Guillen, known to millions as the science editor of ABC's Good Morning America, tells the fascinating stories behind five mathematical equations.
+As a regular contributor to daytime's most popular morning news show and an instructor at Harvard University, Dr. Michael Guillen has earned the respect of millions as a clear and entertaining guide to the exhilarating world of science and mathematics.
+Now Dr. Guillen unravels the equations that have led to the inventions and events that characterize the modern world, one of which -- Albert Einstein's famous energy equation, E=mc2 -- enabled the creation of the nuclear bomb. Also revealed are the mathematical foundations for the moon landing, airplane travel, the electric generator -- and even life itself.
+Praised by Publishers Weekly as \"a wholly accessible, beautifully written exploration of the potent mathematical imagination,\" and named a Best Nonfiction Book of 1995, the stories behind The Five Equations That Changed the World, as told by Dr. Guillen, are not only chronicles of science, but also gripping dramas of jealousy, fame, war, and discovery.
+
+
+                        From the popular science editor of ABC's Good Morning America, this is the story behind five mathematical equations that have shaped the modern world. As told by Dr. Guillen, the stories behind the creation of these formulas are not only chronicles of science, but also gripping dramas of jealousy, fame, war, and discovery. Author media.
+
+                    
+                ")
+item = Item.create(title: "Physics: AlgebraTrig (with CD-ROM) Edition 3", price: 336.95, img: "http://img1.imagesbn.com/p/9780534377298_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0534377297", published: "July 2002", publisher: "Cengage Learning", author: "Eugene Hecht", overview: "
+                    In Hecht's groundbreaking book, you'll find real-life applications, an unparalleled art and photography program, a presentation that anticipates students' questions, and an approach that emphasizes contemporary physics while interweaving historical perspectives. Hecht's coverage of classical physics is clear and insightful. He shows students how 21st-century physics illuminates the classical topics of each chapter, adding excitement to the subject matter. Over 1,300 illustrations make it possible for students to visualize a diversity of physical phenomena. Many of these are multi-frame, sequential drawings allowing students to comprehend the temporal unfolding of complex events. A selection of sketch art teaches students how to create problem-solving diagrams. This new edition of the text was designed to aggressively address the issue of problem solving for students (guided by contemporary physics education research). To this end Hecht has provided not only his approach to the five-step problem-solving framework but also a wide range of new problems and solutions specifically designed to build student capability and confidence.
+
+
+                ")
+item = Item.create(title: "Essential Algebra for Chemistry Students Edition 2", price: 52.95, img: "http://img2.imagesbn.com/p/9780495013273_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0495013277", published: "January 2005", publisher: "Cengage Learning", author: "David W. Ball,Gabriela C. Weaver,Paul M. Treichel,John C. Kotz", overview: "
+                    Available packaged with any CENGAGE textbook, this short book is intended for students who lack confidence and/or competency in their essential mathematics skills necessary to survive in general chemistry. Each chapter focuses on a specific type of skill and has worked-out examples to show how these skills translate to chemical problem solving. This book is also available for students to purchase separately at www.CENGAGEbrain.com.
+
+
+                ")
+item = Item.create(title: "Linear Multivariable Control Edition 1", price: 730.00, img: "http://img2.imagesbn.com/p/9780471928591_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0471928593", published: "September 1991", publisher: "Wiley", author: "A. I. G. Vardulakis,Vardulakis", overview: "
+                    Details the basic theory of polynomial and fractional representation methods for algebraic analysis and synthesis of linear multivariable control systems. It also serves as a self-contained treatise of the mathematical theory so that results and techniques of the &'grave;state space approaches'' for regular and singular systems appear as special cases of a general theory covering the wider class of PMDs of linear systems. Among the topics covered are: real rational vector spaces and rational matrices, pole and zero structure of rational matrices at infinity, proper and omega stable rational fuctions and matrices.
+
+
+                ")
+item = Item.create(title: "Conformal Field Theory Edition 1", price: 175.00, img: "http://img2.imagesbn.com/p/9780387947853_p0_v1_s600.JPG", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "038794785", published: "September 2010", publisher: "Springer New York", author: "Philippe Francesco,Pierre Mathieu,David Senechal", overview: "
+                    Filling an important gap in the literature, this comprehensive text develops conformal field theory from first principles. The treatment is self-contained, pedagogical, and exhaustive, and includes a great deal of background material on quantum field theory, statistical mechanics, Lie algebras and affine Lie algebras. The many exercises, with a wide spectrum of difficulty and subjects, complement and in many cases extend the text. The text is thus not only an excellent tool for classroom teaching but also for individual study. Intended primarily for graduate students and researchers in theoretical high-energy physics, mathematical physics, condensed matter theory, statistical physics, the book will also be of interest in other areas of theoretical physics and mathematics. It will prepare the reader for original research in this very active field of theoretical and mathematical physics.
+
+                ")
+item = Item.create(title: "Algorithmic Algebra Edition 1", price: 89.95, img: "http://img1.imagesbn.com/p/9780387940908_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387940901", published: "September 1993", publisher: "Springer New York", author: "Bhubaneswar Mishra", overview: "
+                    Algorithmic Algebra studies some of the main algorithmic tools of computer algebra, covering such topics as Gröbner bases, characteristic sets, resultants and semialgebraic sets. The main purpose of the book is to acquaint advanced undergraduate and graduate students in computer science, engineering and mathematics with the algorithmic ideas in computer algebra so that they could do research in computational algebra or understand the algorithms underlying many popular symbolic computational systems: Mathematica, Maple or Axiom, for instance. Also, researchers in robotics, solid modeling, computational geometry and automated theorem proving community may find it useful as symbolic algebraic techniques have begun to play an important role in these areas. The book, while being self-contained, is written at an advanced level and deals with the subject at an appropriate depth. The book is accessible to computer science students with no previous algebraic training. Some mathematical readers, on the other hand, may find it interesting to see how algorithmic constructions have been used to provide fresh proofs for some classical theorems. The book also contains a large number of exercises with solutions to selected exercises, thus making it ideal as a textbook or for self-study.
+
+                ")
+item = Item.create(title: "Clifford Algebras and Spinors Edition 2", price: 124.00, img: "http://img2.imagesbn.com/p/9780521005517_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0521005515", published: "June 2006", publisher: "Cambridge University Press", author: "Pertti Lounesto,J. W. S. Cassels (Editor),N. J. Hitchin (Editor)", overview: "
+                    This second edition of a popular and unique introduction to Clifford algebras and spinors has three new chapters. The beginning chapters cover the basics: vectors, complex numbers and quaternions are introduced with an eye on Clifford algebras. The next chapters, which will also interest physicists, include treatments of the quantum mechanics of the electron, electromagnetism and special relativity. A new classification of spinors is introduced, based on bilinear covariants of physical observables. This reveals a new class of spinors, residing among the Weyl, Majorana and Dirac spinors. Scalar products of spinors are categorized by involutory anti-automorphisms of Clifford algebras. This leads to the chessboard of automorphism groups of scalar products of spinors. On the algebraic side, Brauer/Wall groups and Witt rings are discussed, and on the analytic, Cauchy's integral formula is generalized to higher dimensions.
+
+
+                ")
+item = Item.create(title: "Earth Algebra, College Algebra with Applications to Environmental Issues Edition 2", price: 93.00, img: "http://img1.imagesbn.com/p/9780321015976_p0_v1_s600.gif", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0321015975", published: "August 1998", publisher: "Addison-Wesley", author: "Christopher Schaufele,Stanle Sims,Marlene Sims,Nancy Zumoff,Stanley Sims", overview: "
+                    This college algebra text focuses on modeling (primarily by curve fitting) real data concerning environmental issues, decision making, reading, writing, and oral reporting. Students work in small groups with graphing calculators or appropriate technology.
+
+                ")
+item = Item.create(title: "Why Americans Hate Welfare: Race, Media, and the Politics of Antipoverty Policy Edition 1", price: 21.00, img: "http://img2.imagesbn.com/p/9780226293653_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0226293653", published: "October 2000", publisher: "University of Chicago Press", author: "MartinGilens", overview: "
+                    
+Tackling one of the most volatile issues in contemporary politics, Martin Gilens's work punctures myths and misconceptions about welfare policy, public opinion, and the role of the media in both. Why Americans Hate Welfare shows that the public's views on welfare are a complex mixture of cynicism and compassion; misinformed and racially charged, they nevertheless reflect both a distrust of welfare recipients and a desire to do more to help the \"deserving\" poor.
+\"With one out of five children currently living in poverty and more than 100,000 families with children now homeless, Gilens's book is must reading if you want to understand how the mainstream media have helped justify, and even produce, this state of affairs.\" —Susan Douglas, The Progressive
+\"Gilens\'s well-written and logically developed argument deserves to be taken seriously.\" —Choice
+\"A provocative analysis of American attitudes towards 'welfare.'. . . [Gilens] shows how racial stereotypes, not white self-interest or anti-statism, lie at the root of opposition to welfare programs.\" -Library Journal
+
+
+                ")
+item = Item.create(title: "Selected Papers on Algebra and Topology by Garrett Birkhoff Edition 1", price: 409.00, img: "http://img2.imagesbn.com/p/9780817631147_p0_v1_s600.jpg", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0817631143", published: "January 1987", publisher: "Birkhauser Verlag", author: "J.S. Oliveira (Editor),G.-C. Rota (Editor)", overview: "I. Lattices.- [3] On the Combination of Subalgebras.- [3a] Note on the Paper “On the Combination of Subalgebras”.- [4] Applications of Lattice Algebra.- [6] On the Lattice Theory of Ideals.- [7] Ideals in Algebraic Rings.- [12] Combinatorial Relations in Projective Geometries.- [16] Abstract Linear Dependence and Lattices.- [21] The Logic of Quantum Mechanics (with J. von Neumann).- [36] A Characterization of Boolean Algebras (with M. Ward).- [40] Neutral Elements in General Lattices.- [51] Distributive Postulates for Systems Like Boolean Algebras (with G. D. Birkhoff).- [54] A Ternary Operation in Distributive Lattices (with S. A. Kiss).- II. Universal Algebra.- [15] On the Structure of Abstract Algebras.- [47] Subdirect Unions in Universal Algebra.- [49] Universal Algebra.- [154] Heterogeneous Algebras (with J. D. Lipson).- [174] Universal Algebra and Automata (with J. D. Lipson).- [179] Note on Universal Topological Algebra.- III. Topology.- [8] The Topology of Transformation-Sets.- [24] Moore-Smith Convergence in General Topology.- [25] The Meaning of Completeness.- [28] An Extended Arithmetic.- [29] Rings of Sets.- [43] Generalized Arithmetic.- [58] Representations of Lattices by Sets (with O. Frink, Jr.).- [118] A New Interval Topology for Dually Directed Sets.- IV. Lie Groups and Lie Algebras.- [19] On the Order of Groups of Automorphisms (with P. Hall).- [20] A Note on Topological Groups.- [22] Lie Groups Simply Isomorphic with No Linear Group.- [26] Continuous Groups and Linear Spaces.- [27] Representability of Lie Algebras and Lie Groups by Matrices.- [32] Analytical Groups.- [60] Representation of Jordan and Lie Algebras (with P. M. Whitman).- V. Lattice-Ordered Algebraic Structures.- [33] Dependent Probabilities and Spaces (L).- [42] Lattice-Ordered Groups.- [48] Lattice-Ordered Lie Groups.- [91] Lattice-Ordered Rings (with R. S. Pierce).- VI. History of Algebra.- [160] Current Trends in Algebra.- [169] The Role of Modern Algebra in Computing.- [182a] The Rise of Modern Algebra to 1936.- [182b] The Rise of Modern Algebra, 1936 to 1950.- Permissions.
+
+")
+item = Item.create(title: "Why Americans Hate Welfare: Race, Media, and the Politics of Antipoverty Policy Edition 1", price: 25.00, img: "http://img1.imagesbn.com/p/9780226293646_p0_v1_s600.gif", cat_id: 2, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0226293645", published: "May 1999", publisher: "University of Chicago Press", author: "MartinGilens", overview: "
+                    Drawing on surveys of public attitudes and analyses of more than forty years of television and newsmagazine stories on poverty, Gilens demonstrates how public opposition to welfare is fed by a potent combination of racial stereotypes and misinformation about the true nature of America's poor. But white Americans don't oppose welfare simply because they think it benefits blacks; rather, they think it benefits \"undeserving\" blacks who would rather live off the government than work, a perception powerfully fueled by the media's negative coverage of the black poor. The public's views on welfare, Gilens shows, are a complex mixture of cynicism and compassion; misinformed and racially charged, they nevertheless reflect both a distrust of welfare recipients and a desire to do more to help the \"deserving\" poor.
+
+                ")
+item = Item.create(title: "A First Look at Perturbation Theory Edition 2", price: 11.95, img: "http://img1.imagesbn.com/p/9780486675510_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0486675513", published: "July 1997", publisher: "Dover Publications", author: "James G. Simmonds,Physics,James E. Mann (With)", overview: "
+                    Undergraduates in engineering and the physical sciences receive a thorough introduction to perturbation theory in this useful and accessible text. Students discover methods for obtaining an approximate solution of a mathematical problem by exploiting the presence of a small, dimensionless parameter — the smaller the parameter, the more accurate the approximate solution. Knowledge of perturbation theory offers a twofold benefit: approximate solutions often reveal the exact solution's essential dependence on specified parameters; also, some problems resistant to numerical solutions may yield to perturbation methods. In fact, numerical and perturbation methods can be combined in a complementary way.
+The text opens with a well-defined treatment of finding the roots of polynomials whose coefficients contain a small parameter. Proceeding to differential equations, the authors explain many techniques for handling perturbations that reorder the equations or involve an unbounded independent variable. Two disparate practical problems that can be solved efficiently with perturbation methods conclude the volume.
+Written in an informal style that moves from specific examples to general principles, this elementary text emphasizes the \"why\" along with the \"how\"; prerequisites include a knowledge of one-variable calculus and ordinary differential equations. This newly revised second edition features an additional appendix concerning the approximate evaluation of integrals.
+
+
+                ")
+item = Item.create(title: "Finite Mathematics: for Business, Economics, Life Sciences and Social Sciences (Barnett Series) Edition 12", price: 190.33, img: "http://img1.imagesbn.com/p/9780321614018_p0_v1_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0321614011", published: "January 2010", publisher: "Pearson", author: "Raymond A. Barnett,Michael R. Ziegler,Karl E. Byleen", overview: "
+                    This accessible text is designed to help readers help themselves to excel. The content is organized into two parts: (1) A Library of Elementary Functions (Chapters 1—2) and (2) Finite Mathematics (Chapters 3—11). The book’s overall approach, refined by the authors’ experience with large sections of college freshmen, addresses the challenges of teaching and learning when readers’ prerequisite knowledge varies greatly. Reader-friendly features such as Matched Problems, Explore & Discuss questions, and Conceptual Insights, together with the motivating and ample applications, make this text a popular choice for today’s students and instructors.
+
+
+                ")
+item = Item.create(title: "Design of Experiments: Statistical Principles of Research Design and Analysis Edition 2", price: 319.95, img: "http://img1.imagesbn.com/p/9780534368340_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0534368344", published: "August 1999", publisher: "Cengage Learning", author: "Robert O. Kuehl,R. O. Kuehl", overview: "
+                    Robert Kuehl's DESIGN OF EXPERIMENTS, Second Edition, prepares students to design and analyze experiments that will help them succeed in the real world. Kuehl uses a large array of real data sets from a broad spectrum of scientific and technological fields. This approach provides realistic settings for conducting actual research projects. Next, he emphasizes the importance of developing a treatment design based on a research hypothesis as an initial step, then developing an experimental or observational study design that facilitates efficient data collection. In addition to a consistent focus on research design, Kuehl offers an interpretation for each analysis.
+
+
+                ")
+item = Item.create(title: "Theory and Applications of Numerical Analysis Edition 2", price: 95.95, img: "http://img2.imagesbn.com/p/9780125535601_p0_v1_s600.gif", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0125535600", published: "October 1996", publisher: "Elsevier Science", author: "G. M. Phillips,Peter J. Taylor (Editor)", overview: "
+                    This long-awaited Second Edition of Phillips and Taylor's highly successful text book provides a comprehensive introduction to numerical analysis. Over the two decades since the First Edition appeared there has been a dramatic explosion in computing power, from desk machine to personal computer, developments which have greatly enhanced the sheer fun of studying numerical analysis. The Second Edition builds on this, giving more emphasis to algorithms and encouraging their implementation on the pc.
+This text book is not simply a 'recipe book' of numerical methods; it is one for serious students and researchers who want to understand the underlying theory, solve real numerical problems and write programs of their own.
+
+
+                        Audience: Advanced undergraduate students in math, computer science, engineering and physical sciences.
+
+                    
+                ")
+item = Item.create(title: "Finite Mathematics for Business Economics, Life Sciences and Social Sciences Edition 10", price: 124.00, img: "http://img1.imagesbn.com/p/9780131139626_p0_v1_s600.jpg", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0131139622", published: "March 2004", publisher: "Pearson", author: "Raymond A. Barnett,Karl Byleen,Michael Ziegler,Karl E. Byleen,Michael R. Ziegler", overview: "
+                    Designed to be accessible, this book develops a thorough, functional understanding of mathematical concepts in preparation for their application in other areas. Coverage concentrates on developing concepts and ideas followed immediately by developing computational skills and problem solving. This book features a collection of important topics from mathematics of finance, linear algebra, linear programming, probability, and statistics, with an emphasis on cross-discipline principles and practices. For the professional who wants to acquire essential mathematical tools for application in business, economics, and the life and social sciences.
+
+                ")
+item = Item.create(title: "Nonclassical Thermoelastic Problems in Nonlinear Dynamics of Shells: Applications of the Bubnov-Galerkin and Finite Difference Numerical Methods Edition 1", price: 149.00, img: "http://img2.imagesbn.com/p/9783540438809_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "3540438807", published: "December 2002", publisher: "Springer Berlin Heidelberg", author: "Jan Awrejcewicz,Vadim A. Krysko,J. Awrejcewicz,Vadim A. Krys'ko", overview: "
+                    The authors made every effort to keep the text intelligible for both practitioners and graduate students, although they offer a rigorous treatment of both purely mathematical and numerical approaches presented so that the reader can understand, analyse and track the nonlinear dynamics of spatial systems (shells) with thermomechanical behaviours.
+
+                ")
+item = Item.create(title: "Toward an Anthropology of Graphing: Semiotic and Activity-Theoretic Perspectives Edition 1", price: 209.00, img: "http://img1.imagesbn.com/p/9781402013744_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1402013744", published: "July 2003", publisher: "Springer Netherlands", author: "W.M. Roth,W. M. Roth", overview: "
+                    This volume presents the results of several studies involving scientists and technicians. The author describes and analyses the interpretation scientists volunteered given graphs that had been culled from an introductory course and textbook in ecology. He next reports on graph usage in three different workplaces based on his ethnographic research among scientists and technicians.
+
+
+                ")
+item = Item.create(title: "Toward an Anthropology of Graphing: Semiotic and Activity-Theoretic Perspectives Edition 1", price: 84.95, img: "http://img1.imagesbn.com/p/9781402013768_p0_v1_s600.jpg", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1402013760", published: "July 2003", publisher: "Springer Netherlands", author: "W.M. Roth", overview: "
+                    This volume presents the results of several studies involving scientists and technicians. The author describes and analyses the interpretation scientists volunteered given graphs that had been culled from an introductory course and textbook in ecology. He next reports on graph usage in three different workplaces based on his ethnographic research among scientists and technicians.
+
+
+                ")
+item = Item.create(title: "Numerical Methods for Physics (2nd Edition) Edition 2", price: 170.40, img: "http://img1.imagesbn.com/p/9780139067440_p0_v1_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0139067442", published: "July 1999", publisher: "Addison-Wesley", author: "Alejandro Garcia", overview: "
+                     This book covers a broad spectrum of the most important, basic numerical and analytical techniques used in physics —including ordinary and partial differential equations, linear algebra, Fourier transforms, integration and probability. Now language-independent.  Features attractive new 3-D graphics. Offers new and significantly revised exercises. Replaces FORTRAN listings with C++, with updated versions of the FORTRAN programs now available on-line. Devotes a third of the book to partial differential equations—e.g., Maxwell's equations, the diffusion equation, the wave equation, etc. This numerical analysis book is designed for the programmer with a physics background.
+
+
+                ")
+item = Item.create(title: "Dynamic Graphics for Statistics Edition 1", price: 210.00, img: "http://img1.imagesbn.com/p/9780534091446_p0_v1_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "053409144", published: "July 1988", publisher: "Taylor & Francis", author: "Cleveland", overview: "
+                    The essential characteristic of a dynamic graphical method is the direct manipulation of elements of a graph on a computer screen, which in high-performance implementations, the elements change virtually instantaneously on the screen. This book contains a collection of papers about dynamic graphics dating from the late 1960s to 1988. Although technology has advanced considerably, the fundamental ideas about basic graphical principles and data-analytic goals are still relevant today.
+
+
+                ")
+item = Item.create(title: "Computer-Aided Analysis of Difference Schemes for Partial Differential Equations Edition 1", price: 214.95, img: "http://img1.imagesbn.com/p/9780471129462_p0_v1_s600.jpg", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0471129461", published: "April 1996", publisher: "Wiley", author: "Victor G. Ganzha,E. V. Vorozhtsov,Evgenii V. Vorozhtsov", overview: "
+                    A topical and comprehensive reference containing applications of computerized symbolic manipulations for analyzing the stability of a wide range of diverse schemes commonly used for solving problems in gas dynamics, catastrophe theory, heat and mass transfer. Provides basic mathematical formula for implementing each algorithm and all formulas are presented on a variety of computer operating systems using global algebraic symbolic languages such as MAPLE, MATHEMATICA and REDUCE. Features scores of illustrations and examples.
+
+                ")
+item = Item.create(title: "Periodic Motions Edition 1", price: 109.00, img: "http://img1.imagesbn.com/p/9781441928382_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1441928383", published: "December 2010", publisher: "Springer New York", author: "Miklos Farkas", overview: "
+                    A summary of the most important results in the existence and stability of periodic solutions for ordinary differential equations achieved in the twentieth century, along with relevant applications. It differs from standard classical texts on non-linear oscillations in that it also contains linear theory; theorems are proved with mathematical rigor; and, besides the classical applications such as Van der Pol's, Linard's and Duffing's equations, most applications come from biomathematics.
+For graduate and Ph.D students in mathematics, physics, engineering, and biology, and as a standard reference for use by researchers in the field of dynamical systems and their applications.
+
+
+                ")
+item = Item.create(title: "Graphing Statistics & Data Edition 1", price: 72.95, img: "http://img1.imagesbn.com/p/9780761905998_p0_v1_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0761905995", published: "June 1996", publisher: "SAGE Publications", author: "Anders Wallgren,Britt Wallgren,Rolf Persson,Ulf Jorner,Jan-Aage Haaland", overview: "
+                    How can you present or organize your statistical or numerical data so that it is accessible and meaningful for your readers or audience?
+Graphing Statistics & Data introduces the technique and art of producing good charts. Carefully written with many examples and illustrations, the book begins with an introduction to the building blocks of charts (axes, scales, and patterns) and then describes each step involved in creating effective and easy-to-read charts. Throughout the book, the authors use numerous examples of real data as a basis of the maps and charts. They also include a chapter that shows step-by-step how to work from the data to the finished chart. Practical textual information serves as a guide for executing each stage of preparing a chart or graph.
+
+
+                ")
+item = Item.create(title: "Computational Techniques for Fluid Dynamics 1: Fundamental and General Techniques Edition 2", price: 89.95, img: "http://img2.imagesbn.com/p/9783540530589_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "3540530584", published: "April 1991", publisher: "Springer Berlin Heidelberg", author: "Clive A.J. Fletcher,Clive A. J. Fletcher", overview: "
+                    This well-known 2-volume textbook provides senior undergraduate and postgraduate engineers, scientists and applied mathematicians with the specific techniques, and the framework to develop skills in using the techniques in the various branches of computational fluid dynamics.Volume 1 systematically develops fundamental computational techniques, partial differential equations including convergence, stability and consistency and equation solution methods. A unified treatment of finite difference, finite element, finite volume and spectral methods, as alternative means of discretion, is emphasized. For the second edition the author also compiled a separately available manual of solutions to the many exercises to be found in the main text.
+
+
+                ")
+item = Item.create(title: "Spatio-Temporal Pattern Formation: With Examples from Physics, Chemistry, and Materials Science Edition 1", price: 139.00, img: "http://img2.imagesbn.com/p/9780387948577_p0_v2_s600.JPG", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387948570", published: "December 1996", publisher: "Springer New York", author: "Daniel Walgraef,D. Walgraef", overview: "
+                    This book provides an interdisciplinary presentation of the current knowledge of pattern formation in complex system, with sufficiently many details, tools, and concrete examples to be useful for the graduate student or scientist entering this area of research.
+
+
+                ")
+item = Item.create(title: "A Practical Guide to Splines Edition 1", price: 99.00, img: "http://img2.imagesbn.com/p/9780387953663_p0_v1_s600.jpg", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0387953663", published: "November 2001", publisher: "Springer New York", author: "Carl de Boor", overview: "
+                    This book is based on the author’s experience with calculations involving polynomial splines, presenting those parts of the theory especially useful in calculations and stressing the representation of splines as weighted sums of B-splines. The B-spline theory is developed directly from the recurrence relations without recourse to divided differences. This reprint includes redrawn figures, and most formal statements are accompanied by proofs.
+
+
+                ")
+item = Item.create(title: "Invariant Manifolds for Physical and Chemical Kinetics Edition 1", price: 199.00, img: "http://img1.imagesbn.com/p/9783540226840_p0_v1_s600.jpg", cat_id: 4, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "3540226842", published: "March 2005", publisher: "Springer Berlin Heidelberg", author: "Alexander N. Gorban,Iliya V. Karlin,A. N. Gorban'", overview: "
+                    By bringing together various ideas and methods for extracting the slow manifolds the authors show that it is possible to establish a more macroscopic description in nonequilibrium systems. The book treats slowness as stability. A unifying geometrical viewpoint of the thermodynamics of slow and fast motion enables the development of reduction techniques, both analytical and numerical.
+
+                ")
+item = Item.create(title: "Research Design: Qualitative, Quantitative, and Mixed Methods Approaches Edition 4", price: 78.00, img: "http://img2.imagesbn.com/p/9781452226101_p0_v2_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1452226105", published: "March 2013", publisher: "SAGE Publications", author: "John W. Creswell", overview: "
+                    "'Creswell''s Research Design is an accessible and useful book that stimulates students through walk through experiences, use of exercises, and production of actual writing samples. It is a book that models the types of issues that best suit different approaches and allows students to understand when to use mixed methods. Furthermore, its focus on theory and paradigms is done in a way that helps students decode their meaning."
+--MARTHA MONTERO-SIEBURTH, University of Massachusetts, Boston
+"One of the most formidable challenges of research design is stating your purpose. Creswell''s approach takes the guesswork out of the process.'"
+--STEVE GUERRIERO, Organization & Management, Antioch New England Graduate School
+The Second Edition of the bestselling Research Design: Qualitative, Quantitative, and Mixed Methods Approaches offers a unique comparison of three key approaches to inquiry. This comparison begins with preliminary consideration of knowledge claims for all three approaches, a review of the literature, and reflections about the importance of writing and ethics in scholarly inquiry. The book also addresses the key elements of the process of research: writing an introduction; stating a purpose for the study; identifying research questions and hypotheses; using theory; defining, delimiting and stating the significance of the study; and advancing methods and procedures for data collection and analysis.
+Key Features:
+Provides a clear presentation of how to implement a mixed methods design in your proposal or plan as well as show how to implementqualitative and quantitative approaches
+Presents the ethical issues that may arise in quantitative, qualitative and mixed methods studies
+Offers extensive writing tips to help get your research plan started in the right direction
+Contains the latest developments in qualitative inquiry--including advocacy, participatory, and emancipatory approaches
+This book is ideal for readers who seek assistance in designing a full research study or planning a proposal for a scholarly journal article, dissertation or thesis. The book is an invaluable reference on the basics of research design as well as an effective text for graduate courses in Research Methods, Research Design, and related topics. The book serves a broad audience of social and human scientists in fields of marketing, management, criminal justice, psychology, sociology, K-12 education, higher and post-secondary education, nursing, health sciences, urban studies, and family research.
+ 
+Describes the purpose statement/the use of a theory/combined qualitative & quantitative designs/scholarly writing/etc.
+
+                    
+                ")
+item = Item.create(title: "Statistics for The Behavioral and Social Sciences Edition 5", price: 178.80, img: "http://img2.imagesbn.com/p/9780205797257_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0205797253", published: "July 2010", publisher: "Pearson", author: "Arthur Aron Ph.D.,Elliot Coups Ph.D.,Elaine N. Aron Ph.D.", overview: "
+                    For one-quarter/semester courses that focus on the basics in statistics or combine statistics with research methods.
+The fifth edition of Statistics for the Behavioral and Social Sciences builds off an already well-established approach - emphasizing the intuitive, deemphasizing the mathematical, and explaining everything in direct, simple language - but also goes beyond these principles to further student understanding. By using definitional formulas to emphasize the concepts of statistics, rather than rote memorization, students work problems in a way that keeps them constantly aware of the underlying logic of what they are doing.
+
+
+                ")
+item = Item.create(title: "Essential Mathematics and Statistics for Science Edition 2", price: 186.75, img: "http://img2.imagesbn.com/p/9780470694497_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0470694491", published: "June 2009", publisher: "Wiley", author: "Graham Currell,Antony Dowman", overview: "
+                    This book is a completely revised and updated version of this invaluable text which allows science students to extend necessary skills and techniques, with the topics being developed through examples in science which are easily understood by students from a range of disciplines. The introductory approach eases students into the subject, progressing to cover topics relevant to first and second year study and support data analysis for final year projects.
+The revision of the material in the book has been matched, on the accompanying website, with the extensive use of video, providing worked answers to over 200 questions in the book plus additional tutorial support. The second edition has also improved the learning approach for key topic areas to make it even more accessible and user-friendly, making it a perfect resource for students of all abilities. The expanding website provides a wide range of support material, providing a study environment within which students can develop their independent learning skills, in addition to providing resources that can be used by tutors for integration into other science-based programmes.
+Hallmark Features:
+Applied approach providing mathematics and statistics from the first to final years of undergraduate science courses.
+Second edition substantially revised to improve the learning approach to key topics and the organisation of resources for ease of use in teaching.
+Companion website at www.wiley.com/go/currellmaths2 providing: 
+Over 200 videos showing step-by-step workings of problems in the book.
+Additional materials including related topic areas, applications, and tutorials on Excel and Minitab.
+Interactive multiple-choice questions for self-testing, with step-by-step video feedback for any wrong answers.
+A developing resource of study plans for useful topics and applications.
+Figures from the book for downloading.
+
+")
+item = Item.create(title: "Statistical Data Analysis Edition 1", price: 50.00, img: "http://img1.imagesbn.com/p/9780198501558_p0_v1_s600.jpg", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0198501552", published: "June 1998", publisher: "Oxford University Press, USA", author: "Glen Cowan", overview: "
+                    This book is a guide to the practical application of statistics to data analysis in the physical sciences. It is primarily addressed at students and professionals who need to draw quantitative conclusions from experimental data. Although most of the examples are taken from particle physics, the material is presented in a sufficiently general way as to be useful to people from most branches of the physical sciences. The first part of the book describes the basic tools of data analysis: concepts of probability and random variables, Monte Carlo techniques, statistical tests, and methods of parameter estimation. The last three chapters then develop more advanced statistical ideas, focusing on interval estimation, characteristic functions, and correcting distributions for the effects of measurement errors (unfolding).
+
+
+                ")
+item = Item.create(title: "Elementary Statistics in Social Research Edition 12", price: 203.20, img: "http://img1.imagesbn.com/p/9780205845484_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0205845487", published: "July 2013", publisher: "Pearson", author: "Jack Levin,James Alan Fox,David R. Forde", overview: "
+                    Provides an understanding of statistics in the social sciences.
+This best-selling introduction to statistical analysis in the social sciences provides the right balance of conceptual understanding and step-by-step computational techniques. The eleventh edition of Elementary Statistics in Social Research is written to be understandable to all readers, particularly those without a strong background in mathematics.
+This text is available in a variety of formats – print and digital. Check your favorite digital provider for your etext, including Coursesmart, Kindle, Nook, and more. To learn more about our programs, pricing options and customization, click the Choices tab.
+Learning Goals
+Upon completing this book, readers will be able to:
+Develop an understanding of the importance of statistics in the social sciences.
+Note: MySearchLab does not come automatically packaged with this text. To purchase MySearchLab, please visit: www.mysearchlab.com or you can purchase a ValuePack of the text + NEW MySearchLab (at no additional cost): ValuePack ISBN-10: 0205959814 / ValuePack ISBN-13: 9780205959815.
+
+
+                ")
+item = Item.create(title: "Current Issues and Enduring Questions: A Guide to Critical Thinking and Argument, with Readings Edition 10", price: 83.75, img: "http://img2.imagesbn.com/p/9781457622601_p0_v2_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1457622602", published: "August 2013", publisher: "Bedford/St. Martin's", author: "Sylvan Barnet,Hugo Bedau", overview: "
+                    The unique collaborative effort of a professor of English and a professor of philosophy, Current Issues and Enduring Questions is a balanced and flexible book that provides the benefits of the authors’ dual expertise in effective persuasive writing and rigorous critical thinking.
+Refined through eight widely adopted editions, it has been revised to address current student interests and trends in argument, research, and writing. Its comprehensive coverage of classic and contemporary approaches to argument includes Aristotle, Toulmin, and a range of alternative views, making it an extraordinarily versatile text.
+Readings on contemporary controversies (including environmental stewardship, student-teacher relationships, cyber bullying, and the limits of reproductive rights) and classical philosophical questions (such as How free is the will of the individual?) are sure to spark student interest and lively discussion and writing. No other text and reader offers such an extensive resource for teaching argument.
+
+
+                ")
+item = Item.create(title: "Statistics for Social Data Analysis Edition 4", price: 246.95, img: "http://img2.imagesbn.com/p/9780875814483_p0_v1_s600.jpg", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0875814484", published: "January 2002", publisher: "Cengage Learning", author: "David Knoke,George W. Bohrnstedt,Alisa Potter Mee", overview: "
+                    The fourth edition of STATISTICS FOR SOCIAL DATA ANALYSIS continues to show students how to apply statistical methods to answer research questions in various fields. Throughout the text, the authors underscore the importance of formulating substantive hypotheses before attempting to analyze quantitative data. An important aspect of this text is its realistic, hands-on approach. Actual datasets are used in most examples, helping students understand and appreciate what goes into the research process. The book focuses on the continuous-discrete distinction in considering the level at which a variable is measured. Rather than dwelling on the four conventional levels-of-measurement distinctions, the authors discuss statistics for analyzing continuous and discrete variables separately and in combination.
+
+
+                ")
+item = Item.create(title: "Advanced Educational Technologies for Mathematics and Science Edition 1", price: 449.00, img: "http://img2.imagesbn.com/p/9783642081521_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "3642081525", published: "December 2010", publisher: "Springer Berlin Heidelberg", author: "David Ferguson (Editor)", overview: "
+                    This book contains revised and updated versions of papers presented at a NATO Advanced Research Workshop held in
+Milton Keynes, U.K., in summer 1990.The workshop brought together about 30 world leaders in the use of advanced technologies in the teaching of mathematics and science.
+The papers demonstrate how technology is impacting the view in the teaching profession of what should be taught, what can be taught, and how teachers should go about their work in the various disciplines. They offer great insight into the central issues of teaching and learning in a wide range of disciplines and across many grade levels, ranging from elementary school through college and undergraduate education.
+The book has two major parts, on advanced technologies in the teaching of science and mathematics respectively,
+although many of the papers address topics of interest to specialists in both areas. The papers reflect examples drawn from a wide range of fields, including mathematics, physics,
+computer science, engineering, chemistry, and biology. Some demonstrate the use of software inteaching difficult but restricted concepts within a discipline. Other show an integrated approach that exploits the power of educational software throughout a course. The notions of discovery,
+representation, qualitative models for reasoning, model building, and the management of complexity are key elements in numerous papers.
+
+
+                ")
+item = Item.create(title: "Studies Show: A Popular Guide to Understanding Scientific Studies Edition 1", price: 26.99, img: "http://img2.imagesbn.com/p/9781573921367_p0_v2_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "157392136", published: "May 1997", publisher: "Prometheus Books", author: "Fennick, John H. Fennick, John H.", overview: "
+                    If you're not sure what to make of all the claims and counterclaims, this new book will help cut through the conflicting reports and contradictory findings.
+We are bombarded daily with media reports of startling new findings from \"just released\" studies often in major, authoritative publications on consumer products, medications, foods, alcohol, safety devices, social behavior, public policy, and much more. The decisions of millions of consumers, professionals, and government agencies can be influenced by just one study.
+Light, humorous, and entertaining, Studies Show reviews sample studies to expose their traps and pitfalls. In plain English, statistics analyst John H. Fennick discusses the methods of good and bad studies to explain how scientific results can differ sometimes radically. Fennick shows that when armed with common sense and critical intelligence, we can understand almost any study.
+
+                ")
+item = Item.create(title: "Essential Mathematics and Statistics for Science Edition 2", price: 62.75, img: "http://img1.imagesbn.com/p/9780470694480_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0470694483", published: "July 2009", publisher: "Wiley", author: "Graham Currell,Antony Dowman", overview: "
+                    Essential Mathematics and Statistics for Science, Second Edition is a completely revised and updated version of this invaluable text which allows science students to extend necessary skills and techniques, with the topics being developed through examples in science which are easily understood by students from a range of disciplines. The introductory approach eases students into the subject, progressing to cover topics relevant to first and second year study and support data analysis for final year projects.
+The revision of the material in the book has been matched, on the accompanying website, with the extensive use of video, providing worked answers to all the questions in the book plus additional tutorial support. The second edition has also improved the learning approach for key topic areas to make it even more accessible and user-friendly, making it a perfect resource for students of all abilities.
+The expanding website provides a wide range of support material, providing a study environment within which students can develop their independent learning skills, in addition to providing resources that can be used by tutors for integration into other science-based programmes.
+Applied approach providing mathematics and statistics from the first to final years of undergraduate science courses.
+Second edition substantially revised to improve the learning approach to key topics and the organization of resources for ease of use in teaching.
+Website incorporates Excel and Minitab tutorials in addition to self-assessment tests, worked video answers and other resources: www.wiley.com/go/currellmaths2
+
+
+                ")
+item = Item.create(title: "Basic Statistical Methods and Models Edition 1", price: 104.95, img: "http://img1.imagesbn.com/p/9781584881476_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "158488147", published: "November 2001", publisher: "Taylor & Francis", author: "Judah Rosenblatt", overview: "
+                    The use of statistics in biology, medicine, engineering, and the sciences has grown dramatically in recent years and having a basic background in the subject has become a near necessity for students and researchers in these fields. Although many introductory statistics books already exist, too often their focus leans towards theory and few help readers gain effective experience in using a standard statistical software package.
+Designed to be used in a first course for graduate or upper-level undergraduate students, Basic Statistical Methods and Models builds a practical foundation in the use of statistical tools and imparts a clear understanding of their underlying assumptions and limitations. Without getting bogged down in proofs and derivations, thorough discussions help readers understand why the stated methods and results are reasonable. The use of the statistical software Minitab is integrated throughout the book, giving readers valuable experience with computer simulation and problem-solving techniques. The author focuses on applications and the models appropriate to each problem while emphasizing Monte Carlo methods, the Central Limit Theorem, confidence intervals, and power functions.
+The text assumes that readers have some degree of maturity in mathematics, but it does not require the use of calculus. This, along with its very clear explanations, generous number of exercises, and demonstrations of the extensive uses of statistics in diverse areas applications make Basic Statistical Methods and Models highly accessible to students in a wide range of disciplines.
+
+
+                ")
+item = Item.create(title: "Models and Methods in Social Network Analysis Edition 1", price: 42.00, img: "http://img1.imagesbn.com/p/9780521600972_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0521600979", published: "February 2005", publisher: "Cambridge University Press", author: "Peter J. Carrington (Editor),John Scott (Editor),Stanley Wasserman (Editor)", overview: "
+                    Models and Methods in Social Network Analysis presents the most important developments in quantitative models and methods for analyzing social network data that have appeared during the 1990s. Intended as a complement to Wasserman and Faust's Social Network Analysis: Methods and Applications, it is a collection of original articles by leading methodologists reviewing recent advances in their particular areas of network methods. Reviewed are advances in network measurement, network sampling, the analysis of centrality, positional analysis or blockmodeling, the analysis of diffusion through networks, the analysis of affiliation or \"two-mode\" networks, the theory of random graphs, dependence graphs, exponential families of random graphs, the analysis of longitudinal network data, graphic techniques for exploring network data, and software for the analysis of social networks.
+
+                ")
+item = Item.create(title: "An Introduction to Grbner Bases Edition 1", price: 178.00, img: "http://img1.imagesbn.com/p/9780471974420_p0_v1_s600.jpg", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0471974420", published: "September 1998", publisher: "Wiley", author: "Ralf Froberg,Ralf Frvberg", overview: "
+                    As algebra becomes more widely used in a variety of applications and computers are developed to allow efficient calculations in the field, so there becomes a need for new techniques to further this area of research. Gröbner Bases is one topic which has recently become a very popular and important area of modern algebra. This book provides a concrete introduction to commutative algebra through Gröbner Bases. The inclusion of exercises, lists of further reading and related literature make this a practical approach to introducing Gröbner Bases. The author presents new concepts and results of recent research in the area allowing students and researchers in technology, computer science and mathematics to gain a basic understanding of the technique. A first course in algebra is the only prior knowledge required for this introduction. Chapter titles include:
+* Monomial ldeas
+* Gröbner Bases
+* Algebraic Sets
+* Solving Systems of Polynomial Equations
+* Applications of Gröbner Bases
+* Homogeneous Algebra
+* Hilbert Series
+* Variations of Gröbner Bases
+* Improvements to Buchberger's Algorithms
+* Software
+
+
+                ")
+item = Item.create(title: "Data Analysis Using SAS Enterprise Guide Edition 1", price: 61.00, img: "http://img2.imagesbn.com/p/9780521130073_p0_v3_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0521130077", published: "August 2009", publisher: "Cambridge University Press", author: "Lawrence S. Meyers,Glenn Gamst,A. J. Guarino", overview: "
+                    This book presents the basic procedures for utilizing SAS Enterprise Guide to analyze statistical data. SAS Enterprise Guide is a graphical user interface (point and click) to the main SAS application. Each chapter contains a brief conceptual overview and then guides the reader through concrete step-by-step examples to complete the analyses. The eleven sections of the book cover a wide range of statistical procedures including descriptive statistics, correlation and simple regression, t tests, one-way chi square, data transformations, multiple regression, analysis of variance, analysis of covariance, multivariate analysis of variance, factor analysis, and canonical correlation analysis. Designed to be used either as a stand-alone resource or as an accompaniment to a statistics course, the book offers a smooth path to statistical analysis with SAS Enterprise Guide for advanced undergraduate and beginning graduate students, as well as professionals in psychology, education, business, health, social work, sociology, and many other fields.
+
+
+                ")
+item = Item.create(title: "Essentials of Statistics for the Behavioral Sciences Edition 8", price: 243.95, img: "http://img1.imagesbn.com/p/9781133956570_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1133956572", published: "January 2013", publisher: "Cengage Learning", author: "Frederick J Gravetter,Larry B. Wallnau", overview: "
+                    
+A proven bestseller, ESSENTIALS OF STATISTICS FOR THE BEHAVIORAL SCIENCES, 8e gives you straightforward instruction, unrivaled accuracy, built-in learning aids, and plenty of real-world examples to help you understand statistical concepts. The authors take time to fully explain statistical procedures so that you can go beyond memorizing formulas and begin gaining a conceptual understanding of statistics. They also take care to show you how having an understanding of statistical procedures will help you comprehend published findings--ultimately leading you to become a savvy consumer of information. Available with InfoTrac Student Collections http://gocengage.com/infotrac.
+
+                        Covers frequency distributions/central tendency/ probability/hypothesis tests w/2 independent samples/etc.
+
+                    
+                ")
+item = Item.create(title: "Hysteresis in Magnetism: For Physicists, Materials Scientists, and Engineers Edition 1", price: 240.00, img: "http://img1.imagesbn.com/p/9780120932702_p0_v2_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0120932709", published: "May 1998", publisher: "Elsevier Science", author: "Giorgio Bertotti", overview: "
+                    The book provides a comprehensive treatment of the physics of hysteresis in magnetish, and of the mathematical tools used to describe it. The relations of hysteresis to Maxwell's equations, equilibrium and non equilibrium thermodynamics, non-linear system dynamics, micromagnetics and domain theory are discussed from a unified viewpoint. These aspects are then applied to the interpretation of magnetization reversal mechanisms: coherent rotation and switching in magnetic particles, stochastic domain wall motion and the Barkhausen effect, coercivity mechanisms and magnetic viscosity, rate-dependent hysteresis and eddy-current losses. Emphasis is given to the connection between basic physical ideas and phenomenological models of interest to applications, and, in particular, to the conceptual path going from Maxwell's equations abnd thermodynamics to micro-magnetics and to Preisach hysteresis modeling.
+The reader will get insight into the importance and role of hysteresis in magnetism. In particular, he will learn:
+* which are the fingerprints of hysteresis in magnetism
+* which are the situations in which hysteresis may appear
+* how to describe mathematically these situations
+* how to apply these descriptions to magnetic materials
+* how to interpret and predict magnetic hysteresis phenomena observed experimentally
+The book is aimed at: (P) researchers and graduate students in physics, who are interested in magnetism and magnetic materials, and, more generally, in the physics of hysteresis phenomena, (P) materials scientists and engineers working on the development and application of magnetic materials, (S) mathematicians investigating the mathematical structure of hysteresis non-linearities.
+
+
+                        Audience: Electrical engineers. Graduate students and researchers in physics, who are interested in magnetism and magnetic materials and, more generally, in the physics of hysteresis phenomena; materials scientists and engineers workingon the development and application of magnetic materials; and mathematicians investigating the mathematical structure of hysteresis non-linearities.
+
+                    
+                ")
+item = Item.create(title: "Calculus For Biology and Medicine Edition 3", price: 210.67, img: "http://img1.imagesbn.com/p/9780321644688_p0_v3_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0321644689", published: "December 2009", publisher: "Pearson", author: "Claudia Neuhauser", overview: "
+                    Calculus for Biology and Medicine, Third Edition, addresses the needs of readers in the biological sciences by showing them how to use calculus to analyze natural phenomena—without compromising the rigorous presentation of the mathematics. While the table of contents aligns well with a traditional calculus text, all the concepts are presented through biological and medical applications. The text provides readers with the knowledge and skills necessary to analyze and interpret mathematical models of a diverse array of phenomena in the living world. This book is suitable for a wide audience, as all examples were chosen so that no formal training in biology is needed.
+
+                ")
+item = Item.create(title: "Applying and Interpreting Statistics: A Comprehensive Guide Edition 2", price: 149.00, img: "http://img2.imagesbn.com/p/9781441928795_p0_v2_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1441928790", published: "May 2011", publisher: "Springer New York", author: "Glen McPherson", overview: "
+                    This book describes the basis, application, and interpretation of statistics, and presents a wide range of univariate and multivariate statistical methodology. The Second Edition retains the unique feature of being written from the users' perspective; it connects statistical models and methods to investigative questions and background information, and connects statistical results with interpretations in plain English. In keeping with this approach, methods are grouped by usage rather than by commonality of statistical methodology.
+
+                ")
+item = Item.create(title: "Regression Models for Categorical Dependent Variables Using Stata Edition 2", price: 98.95, img: "http://img2.imagesbn.com/p/9781597180115_p0_v1_s600.JPG", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "1597180114", published: "November 2005", publisher: "Taylor & Francis", author: "J. Scott Long,Jeremy Freese", overview: "
+                    Although regression models for categorical dependent variables are common, few texts explain how to interpret such models. Regression Models for Categorical Dependent Variables Using Stata, Second Edition, fills this void, showing how to fit and interpret regression models for categorical data with Stata. The authors also provide a suite of commands for hypothesis testing and model diagnostics to accompany the book.
+The book begins with an excellent introduction to Stata and then provides a general treatment of estimation, testing, fit, and interpretation in this class of models. It covers in detail binary, ordinal, nominal, and count outcomes in separate chapters. The final chapter discusses how to fit and interpret models with special characteristics, such as ordinal and nominal independent variables, interaction, and nonlinear terms. One appendix discusses the syntax of the author-written commands, and a second gives details of the datasets used by the authors in the book.
+Nearly 50% longer than the previous edition, the book covers new topics for fitting and interpreting models included in Stata 9, such as multinomial probit models, the stereotype logistic model, and zero-truncated count models. Many of the interpretation techniques have been updated to include interval as well as point estimates.
+New to the Second Edition:
+Regression models, including the zero-truncated Poisson and the zero-truncated negative binomial models, the hurdle model for counts, the stereotype logistic regression model, the rank-ordered logit model, and the multinomial probit model
+Stata commands, such as estat, which provides a uniform way to access statistics useful for postestimation interpretation.
+Expanded suite of programs known as SPost
+Inclusion of confidence intervals for predictions computed by prvalue and prgen
+Because all the examples, datasets, and author-written commands are available from the authors' Web site, readers can easily replicate the concrete examples using Stata, making it ideal for students or applied researchers who want to know how to fit and interpret models for categorical data.
+
+
+                ")
+item = Item.create(title: "Complexity Theory And The Social Sciences Edition 1", price: 64.95, img: "http://img1.imagesbn.com/p/9780415162968_p0_v1_s600.jpg", cat_id: 3, clicks: 0, rating: 0)
+ItemInfo.create(item_id: item.id, isbn: "0415162963", published: "October 1998", publisher: "Taylor & Francis", author: "David Byrne", overview: "
+                    Chaos and complexity are the new buzz words in both science and contemporary society. The ideas they represent have enormous implications for the way we understand and engage with the world. Complexity Theory and the Social Sciences introduces students to the central ideas which surround the chaos/complexity theories. It discusses key concepts before using them as a way of investigating the nature of social research. By applying them to such familiar topics as urban studies, education and health, David Byrne allows readers new to the subject to appreciate the contribution which complexity theory can make to social research and to illuminating the crucial social issues of our day.
+
+
+                ")
