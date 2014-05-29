@@ -13,7 +13,7 @@ class Api::HotwordsController < ApplicationController
       render json: @items
     else
       if(params[:query].length > 4)
-        items = Item.where("title LIKE ?", "%#{params[:query]}%")
+        items = Item.where("title ILIKE ?", "%#{params[:query]}%")
         Hotword.create(query: params[:query], result: items.pluck(:id).join(","))
         render json: items
       else
