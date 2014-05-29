@@ -71,7 +71,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     var cat = this.book[this.page].cat;
     this.book[this.page].off();
     if(!this.book[this.page + 1]){
-      this.book[this.page + 1] = this.book[this.page + 1] || new Anizon.Collections.Items({page: this.page + 1, cat: cat});
+      this.book[this.page + 1] = new Anizon.Collections.Items({page: this.page + 1, cat: cat});
       this.book[this.page + 1].setUrl();
       this.book[this.page + 1].fetch();
     }
@@ -79,48 +79,46 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.page += 1;
 
     var parent = this;
-    this.listenTo(this.collection, "sync", function(){
-      parent.children.each(function(childView){
-        childView.leave();
-      })
-      parent.collection.each(function(item){
-        var itemView = new Anizon.Views.Item({model: item});
-        parent.children.push(itemView);
-        itemView.parent = parent;
-      })
-      parent.render();
-    }) 
+    this.listenTo(this.collection, "sync", this.refreshChildrenAndRender) 
 
-    this.render();
+    this.refreshChildrenAndRender();
   },
 
   previousPage: function(){
     console.log("prev");
-    debugger
-    var cat = this.book[this.page].cat;
-    this.book[this.page].off();
-    if(!this.book[this.page - 1 ]){
-      this.book[this.page - 1] =  new Anizon.Collections.Items({page: this.page - 1, cat: cat});
-      this.book[this.page - 1].setUrl();
-      this.book[this.page - 1].fetch();
-    }
-    this.collection = this.book[this.page - 1];
-    this.page -= 1;
-    
-    var parent = this;
-    this.listenTo(this.collection, "sync", function(){
-      parent.children.each(function(childView){
-        childView.leave();
-      })
-      parent.collection.each(function(item){
-        var itemView = new Anizon.Views.Item({model: item});
-        parent.children.push(itemView);
-        itemView.parent = parent;
-      })
-      parent.render();
-    })
+    if(this.page > 1){
+      var cat = this.book[this.page].cat;
+      this.book[this.page].off();
+      if(!this.book[this.page - 1 ]){
+        this.book[this.page - 1] =  new Anizon.Collections.Items({page: this.page - 1, cat: cat});
+        this.book[this.page - 1].setUrl();
+        this.book[this.page - 1].fetch();
+      }
+      this.collection = this.book[this.page - 1];
+      this.page -= 1;
+      
+      var parent = this;
+      this.listenTo(this.collection, "sync",this.refreshChildrenAndRender)
 
-    this.render(); 
+      this.refreshChildrenAndRender();
+
+    }else{
+      $.notify("You have reach the end of page");
+    } 
+  },
+
+
+  refreshChildrenAndRender: function(){
+    var parent = this;
+    parent.children.each(function(childView){
+      childView.leave();
+    })
+    parent.collection.each(function(item){
+      var itemView = new Anizon.Views.Item({model: item});
+      parent.children.push(itemView);
+      itemView.parent = parent;
+    })
+    parent.render();
   },
 
   initSly: function(){
