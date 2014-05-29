@@ -15,6 +15,7 @@
 //= require jquery.ui.all
 //= require jquery.cookie.js
 //= require jquery.qtip.min.js
+//= require typeahead.js
 //= require sly.min.js
 //= require notify.min.js
 //= require backstretch.min.js

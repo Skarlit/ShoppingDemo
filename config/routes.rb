@@ -11,6 +11,8 @@ Anizon::Application.routes.draw do
     put '/cart_items/:id', to: 'cart_items#update'
     get '/feeds', to: 'infos#feeds'
     get '/userinfo', to: 'infos#user_info'
+    post '/hotwords/search', to: 'hotwords#search'
+    get '/hotwords/index', to: 'hotwords#index'
     post 'orders', to: 'orders#create'
     post 'comments', to: 'comments#create'
     get '/items/popular', to: 'items#popular'

@@ -7,6 +7,7 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     '' : 'welcomePanel',
     'news' : 'newsPanel',
     'items/:cat' : 'itemsPanel',
+    'search' : 'searchView'
   },
   newsPanel: function(){
     var newsView = new Anizon.Views.NewsPanel();
@@ -23,6 +24,11 @@ Anizon.Routers.Center = Support.SwappingRouter.extend({
     items.fetch();
     var view = new Anizon.Views.ItemsPanel({collection: items})
     this.swap(view);
+  },
+
+  searchView: function(){
+    var searchView = new Anizon.Views.Search();
+    this.swap(searchView);
   },
 
   swap: function(newView) {

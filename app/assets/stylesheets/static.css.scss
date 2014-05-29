@@ -3,7 +3,9 @@
   opacity: 0.95;
 }
 
-
+li{
+  list-style: none;
+}
 /* Button */
 .menuFont{
   font-family: 'Nova Square', cursive;
@@ -165,112 +167,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 }
 
 
-/*News Panel*/
-#center{
-  background-color: #3c3c3c
-}
 
-#news-container{
-  border-radius: 8px;
 
-}
 
-.news-panel{
-  color: white;
-  background: rgba(32,32,32, 0.8);
-  height:280px;
-}
-
-#news-list, #popular-list, #ranking-list{
-  overflow-y: scroll;
-  height: 70%;
-}
-
-.newsEntry, .newsEntry a{
-  border-bottom: 1px solid #444444;
-  text-decoration: none;
-  color: #dcdc66;
-}
-
-.popular-clicks span, .ranking-rating{
-  color: #ecec44;
-}
-
-.popular-clicks, .ranking-rating{
-  float: right;
-}
-
-.popular_Entry:hover, .ranking_Entry:hover, .newsEntry:hover{
-  background-color: black;
-  cursor: pointer;
-}
-
-/*Bottom */
-
-.cartSideBar{
-  position: fixed;
-/*  z-index: 128;*/
-  z-index: auto;
-  bottom:0;
-  width:100%;
-  background-color: black;
-  opacity: 0.95;
-  color: white;
-}
-
-#hideCart{
-  height:30px;
-  text-align: center;
-}
-
-#cartBody{
-  background-color: black;
-  height:150px;
-}
-
-#itemsContainer{
-  background-color: #111111;
-  overflow-x: scroll;
-}
-
-#itemsContainer .cartItem{
-  height:130px;
-  margin-top: 3px;
-  display: inline;
-}
-
-#cartScrollLeft{
-  height: 150px;
-}
-
-#cartScrollRight{
-  height: 150px;
-}
-
-#cartScrollLeft span, #cartScrollRight span{
-  top: 45%;
-  left:40%;
-}
-
-#hideCart:hover, #cartScrollLeft:hover, #cartScrollRight:hover{
-  background-color: #333333;
-}
-
-#cartMenu{
-  height: 150px;
-}
-
-.floatingDialog{
-  color:black;
-  position: absolute;
-  top: 18%;
-  opacity: 0.9;
-  background-color: #acacac;
-  border-radius: 5px;
-  z-index: 400;
-  overflow-x: hidden;
-
-}
 
 
 ::-webkit-scrollbar {
@@ -293,61 +192,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141312', end
 }
 
 
-/*Items */
-#items-panel{
-  width: 100%;
-/*  overflow-y: scroll;
-  overflow-x:scroll;*/
-  background: rgba(225, 225, 225, 0.6);
-}
 
-.frame { width: 100%; height: 380px; padding: 0; }
-.frame .slidee { margin: 0; padding: 0; height: 100%; list-style: none; }
-.frame .slidee li { float: left; margin: 0 5px 0 0; padding: 0; width: 250px; height: 100%; }
-
-.scrollbar { width: 100%; height: 10px; }
-.scrollbar .handle {
-    width: 100px; /* overriden if dynamicHandle: 1 */
-    height: 100%;
-    background: #222;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.item{
-/*  width: 250px; 
-  border-radius: 5px;
-  display: inline-block;
-  margin: 4em;*/
-  background: rgba(255, 255, 255, 1);
-/*  position: relative;*/
-}
-
-.prevPage, .nextPage{
-  background-color: #222222;
-  color: #eeeeee;
-  font-size: 25pt;
-}
-
-.prevPage:hover, .nextPage:hover{
-  background-color: #555555;
-}
-
-.prevPage span{
-  position:absolute;
-  top:45%;
-  left: 8px;
-  vertical-align: middle;
-  color: white;
-}
-
-.nextPage span{
-  position:absolute;
-  top:45%;
-  right: 8px;
-  vertical-align: middle;
-  color: white;
-}
 
 
 /* Modal */

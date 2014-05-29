@@ -12,9 +12,10 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
 
     var parent = this;
     this.listenTo(this.collection, "sync", function(){
-      parent.children.each(function(childView){
-        childView.leave();
-      })
+      var child;
+      while(child = parent.children.first()){
+        child.leave();
+      }
       parent.collection.each(function(item){
         var itemView = new Anizon.Views.Item({model: item});
         parent.children.push(itemView);
@@ -63,7 +64,6 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
 
   pager: function(index){ 
     console("called with" + index);
-
   },
 
   nextPage: function(){
@@ -139,7 +139,6 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       scrollBar: parent.$wrap.find('.scrollbar'),
       scrollBy: 1,
       pagesBar: parent.$wrap.find('.pages'),
-      // activatePageOn: 'click',
       keyboardNavBy: 'pages',
       dragHandle: true,
       speed: 300,
@@ -166,6 +165,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
   },
 
   events: {
+    'click .thumbnail' : 'showInfo',
     'click .itemDetail' : 'showInfo', 
     'click .addToCart' : 'addToCart'
   },
@@ -177,15 +177,13 @@ Anizon.Views.Item = Support.CompositeView.extend({
     var parent = this;
 
     this.$el.draggable({
+      appendTo: 'body',
       revert: true,  
       distance: 10,
-      //helper: "clone",
+      helper: 'clone',
       stack: "#cartBody",
       zIndex: 9000,
       start: function(event, ui){
-        // console.log(event.clientY + " " + event.clientX);
-        // console.log(ui.offset.top + " " + ui.offset.left);
-        // console.log(parent.$el.offset());  
 
         Anizon.currentDraggedItem = parent.model;
         if(Anizon.cart){
