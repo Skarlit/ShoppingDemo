@@ -10,11 +10,15 @@ Anizon.Views.Cart = Support.CompositeView.extend({
     
     var parent = this;
     this.listenTo(this.collection, "add", function(cartItem){
-      if($.cookie('cart_item')){
-        $.cookie('cart_item', $.cookie('cart_item') + " " + cartItem.escape("item_id") + "&" + cartItem.escape("quantity") );
-      }else{
-        $.cookie('cart_item', cartItem.escape("item_id") + "&" + cartItem.escape("quantity") );
-      }
+      $.cookie('cart_item' , "");
+      parent.collection.each(function(model){
+        if($.cookie('cart_item') !== ""){
+          $.cookie('cart_item', $.cookie('cart_item') + " " + model.escape("item_id") + "&" + model.escape("quantity") );
+        }else{
+          $.cookie('cart_item', model.escape("item_id") + "&" + model.escape("quantity") );
+        }
+      })
+
       cartItem.save({
         success: function(resp){
           $.notify(resp.escape("title") + "\n added to the cart", "success")
@@ -203,6 +207,10 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   removeItem: function(event){
     
     event.preventDefault();
+    var cookieItem = $.cookie("cart_item").split(" ");
+    cookieItem.splice(cookieItem.indexOf(this.model.escape("item_id") + "&" + this.model.escape("quantity")), 1);
+    $.cookie("cart_item", cookieItem.join(" "));
+
     this.model.destroy({
         success: function(resp){
           $.notify(resp.escape("title") + " removed", "success");
