@@ -2,9 +2,9 @@ require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
 
-urls = File.readlines("analysis_books").map(&:chomp)
+urls = File.readlines("algebra_books").map(&:chomp)
 
-File.open("analysis.rb", "w") do |f|
+File.open("algebra.rb", "w") do |f|
   urls.each_with_index do |url, i|
     begin
       puts "trying #{url}..."
@@ -21,7 +21,7 @@ File.open("analysis.rb", "w") do |f|
       overview = doc.css(".fade-to-more").css(".content.box").css(".simple-html")[0].text
 
 
-      str = "item = Item.create(title: \"#{title}\", price: \"#{price}\", img: \"#{img}\", cat_id: 5)"
+      str = "item = Item.create(title: \"#{title}\", price: #{price}, img: \"#{img}\", cat_id: 2, clicks: 0, rating: 0)"
       str1 = "ItemInfo.create(item_id: item.id, isbn: \"#{isbn}\", published: \"#{published}\", publisher: \"#{publisher}\", author: \"#{author}\", overview: \"#{overview}\")"
       puts str
       puts str1

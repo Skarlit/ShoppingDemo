@@ -11,7 +11,7 @@ user.save!
 
 
 Cat.create(name: "geometry")  #1
-Cat.create(name: "glgebra")  #2
+Cat.create(name: "algebra")  #2
 Cat.create(name: "probability") #3
 Cat.create(name: "numerical")  #4
 Cat.create(name: "analysis")  #5
