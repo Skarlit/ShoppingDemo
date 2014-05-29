@@ -23,6 +23,14 @@ class Api::ItemsController < ApplicationController
     end
   end
 
+  def popular
+    render json: Item.where("clicks > 0").order(:clicks => :desc).limit(15)
+  end
+
+  def ranking
+    render json: Item.where("rating > 0").order(:rating => :desc).limit(15)
+  end
+
   private 
   def click_params
     params.require(:item).permit(:clicks)
