@@ -150,6 +150,8 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
   },
 
   handleConsoleInput: function(){
+
+    $("#console").css("height", )
     $("#console input").on('keyup', function(event){
        console.log(event.keyCode);
        if (event.which == 13 || event.keyCode == 13) {
@@ -161,5 +163,9 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
           $(event.target).html("");
        }
     });
+
+    $("#console-minimize").on("click", function(){
+      $("#console").hide('slide', {direction: 'right'}, 200);
+    })
   }
 });
