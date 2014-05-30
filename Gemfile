@@ -8,6 +8,8 @@ gem 'kaminari'
 gem 'nokogiri'
 gem 'feed-normalizer'
 
+gem 'newrelic_rpm'
+
 
 ####FRONT END
 gem 'sass-rails', '~> 4.0.0'
