@@ -4,7 +4,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="color: red">&times;</button>
       <h4 class="modal-title">CheckOut</h4>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" id="checkout-modal-body">
       <% var sum = 0 %>
       <table style="table panel panel-default">
         <tr>
@@ -48,27 +48,36 @@
       <% }else{ %>
           <form id="userinfo-form">
            <label> Name: <span style="color:red">(One time user only) </span>
-             <input type="text" name="user_info[name]">
+             <input type="text" class="form-control" name="user_info[name]">
            </label>
            <br>
            <label style="float:left"> Country:
-             <input type="text" name="user_info[country]" >
+             <input type="text" class="form-control" name="user_info[country]" >
            </label>
 
            <label style="float:left"> State:
-             <input type="text" name="user_info[state]">
+             <input type="text" class="form-control" name="user_info[state]">
            </label>
            <label style="float:left">ZipCode:
-             <input type="text"  name="user_info[zipcode]">
+             <input type="text" class="form-control" name="user_info[zipcode]">
            </label>
            <br>
 
            <label style="float:left"> Address:
-              <input type="text" name="user_info[address]">
+              <input type="text" class="form-control" name="user_info[address]">
            </label>         
+       
         </form>
+      <% } %>
+       <form id="cred-form"> 
+          <label style="float: left"> Credit Card: 
+            <input type="text"  id="cred" class="form-control" name="user_info[credit_card]">
+          </label>
 
-      <% } %> 
+          <label style="float:left"> CRV:
+            <input type="text" id="crv" class="form-control" name="user_info[crv]">
+          </label>
+       </form>
        <br><br>
     </div>
     <div class="modal-footer">

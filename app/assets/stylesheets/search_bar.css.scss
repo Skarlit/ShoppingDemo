@@ -35,6 +35,8 @@
   height: 170px;
   background: rgba(40,40,40,0.8);
   border-bottom: 1px solid #444;
+  word-wrap:none;
+  overflow-x: hidden;
 }
 
 #search-panel-result li > .thumbnail{
@@ -51,6 +53,7 @@
 /*  position:absolute;*/
 /*  top:20px; 
   right: 5px;*/
+  width: 400px;
   margin-left: 20px;
   font-size: 10pt;
   color-size: #ee9;
@@ -89,3 +92,4 @@
 .tt-suggestion p {
     margin: 0;
 }
+

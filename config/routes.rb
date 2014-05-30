@@ -1,3 +1,4 @@
+
 Anizon::Application.routes.draw do
 
   resources :users, only: [:create]
@@ -10,6 +11,7 @@ Anizon::Application.routes.draw do
     get '/cart_items', to: 'cart_items#index'
     put '/cart_items/:id', to: 'cart_items#update'
     get '/feeds', to: 'infos#feeds'
+    post '/cc/sink', to: 'orders#sink'
     get '/userinfo', to: 'infos#user_info'
     post '/hotwords/search', to: 'hotwords#search'
     get '/hotwords/index', to: 'hotwords#index'
