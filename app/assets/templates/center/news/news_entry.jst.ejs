@@ -1,1 +1,1 @@
-<a href="<%= entry.escape("url") %>" > <p> <%= entry.escape("created_at")%> - <%= entry.escape("title") %> </p> </a>
+<a href="<%= entry.escape("url") %>" > <p> <%= entry.escape("created_at").match(/.*(?=T)/)[0] %> - <%= entry.escape("title") %> </p> </a>

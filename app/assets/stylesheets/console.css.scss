@@ -10,3 +10,39 @@
   right: 0;
   top: 10%;
 }
+
+#console-control{
+  position: absolute;
+  top:0;
+  width: 100%;
+  height: 15px;
+  background-color: #eee;
+}
+
+#console-content{
+  position: absolute;
+  bottom:0px;
+  width: 100%;
+  height: 560px;
+  color: yellow;
+}
+
+
+#console-input{
+  position: absolute;
+  top: 15px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  color: yellow;
+  width: 100%;
+  height: 15px;
+}
+
+#input-command, #console input[type="text"]:focus{
+  width:500px;
+  color: yellow;
+  background: rgba(25,25,25,0.9);
+  border: none;
+  box-shadow: none;
+}
+

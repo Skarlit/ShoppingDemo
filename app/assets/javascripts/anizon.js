@@ -41,4 +41,5 @@ $(document).ready(function(){
       classes: 'qtip-dark qtip-tipsy'
     }
   })
+
 });

@@ -7,7 +7,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'kaminari'
 gem 'nokogiri'
 gem 'feed-normalizer'
-
 gem 'newrelic_rpm'
 
 
