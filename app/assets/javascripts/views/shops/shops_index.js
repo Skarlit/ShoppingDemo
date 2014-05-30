@@ -151,7 +151,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
   handleConsoleInput: function(){
 
-    $("#console").css("height", )
+    // $("#console").css("height", Math.round($(document).height() * 0.6) );
     $("#console input").on('keyup', function(event){
        console.log(event.keyCode);
        if (event.which == 13 || event.keyCode == 13) {
