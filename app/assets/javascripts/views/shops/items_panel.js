@@ -9,19 +9,18 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.page = 1;
     this.book = [];
     this.book[this.page] = this.collection;
+    this.render();
 
     var parent = this;
     this.listenTo(this.collection, "sync", function(){
-      var child;
-      while(child = parent.children.first()){
-        child.leave();
-      }
+      
+      parent.eraseChildren();
       parent.collection.each(function(item){
         var itemView = new Anizon.Views.Item({model: item});
         parent.children.push(itemView);
         itemView.parent = parent;
       })
-      parent.render();
+      parent.renderChildren();
     })
   },
 
@@ -42,24 +41,39 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     
     var parent = this;
 
+    this.initSly();
+    this.$frame.sly('on', 'change', function(event){
+      parent.hideCart();
+    });
+
+    this.delegateEvents();
+    return this;
+  },
+
+  eraseChildren: function(){
+    var parent = this;
+    var child;
+    while(child = parent.children.first()){
+      child.leave();
+    }
+    parent.$el.find(".prevPage").remove();
+    parent.$el.find(".nextPage").remove();
+  },
+
+  renderChildren: function(){
+    var parent = this;
+
     this.$el.find("#items-panel").append(this.prevPageTemplate());
     this.children.each(function(childView){
       parent.$el.find("#items-panel").append(childView.render().$el);
     })
     this.$el.find("#items-panel").append(this.nextPageTemplate());
 
-
     this.initSly();
     this.$frame.sly('on', 'change', function(event){
       parent.hideCart();
     });
 
-    this.$frame.sly('cycle', function(event){
-      
-    });
-
-    this.delegateEvents();
-    return this;
   },
 
   pager: function(index){ 
@@ -110,15 +124,13 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
 
   refreshChildrenAndRender: function(){
     var parent = this;
-    parent.children.each(function(childView){
-      childView.leave();
-    })
+    parent.eraseChildren();
     parent.collection.each(function(item){
       var itemView = new Anizon.Views.Item({model: item});
       parent.children.push(itemView);
       itemView.parent = parent;
     })
-    parent.render();
+    parent.renderChildren();
   },
 
   initSly: function(){

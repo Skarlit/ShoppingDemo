@@ -35,6 +35,11 @@ Anizon.Models.Item = Backbone.Model.extend({
     }
   },
 
+  updateClicks: function(n){
+    this.set({clicks:  parseInt(this.get('clicks')) + n});
+    this.save();
+  },
+
   comments: function(){
     if(this.c){
       return this.c;

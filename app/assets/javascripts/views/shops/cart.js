@@ -180,6 +180,9 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
 
     this.listenTo(this.model, 'change:quantity', function(){
       parent.render();
+      var target = RegExp(parent.model.escape("item_id") + "&" + "\\d+");
+      var new_quantity = parent.model.escape("item_id")+ "&" + parent.model.escape("quantity");
+      $.cookie("cart_item", $.cookie("cart_item").replace(target, new_quantity));
       parent.model.save({
         success: function(resp){
           $.notify("quantity updated", "success");
@@ -305,6 +308,7 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
 
   checkout: function(){
     var user_info = this.$el.find("#userinfo-form").serializeJSON();
+    $.notify("Incorrect Credit Card Number");
     // $.ajax({
     //   method: "POST",
     //   url: "api/orders",

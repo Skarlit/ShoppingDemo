@@ -63,6 +63,7 @@ Anizon.Views.Item = Support.CompositeView.extend({
 
   showInfo: function(event){
     event.preventDefault();
+    this.model.updateClicks(1);
     var infoView  = new Anizon.Views.Info({model: this.model});
     this.swapInfoView(infoView);
   },

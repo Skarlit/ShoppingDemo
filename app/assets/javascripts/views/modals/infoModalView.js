@@ -22,6 +22,7 @@ Anizon.Views.Info = Support.CompositeView.extend({
 
   submitComment: function(event){
     event.preventDefault();
+    this.model.updateClicks(3);
     var newComment = new Anizon.Models.Comment({
       title: this.$el.find("#comment-title").val(),
       body: this.$el.find("#comment-box").val(),

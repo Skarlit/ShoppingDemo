@@ -79,8 +79,8 @@ Anizon.Views.Panel = Support.CompositeView.extend({
     this.root = option.root
    
     var parent = this;
-    this.listenTo(this.collection, "sync", function(){
-      parent.collection.each(function(entry){
+
+    this.listenTo(this.collection, "add", function(entry){
         var entryView = new Anizon.Views.Entry({
           model: entry, 
           template: parent.entryTemplate,
@@ -88,7 +88,6 @@ Anizon.Views.Panel = Support.CompositeView.extend({
         });
         parent.children.push(entryView);
         parent.render();
-      })
     });
   },
 
@@ -138,16 +137,15 @@ Anizon.Views.listItemPanel = Support.CompositeView.extend({
     this.root = option.root
 
     var parent = this;
-    this.listenTo(this.collection, "sync", function(){
-      parent.collection.each(function(entry){
-        var entryView = new Anizon.Views.listItem({
-          model: entry, 
-          template: parent.entryTemplate,
-          className: parent.entryClassName
-        });
-        parent.children.push(entryView);
-        parent.render();
-      })
+
+    this.listenTo(this.collection, "add", function(entry){
+      var entryView = new Anizon.Views.listItem({
+        model: entry, 
+        template: parent.entryTemplate,
+        className: parent.entryClassName
+      });
+      parent.children.push(entryView);
+      parent.render();
     });
   },
 
@@ -165,6 +163,7 @@ Anizon.Views.listItem = Anizon.Views.Item.extend({
   initialize: function(option){
     this.itemTemplate = option.template;
     this.className = option.entryClassName;
+    this.listenTo(this.model, "sync", this.render);
   },
 
   events: {
