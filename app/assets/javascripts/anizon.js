@@ -18,6 +18,7 @@ window.persistentLogin = function(){
     url: "sessions/auto",
     data: "",
     success: function(resp){
+      Anizon.username = resp.name;
       $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
     },
     error: function(resp){

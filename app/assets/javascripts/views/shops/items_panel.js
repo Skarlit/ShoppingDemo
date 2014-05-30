@@ -55,7 +55,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     });
 
     this.$frame.sly('cycle', function(event){
-      console.log("you went around : )");
+      
     });
 
     this.delegateEvents();
@@ -67,7 +67,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   nextPage: function(){
-    console.log("next");
+    
     var cat = this.book[this.page].cat;
     this.book[this.page].off();
     if(!this.book[this.page + 1]){
@@ -85,7 +85,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
   },
 
   previousPage: function(){
-    console.log("prev");
+    
     if(this.page > 1){
       var cat = this.book[this.page].cat;
       this.book[this.page].off();

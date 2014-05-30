@@ -4,11 +4,13 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
   navbarTemplate: JST['top/topNavBar'],
   signInMenuTemplate: JST['top/signInForm'],
   authButtonsTemplate: JST['top/authButtons'],
+  consoleTemplate: JST['console'],
   
   //RENDER
   render: function(){
     var topNavBar = this.navbarTemplate({});
     this.$el.html(topNavBar);
+    $('#console').html(this.consoleTemplate({username: Anizon.username}));
     this.$el.find("#top-navbar-right").html(this.authButtonsTemplate({}));
     this.delegateEvents();
     return this;
@@ -26,12 +28,13 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     'click #signin-submit-btn' : 'signInSubmit',
     'click #sign-up-submit-btn' : 'signUpSubmit',
     'click #sign-up-btn' : 'signUpForm',
-    'click #cart' : 'toggleCart'
+    'click #cart' : 'toggleCart',
+    'click #consoleToggle' : 'toggleConsole'
   },
 
   //HANDLERS
   signInForm: function(event){
-    console.log("Sign In clicked");
+    
     event.preventDefault();
     $("#top-navbar-right").find("li").detach();
     $("#top-navbar-right").html(this.signInMenuTemplate({})).hide().fadeIn(600);
@@ -39,15 +42,14 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
   },
 
   authButtons: function(event){
-    console.log("Sign In Canceled");
+    
     event.preventDefault();
     $("#top-navbar-right").find("form").detach();
     $("#top-navbar-right").html(this.authButtonsTemplate({})).hide().fadeIn(600);
   },
 
   signInSubmit: function(event){
-    console.log("Sign In Submitted");
-
+    
     event.preventDefault();
     var credential = $("#top-navbar-right").find("form").serializeJSON();
     $.ajax({
@@ -55,24 +57,24 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
       url: "/sessions",
       dataType: "json",
       data: credential, 
-      success: function(resp){  // resp: {name: "username"}
-        console.log(resp);
+      success: function(resp){  // resp: {name: "username"}        
+        Anizon.username = resp.name;
         $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
       },
       error: function(resp){
-        console.log(resp);
+        
       }
     });
   },
 
   signUpForm: function(event){
-    console.log("Sign Up clicked");
+    
     event.preventDefault();
     $(event.target).dropdown();
   },
 
   signUpSubmit: function(event){
-    console.log("Sign Up Submitted");
+    
     event.preventDefault();
     var credential = $("#sign-up-form").serializeJSON();
     $.ajax({
@@ -80,7 +82,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
       url: "/users",
       data: credential,
       success: function(resp){
-        console.log(resp);        
+        
         $("#top-navbar-right").html(JST["top/loginStatus"]({name: resp.name}));
       },
       error: function(resp){
@@ -91,7 +93,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
   toggleCart: function(event){
     event.preventDefault();
-    console.log("rendering cart");
+    
     if(Anizon.cart){
       $("#hideCart").click();
     }else{
@@ -102,14 +104,14 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
   },
 
   animateDropDown: function(event){
-    console.log("cat dropdown");
+    
 
     $(event.target).parent().find('.my-dropdown-menu').stop().slideDown(200);
     event.stopPropagation();
   },
 
   animateSlideUp: function(event){
-    console.log("cat slideUp");
+    
     var $target = $(event.target)
     if($target.prop("tagName") === "UL") {
       $target.stop().slideUp(200);
@@ -120,13 +122,13 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
   },
 
   animateSlideUpParent: function(event){
-    console.log("cat slideUp");
+    
     $(event.target).parent().find('.my-dropdown-menu').stop().slideUp(200);
     event.stopPropagation();
   },
 
   signOut: function(event){
-    console.log("Sign Out");
+    
     var parent = this;
     event.preventDefault();
     $.ajax({
@@ -140,5 +142,9 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
       }
     })
+  },
+
+  toggleConsole: function(event){
+    $("#console").toggle('slide',{direction: 'right'},500);
   }
 });

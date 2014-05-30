@@ -1,0 +1,12 @@
+#console{
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 3px;
+  background: rgba(25,25,25,0.9);
+  z-index: 9999;
+  width: 600px;
+  height: 600px;
+  display: none;
+  right: 0;
+  top: 10%;
+}

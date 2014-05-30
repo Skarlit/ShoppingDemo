@@ -103,7 +103,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   },
 
   toggleCart: function(event){
-    console.log("toggle cart");
+    
     event.preventDefault();
     $("#cartBody").toggle("slow",function(){ 
       if($("#cartBody").is(":visible"))
@@ -129,7 +129,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   },
 
   slideItemsRight: function(){
-    console.log("slide right");
+    
     if(this.upperBound+1 < this.children._wrapped.length){
       this.children._wrapped[this.upperBound+1].$el.show("slow");
       this.children._wrapped[this.lowerBound].$el.hide("slow");
@@ -139,7 +139,7 @@ Anizon.Views.Cart = Support.CompositeView.extend({
   },
 
   slideItemsLeft: function(){
-    console.log("slide left");
+    
     if(this.lowerBound - 1 >= 0 ){
       this.children._wrapped[this.lowerBound-1].$el.show("slow");
       this.children._wrapped[this.upperBound].$el.hide("slow");
@@ -189,14 +189,14 @@ Anizon.Views.CartItem = Support.CompositeView.extend({
   },
 
   editQuantity: function(event){
-    console.log("editing item quantity");
+    
     event.preventDefault();
     var editView = new Anizon.Views.EditQuantity({model: this.model});
     this.$el.append(editView.render().$el);
   },
 
   removeItem: function(event){
-    console.log("remove cart item");
+    
     event.preventDefault();
     this.model.destroy({
         success: function(resp){
@@ -275,7 +275,7 @@ Anizon.Views.CheckOut = Support.CompositeView.extend({
     var parent = this;
     $(".modal-backdrop").on('click', function(){
       parent.remove();
-      console.log("destroyed");
+      
       $(".modal-backdrop").remove();
     });
     return this;
