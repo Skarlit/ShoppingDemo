@@ -32,11 +32,17 @@ Anizon.Views.Search =  Support.CompositeView.extend({
   },
 
   events: {
-    'click #search-submit' : 'submitQuery'
+    'click #search-submit' : 'submitQuery',
   },
 
   render: function(){
     this.$el.html(this.searchTemplate({}));
+
+    this.$el.find("#search-panel-result").on('scroll', function(event){
+      if($("#cartBody").is(":visible")){
+        $("#cartBody").hide();
+      }
+    });
     this.delegateEvents();
     return this;
   },
