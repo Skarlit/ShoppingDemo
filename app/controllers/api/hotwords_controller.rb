@@ -17,7 +17,7 @@ class Api::HotwordsController < ApplicationController
         Hotword.create(query: params[:query], result: items.pluck(:id).join(","))
         render json: items
       else
-        items = Item.where("title LIKE ?", "%#{params[:query]}%").limit(10)
+        items = Item.where("title ILIKE ?", "%#{params[:query]}%").limit(10)
         Hotword.create(query: params[:query], result: items.pluck(:id).join(","))
         render json: items
       end
