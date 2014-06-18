@@ -23,7 +23,11 @@
   background: rgba(255, 255, 255, 1);
 }
 
-
+#paginator{
+  float:right;
+  font-weight:600;
+  color: white;
+}
 
 .prevPage, .nextPage{
   background-color: #222222;

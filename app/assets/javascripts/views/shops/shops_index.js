@@ -11,6 +11,7 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
     var topNavBar = this.navbarTemplate({});
     this.$el.html(topNavBar);
     $('#console').html(this.consoleTemplate({username: Anizon.username}));
+    this.handleConsoleInput();
     this.$el.find("#top-navbar-right").html(this.authButtonsTemplate({}));
     this.delegateEvents();
     return this;
@@ -146,5 +147,25 @@ Anizon.Views.ShopIndex = Support.CompositeView.extend({
 
   toggleConsole: function(event){
     $("#console").toggle('slide',{direction: 'right'},500);
+  },
+
+  handleConsoleInput: function(){
+
+    // $("#console").css("height", Math.round($(document).height() * 0.6) );
+    $("#console input").on('keyup', function(event){
+       console.log(event.keyCode);
+       if (event.which == 13 || event.keyCode == 13) {
+          if($(event.target).val() == "clear"){
+            $("#console-content").html("");
+          }else{
+            $("#console-content").html("<p> error: command could not be found</p>")
+          }
+          $(event.target).html("");
+       }
+    });
+
+    $("#console-minimize").on("click", function(){
+      $("#console").hide('slide', {direction: 'right'}, 200);
+    })
   }
 });

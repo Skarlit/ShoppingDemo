@@ -73,11 +73,6 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
     this.$frame.sly('on', 'change', function(event){
       parent.hideCart();
     });
-
-  },
-
-  pager: function(index){ 
-    console("called with" + index);
   },
 
   nextPage: function(){
@@ -117,10 +112,9 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       this.refreshChildrenAndRender();
 
     }else{
-      $.notify("You have reach the end of page");
+      $.notify("You are on the first page");
     } 
   },
-
 
   refreshChildrenAndRender: function(){
     var parent = this;
@@ -130,6 +124,7 @@ Anizon.Views.ItemsPanel = Support.CompositeView.extend({
       parent.children.push(itemView);
       itemView.parent = parent;
     })
+    parent.$el.find("#paginator").html("Page: " + parent.page)
     parent.renderChildren();
   },
 

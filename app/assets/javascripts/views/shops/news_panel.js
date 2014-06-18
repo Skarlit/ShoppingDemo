@@ -91,17 +91,32 @@ Anizon.Views.Panel = Support.CompositeView.extend({
     });
   },
 
+  events: {
+    'click a' : 'renderPdf',
+    'click p' : 'renderPdf'
+  },
+
+  renderPdf: function(event){
+    event.preventDefault();
+    var url = $(event.target).parent().attr('href') || $(event.target).parent().find('a').attr('href');
+    var title = $(event.target).parent().find('p').html();
+    $("#console").show("slow");
+    $("#console").find("#console-content").html(JST['center/news/pdfModal']({url: url, title: title}));
+  },
+
   render: function(){
     this.$el.html(this.panelTemplate({}));
     var parent = this;
     this.children.each(function(childView){
       parent.$el.find(parent.root).append(childView.render().$el);
     })
+    this.delegateEvents();
     return this;
   }
 })
 
 Anizon.Views.Entry = Support.CompositeView.extend({
+
   initialize: function(option){
     this.template = option.template;  
     this.listenTo(this.model, 'sync', this.render);
@@ -112,6 +127,7 @@ Anizon.Views.Entry = Support.CompositeView.extend({
     return this;
   }
 })  
+
 
 Anizon.Views.Log = Support.CompositeView.extend({
   className: "col-md-4 news-panel",

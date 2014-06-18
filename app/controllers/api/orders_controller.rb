@@ -1,4 +1,4 @@
-class OrdersController < ApplicationController
+class Api::OrdersController < ApplicationController
   def create
     if signed_in?
       user_info = UserInfo.find_by_user_id(current_user.id)
@@ -35,6 +35,11 @@ class OrdersController < ApplicationController
     else
 
     end
+  end
+
+
+  def sink
+    render json: {status: "OK"}
   end
 
   private

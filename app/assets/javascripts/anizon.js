@@ -31,8 +31,11 @@ $(document).ready(function(){
 
   window.Anizon.initialize();
   window.persistentLogin(); 
-  $.backstretch("http://cdn.wallwuzz.com/uploads/vector-wallpaper-patterns-black-wallpapers-array-wallwuzz-hd-wallpaper-7577.png");
-
+  if($.cookie("wall"))
+    $.backstretch($.cookie("wall"));
+  else{ 
+    $.backstretch("http://cdn.wallwuzz.com/uploads/vector-wallpaper-patterns-black-wallpapers-array-wallwuzz-hd-wallpaper-7577.png");
+  }
   $("#cart").qtip({
     content: {
       text: 'Click Here to Create/Toggle Cart'
@@ -41,4 +44,5 @@ $(document).ready(function(){
       classes: 'qtip-dark qtip-tipsy'
     }
   })
+
 });

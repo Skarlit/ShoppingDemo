@@ -1,8 +1,15 @@
-<div id="console-control">  </div>
+
+<div id="console-control"> <span id="console-minimize" class="glyphicon glyphicon-minus"></span> </div>
+<div id="console-input"> 
+  <span id="console-prefix"> 
+  <% if(Anizon.name){ %>
+  <%= Anizon.name%> @ <%= Anizon.name%>:~/
+  <% }else{ %>
+    Anon@Anon:~/
+  <% } %>
+  </span>
+  <input type="text" id="input-command">
+
+</div>
 <div id="console-content"> </div>
 
-<div id="console-input"> 
-  <div id="console-prefix"> 
-      
-  </div>
-</div>
